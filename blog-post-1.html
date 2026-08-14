@@ -125,15 +125,65 @@
             object-fit: cover;
         }
 
-        article h2 {
-            font-size: 22px;
-            color: #432b37;
-            margin: 36px 0 14px;
+        .content-card {
+            background: white;
+            border-radius: 18px;
+            padding: 26px 28px;
+            box-shadow: 0 8px 24px rgba(70, 35, 50, 0.08);
+            margin: 24px 0;
+        }
+
+        .content-card h2 {
+            margin-top: 0;
+        }
+
+        .content-card p:last-child,
+        .content-card ul:last-child,
+        .content-card ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3dde6;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-dot {
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #b85b82;
+            margin-top: 7px;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            color: #5a4450;
         }
 
         article p, article li {
             font-size: 16px;
             color: #5a4450;
+        }
+
+        article h2 {
+            font-size: 22px;
+            color: #432b37;
+            margin: 0 0 14px;
         }
 
         article ul, article ol {
@@ -216,49 +266,46 @@
         <img src="images/life%201.png" alt="Digital student planner for 2026">
     </div>
 
-    <p>Starting a new school year always feels the same way — full of good intentions that quietly fall apart by week three. Assignments pile up, deadlines blur together, and that beautiful fresh notebook from September ends up half-empty by November. If this sounds familiar, the problem usually isn't motivation. It's the system.</p>
+    <p class="intro-text">Starting a new school year always feels the same way — full of good intentions that quietly fall apart by week three. Assignments pile up, deadlines blur together, and that fresh notebook from September ends up half-empty by November. If this sounds familiar, the problem usually isn't motivation. It's the system.</p>
 
-    <p>A good digital student planner fixes that. Here's why 2026 is the year to finally switch to one, and what to look for.</p>
+    <p class="intro-text">A good <strong>digital student planner</strong> fixes that. Here's why 2026 is the year to finally switch to one, what separates the <strong>best student planner apps</strong> from the rest, and how to actually stay organized as a student — without it feeling like extra homework.</p>
 
-    <h2>Why a Digital Planner Beats a Paper One</h2>
+    <div class="content-card">
+        <h2>Digital Planner vs Paper Planner: Why Digital Wins</h2>
+        <p>Paper planners are lovely, but they have real limits. You can't search them, you can't duplicate a weekly layout in seconds, and if you lose the notebook, you lose the whole term. In the digital planner vs paper planner debate, a digital student planner solves three problems paper never could:</p>
+        <ul class="feature-list">
+            <li><span class="feature-dot"></span><span><strong>Always with you</strong> — on your phone, tablet, or laptop, so there's no "I forgot my planner at home."</span></li>
+            <li><span class="feature-dot"></span><span><strong>Reusable layouts</strong> — print the same weekly spread as many times as you need, all year.</span></li>
+            <li><span class="feature-dot"></span><span><strong>Built to last</strong> — no torn pages, no lost notebooks, no starting over in March.</span></li>
+        </ul>
+    </div>
 
-    <p>Paper planners are lovely, but they have real limits. You can't search them, you can't duplicate a weekly layout in seconds, and if you lose the notebook, you lose the whole term. A digital planner solves all three problems:</p>
+    <div class="content-card">
+        <h2>What Makes a Student Planner Actually Work</h2>
+        <p>Not every planner is built for student life. If you're wondering how to stay organized as a student, the answer usually comes down to structure — a planner that actually helps with classes, assignments, and everyday routines includes:</p>
+        <ul class="feature-list">
+            <li><span class="feature-dot"></span><span><strong>A weekly and monthly view</strong> — so you can zoom out for deadlines and zoom in for daily tasks.</span></li>
+            <li><span class="feature-dot"></span><span><strong>A dedicated assignment tracker</strong> — separate from your daily to-do list, so nothing slips through.</span></li>
+            <li><span class="feature-dot"></span><span><strong>Space for habits and routines</strong> — because grades aren't only about study hours; sleep, meals, and downtime matter too.</span></li>
+            <li><span class="feature-dot"></span><span><strong>A design you'll actually enjoy opening</strong> — the plainer a planner looks, the faster people abandon it.</span></li>
+        </ul>
+    </div>
 
-    <ul>
-        <li><strong>Always with you</strong> — on your phone, tablet, or laptop, so there's no "I forgot my planner at home."</li>
-        <li><strong>Reusable layouts</strong> — print the same weekly spread as many times as you need, all year.</li>
-        <li><strong>Built to last</strong> — no torn pages, no lost notebooks, no starting over in March.</li>
-    </ul>
+    <div class="content-card">
+        <h2>Our Take: The Student Planner 2026</h2>
+        <p>This is exactly what we built the <a href="index.html#products">Student Planner 2026</a> around — a complete, ten-page layout that keeps classes, assignments, goals, and daily routines in one calm, organized place. It's designed for students who want structure without it feeling like homework.</p>
+        <p>If juggling a full course load is more your reality, the <a href="index.html#products">Student Full Year Planner</a> is built for exactly that — a planner that follows you across the whole academic year instead of resetting every few months.</p>
+    </div>
 
-    <h2>What Makes a Student Planner Actually Work</h2>
-
-    <p>Not every planner is built for student life. A planner that actually helps with classes, assignments, and everyday routines usually includes:</p>
-
-    <ol>
-        <li><strong>A weekly and monthly view</strong> — so you can zoom out for deadlines and zoom in for daily tasks.</li>
-        <li><strong>A dedicated assignment tracker</strong> — separate from your daily to-do list, so nothing slips through.</li>
-        <li><strong>Space for habits and routines</strong> — because grades aren't only about study hours; sleep, meals, and downtime matter too.</li>
-        <li><strong>A design you'll actually enjoy opening</strong> — the plainer a planner looks, the faster people abandon it.</li>
-    </ol>
-
-    <h2>Our Take: The Student Planner 2026</h2>
-
-    <p>This is exactly what we built the <a href="index.html#products">Student Planner 2026</a> around — a complete, ten-page layout that keeps classes, assignments, goals, and daily routines in one calm, organized place. It's designed for students who want structure without it feeling like homework.</p>
-
-    <p>If juggling a full course load is more your reality, the <a href="index.html#products">Student Full Year Planner</a> is built for exactly that — a planner that follows you across the whole academic year instead of resetting every few months.</p>
-
-    <h2>A Simple Way to Start</h2>
-
-    <p>You don't need a perfect system on day one. Start with just two things:</p>
-
-    <ul>
-        <li>Write down every assignment the moment it's given, not the night before it's due.</li>
-        <li>Review your week every Sunday for ten minutes — what's coming, what's already done.</li>
-    </ul>
-
-    <p>That's it. The planner does the remembering so your brain doesn't have to.</p>
-
-    <hr>
+    <div class="content-card">
+        <h2>A Simple Way to Start</h2>
+        <p>You don't need a perfect system on day one. Start with just two things:</p>
+        <ul class="feature-list">
+            <li><span class="feature-dot"></span><span>Write down every assignment the moment it's given, not the night before it's due.</span></li>
+            <li><span class="feature-dot"></span><span>Review your week every Sunday for ten minutes — what's coming, what's already done.</span></li>
+        </ul>
+        <p>That's it. The planner does the remembering so your brain doesn't have to.</p>
+    </div>
 
     <div class="cta-box">
         Looking for a planner that keeps up with a real student schedule?<br>
