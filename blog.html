@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog | Planning Tips, Study Habits & Organization Ideas — The Planner Hup</title>
+
+    <meta name="description" content="Practical tips on student planning, daily routines and staying organized — from the team behind The Planner Hup's digital planners.">
+    <meta name="keywords" content="digital student planner, planning tips, student organization, daily planner ideas, study routine">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Planner Hup">
+    <meta name="google-site-verification" content="2W6Ls3I7ZHzfh3QOsRBbrAJ4Fc_vk6sC9QTM2h-G9_4" />
+
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/blog.html">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:title" content="Blog | The Planner Hup">
+    <meta property="og:description" content="Practical tips on student planning, daily routines and staying organized.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/life%201.png">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/blog.html">
+    <meta property="og:site_name" content="The Planner Hup">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | The Planner Hup">
+    <meta name="twitter:description" content="Practical tips on student planning, daily routines and staying organized.">
+    <meta name="twitter:image" content="images/life%201.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "The Planner Hup Blog",
+        "url": "https://theplannerhup-sketch.github.io/the-planner-hup/blog.html",
+        "description": "Practical tips on student planning, daily routines and staying organized."
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffafd;
+            color: #432b37;
+        }
+
+        header.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: #fffafd;
+            border-bottom: 1px solid #f3dde6;
+        }
+
+        header.navbar .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #432b37;
+            text-decoration: none;
+        }
+
+        header.navbar nav a {
+            margin-left: 26px;
+            color: #765866;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        header.navbar nav a:hover {
+            color: #b85b82;
+        }
+
+        .blog-hero {
+            text-align: center;
+            padding: 60px 6% 30px;
+        }
+
+        .blog-hero p.section-label {
+            color: #b85b82;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 0 0 12px;
+            color: #432b37;
+        }
+
+        .blog-hero p.subtitle {
+            color: #765866;
+            max-width: 560px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            max-width: 1100px;
+            margin: 40px auto 80px;
+            padding: 0 6%;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(70, 35, 50, 0.10);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(70, 35, 50, 0.16);
+        }
+
+        .blog-card .blog-card-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff6fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .blog-card .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card .blog-tag {
+            display: inline-block;
+            background: #fdeef3;
+            color: #b85b82;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h2 {
+            font-size: 19px;
+            margin: 0 0 8px;
+            color: #432b37;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: #765866;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        footer#contact {
+            text-align: center;
+            padding: 40px 6%;
+            background: #fff6fa;
+        }
+
+        footer#contact h2 {
+            margin: 0 0 6px;
+        }
+
+        footer#contact p {
+            color: #765866;
+            margin: 0;
+        }
+
+        footer#contact .copyright {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #a68493;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <nav>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#about">Why Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="blog-hero">
+    <p class="section-label">THE PLANNER HUP BLOG</p>
+    <h1>Planning tips &amp; study habits</h1>
+    <p class="subtitle">Practical, honest advice on staying organized — for students and anyone building a routine that actually sticks.</p>
+</div>
+
+<div class="blog-grid">
+
+    <a href="blog-best-digital-student-planner-2026.html" class="blog-card">
+        <div class="blog-card-image">
+            <img src="images/life%201.png" alt="Best digital student planner for 2026">
+        </div>
+        <span class="blog-tag">Student Planning</span>
+        <h2>Best Digital Student Planner for 2026: Why Every Student Needs One</h2>
+        <p>Why a digital planner beats paper, what actually makes a student planner work, and a simple way to start this term.</p>
+    </a>
+
+</div>
+
+<footer id="contact">
+    <h2>The Planner Hup ♡</h2>
+    <p>Plan your days. Create your dreams.</p>
+    <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+</footer>
+
+</body>
+</html>
