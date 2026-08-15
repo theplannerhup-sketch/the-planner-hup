@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theplannerhup-sketch.github.io/the-planner-hup/sitemap.xml
