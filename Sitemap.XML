@@ -11,7 +11,12 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog-best-digital-student-planner-2026.html</loc>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog-post-1.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog-post-2.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
