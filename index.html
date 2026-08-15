@@ -1033,13 +1033,25 @@
                 enjoy and get lost in.
             </p>
 
-            <a
-                href="novels.html"
-                class="category-card-button"
-                style="display: inline-block; text-decoration: none; text-align: center;"
-            >
-                Explore Novels →
-            </a>
+            <div class="card-actions">
+
+                <button
+                    type="button"
+                    class="category-card-button"
+                    onclick="openCollection('novels')"
+                >
+                    Explore Novels →
+                </button>
+
+                <button
+                    type="button"
+                    class="add-to-cart-button"
+                    onclick="addToCart('bheriya-ki-rooh')"
+                >
+                    🛍 Add to Cart
+                </button>
+
+            </div>
 
         </article>
 
@@ -1872,6 +1884,31 @@ const planners = {
         pdfFile:
             "downloads/glow-up-korean.pdf"
 
+    },
+
+
+    "bheriya-ki-rooh": {
+
+        title:
+            "بھیڑیے کی روح",
+
+        type:
+            "URDU NOVEL",
+
+        category:
+            "novel",
+
+        description:
+            "A haunting Urdu novel by Thania Intezar.",
+
+        price:
+            4.99,
+
+        cover:
+            "images/bheriya-cover.png",
+
+        pages: []
+
     }
 
 };
@@ -1931,7 +1968,7 @@ const collections = {
             "Novels",
 
         description:
-            "Our novel collection will appear here.",
+            "Beautiful stories to read, enjoy and get lost in.",
 
         type:
             "novels"
@@ -1994,13 +2031,19 @@ function openCollection(
         ||
         collection.type ===
         "books"
+        ||
+        collection.type ===
+        "novels"
     ) {
 
         const categoryFilter =
             collection.type ===
             "planners"
                 ? "planner"
-                : "book";
+                : collection.type ===
+                  "books"
+                    ? "book"
+                    : "novel";
 
         Object.keys(
             planners
@@ -2165,12 +2208,18 @@ function createPlannerCard(
 
         <div class="card-actions">
 
+            ${
+                planner.category === "novel"
+                    ? ""
+                    : `
             <button
                 type="button"
                 class="category-card-button explore-planner-btn"
             >
                 ${planner.category === "book" ? "Explore Book →" : "Explore Planner →"}
             </button>
+            `
+            }
 
             <button
                 type="button"
@@ -2215,18 +2264,22 @@ function createPlannerCard(
         );
 
 
-    exploreButton.addEventListener(
-        "click",
-        function() {
+    if (exploreButton) {
 
-            closeCollection();
+        exploreButton.addEventListener(
+            "click",
+            function() {
 
-            openPlanner(
-                plannerKey
-            );
+                closeCollection();
 
-        }
-    );
+                openPlanner(
+                    plannerKey
+                );
+
+            }
+        );
+
+    }
 
 
     const addToCartButton =
@@ -3701,6 +3754,11 @@ document
 
 
 renderCart();
+
+
+if (window.location.hash === "#novels") {
+    openCollection("novels");
+}
 
 </script>
 
