@@ -7,9 +7,9 @@
     <title>بھیڑیے کی روح - اردو ناول از ثانیہ انتظار | The Planner Hup</title>
 
     <meta name="description" content="بھیڑیے کی روح - ایک منفرد اردو ناول، محبت، معافی اور خود کی تلاش کی کہانی۔ ثانیہ انتظار کا پہلا ناول، The Planner Hup پر پڑھیں۔">
-    <meta name="keywords" content="اردو ناول, بھیڑیے کی روح, urdu novel, thania intezar novel, best urdu novel 2026, romantic urdu novel">
+    <meta name="keywords" content="اردو ناول, بھیڑیے کی روح, urdu novel, saniya intazar novel, best urdu novel 2026, romantic urdu novel">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Thania Intezar">
+    <meta name="author" content="Saniya Intazar">
     <meta name="google-site-verification" content="2W6Ls3I7ZHzfh3QOsRBbrAJ4Fc_vk6sC9QTM2h-G9_4" />
 
     <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html">
@@ -19,7 +19,7 @@
     <meta property="og:title" content="بھیڑیے کی روح - اردو ناول">
     <meta property="og:description" content="محبت، معافی اور خود کی تلاش کی ایک منفرد کہانی۔">
     <meta property="og:type" content="book">
-    <meta property="og:image" content="images/life%201.png">
+    <meta property="og:image" content="images/bheriya-cover.png">
     <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html">
     <meta property="og:site_name" content="The Planner Hup">
 
@@ -32,12 +32,18 @@
         "@context": "https://schema.org",
         "@type": "Book",
         "name": "بھیڑیے کی روح",
-        "author": { "@type": "Person", "name": "Thania Intezar" },
+        "author": { "@type": "Person", "name": "Saniya Intazar" },
         "inLanguage": "ur",
         "description": "ایک منفرد اردو ناول، محبت، معافی اور خود کی تلاش کی کہانی۔",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/bheriya-cover.png",
         "url": "https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html",
-        "publisher": { "@type": "Organization", "name": "The Planner Hup" }
+        "publisher": { "@type": "Organization", "name": "The Planner Hup" },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "2.99",
+            "availability": "https://schema.org/InStock"
+        }
     }
     </script>
 
@@ -135,6 +141,66 @@
             display: block;
         }
 
+        .book-price {
+            font-family: Arial, sans-serif;
+            direction: ltr;
+            font-size: 20px;
+            font-weight: 700;
+            color: #432b37;
+            margin: 0 0 18px;
+        }
+
+        .book-purchase-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+            font-family: Arial, sans-serif;
+            direction: ltr;
+        }
+
+        .add-to-cart-button {
+            display: inline-block;
+            padding: 13px 26px;
+            border-radius: 30px;
+            background: #b85b82;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+        }
+
+        .add-to-cart-button:hover {
+            background: #a84d73;
+        }
+
+        .cart-toast {
+            position: fixed;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #432b37;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.25s ease;
+            z-index: 999;
+        }
+
+        .cart-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         article.novel-content {
             max-width: 760px;
             margin: 0 auto;
@@ -224,7 +290,21 @@
     <h1>بھیڑیے کی روح</h1>
     <p class="author">مصنفہ: ثانیہ انتظار</p>
     <p class="tagline">ہر روح کی ایک کہانی ہوتی ہے... اور ہر کہانی کے پیچھے ایک اور۔</p>
+
+    <div class="book-cover">
+        <img src="images/bheriya-cover.png" alt="بھیڑیے کی روح - اردو ناول کور، از ثانیہ انتظار">
+    </div>
+
+    <p class="book-price">$2.99</p>
+
+    <div class="book-purchase-actions">
+        <button type="button" class="add-to-cart-button" id="novelAddToCartBtn">
+            🛍 Add to Cart
+        </button>
+    </div>
 </div>
+
+<div class="cart-toast" id="novelCartToast">✓ Added to cart</div>
 
 <article class="novel-content">
 
@@ -1155,6 +1235,67 @@
     <p>Plan your days. Create your dreams.</p>
     <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
 </footer>
+
+<script>
+    /* Uses the same localStorage cart key as index.html so the cart
+       stays in sync across the whole site. */
+    const CART_STORAGE_KEY = "plannerHupCart";
+
+    const novelItem = {
+        key: "bheriya-ki-rooh",
+        title: "بھیڑیے کی روح",
+        price: 2.99
+    };
+
+    function loadCart() {
+        try {
+            const saved = localStorage.getItem(CART_STORAGE_KEY);
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+    }
+
+    function addNovelToCart() {
+        const cart = loadCart();
+        const existing = cart.find(function (item) {
+            return item.key === novelItem.key;
+        });
+
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({
+                key: novelItem.key,
+                title: novelItem.title,
+                price: novelItem.price,
+                qty: 1
+            });
+        }
+
+        saveCart(cart);
+        showToast();
+    }
+
+    let toastTimeout = null;
+
+    function showToast() {
+        const toast = document.getElementById("novelCartToast");
+        toast.classList.add("show");
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(function () {
+            toast.classList.remove("show");
+        }, 2200);
+    }
+
+    document
+        .getElementById("novelAddToCartBtn")
+        .addEventListener("click", addNovelToCart);
+</script>
 
 </body>
 </html>

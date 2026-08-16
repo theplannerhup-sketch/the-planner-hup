@@ -1036,13 +1036,29 @@
                 enjoy and get lost in.
             </p>
 
-            <button
-                type="button"
-                class="category-card-button"
-                onclick="openCollection('novels')"
-            >
-                Explore Novels →
-            </button>
+            <p class="product-price">
+                From $2.99
+            </p>
+
+            <div class="card-actions">
+
+                <button
+                    type="button"
+                    class="category-card-button"
+                    onclick="openCollection('novels')"
+                >
+                    Explore Novels →
+                </button>
+
+                <button
+                    type="button"
+                    class="add-to-cart-button"
+                    onclick="addToCart('bheriya-ki-rooh')"
+                >
+                    🛍 Add to Cart
+                </button>
+
+            </div>
 
         </article>
 
@@ -1875,6 +1891,32 @@ const planners = {
         pdfFile:
             "downloads/glow-up-korean.pdf"
 
+    },
+
+
+    "bheriya-ki-rooh": {
+
+        title:
+            "بھیڑیے کی روح",
+
+        type:
+            "URDU NOVEL",
+
+        category:
+            "novel",
+
+        description:
+            "ایک منفرد اردو ناول، محبت، معافی اور خود کی تلاش کی کہانی۔",
+
+        price:
+            2.99,
+
+        cover:
+            "images/bheriya-cover.png",
+
+        link:
+            "novel-bheriya-ki-rooh.html"
+
     }
 
 };
@@ -1997,13 +2039,19 @@ function openCollection(
         ||
         collection.type ===
         "books"
+        ||
+        collection.type ===
+        "novels"
     ) {
 
         const categoryFilter =
             collection.type ===
             "planners"
                 ? "planner"
-                : "book";
+                : collection.type ===
+                  "books"
+                    ? "book"
+                    : "novel";
 
         Object.keys(
             planners
@@ -2172,7 +2220,7 @@ function createPlannerCard(
                 type="button"
                 class="category-card-button explore-planner-btn"
             >
-                ${planner.category === "book" ? "Explore Book →" : "Explore Planner →"}
+                ${planner.category === "book" ? "Explore Book →" : planner.category === "novel" ? "Read Novel →" : "Explore Planner →"}
             </button>
 
             <button
@@ -2221,6 +2269,20 @@ function createPlannerCard(
     exploreButton.addEventListener(
         "click",
         function() {
+
+            if (
+                planner.category ===
+                "novel"
+                &&
+                planner.link
+            ) {
+
+                window.location.href =
+                    planner.link;
+
+                return;
+
+            }
 
             closeCollection();
 
