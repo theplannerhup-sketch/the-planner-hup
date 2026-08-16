@@ -2,16 +2,28 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ14ZK6Z6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJ14ZK6Z6F');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Planner Hup | Planners • Books • Novels ♡</title>
 
-    <meta name="description" content="The Planner Hup offers beautiful, elegant planners, books and novels for people who love to plan, learn and dream. Shop student planners, life planners and more.">
+    <meta name="description" content="Beautiful, elegant digital planners, books and novels for people who love to plan, learn and dream. Shop student planners and life planners today.">
     <meta name="keywords" content="digital planner, printable planner, student planner, aesthetic planner, cute planner, life planner, study planner, undated planner, planners books novels, The Planner Hup">
     <meta name="robots" content="index, follow">
     <meta name="author" content="The Planner Hup">
 
+    <!-- ⚠️ PLACEHOLDER DOMAIN — jab aap domain khareed lein, is poori file mein
+         "https://www.theplannerhup-placeholder.com" ko apne asli domain se replace kar dein
+         (canonical, og:url, aur neeche JSON-LD mein) -->
     <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Cpath d='M50 82 C28 66 12 50 12 32 C12 18 23 9 34 9 C43 9 48 15 50 21 C52 15 57 9 66 9 C77 9 88 18 88 32 C88 50 72 66 50 82 Z' fill='none' stroke='%23b85f82' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -44,7 +56,7 @@
         "@type": "Product",
         "name": "Student Full Year Planner",
         "description": "Keep your classes, assignments, goals and study routine organized.",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/1.png",
         "offers": {
             "@type": "Offer",
             "url": "https://theplannerhup-sketch.github.io/the-planner-hup/",
@@ -61,7 +73,7 @@
         "@type": "Product",
         "name": "Student Planner 2026",
         "description": "Your complete 10-page 2026 student planner.",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/2026-1.png",
         "offers": {
             "@type": "Offer",
             "url": "https://theplannerhup-sketch.github.io/the-planner-hup/",
@@ -716,15 +728,6 @@
 
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y79NFHWZJX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y79NFHWZJX');
-    </script>
-
 </head>
 
 
@@ -755,6 +758,10 @@
 
             <a href="blog.html">
                 Blog
+            </a>
+
+            <a href="about.html">
+                About
             </a>
 
             <a href="#contact">
@@ -1017,9 +1024,12 @@
 
             <div class="product-visual">
 
-                <span style="font-size: 65px;">
-                    📖
-                </span>
+                <img
+                    src="images/bheriya-cover.png"
+                    alt="Novels preview"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"
+                    loading="lazy"
+                >
 
             </div>
 
@@ -1034,10 +1044,6 @@
             <p>
                 Beautiful stories to read,
                 enjoy and get lost in.
-            </p>
-
-            <p class="product-price">
-                From $2.99
             </p>
 
             <div class="card-actions">
@@ -1203,6 +1209,11 @@
 
         <p>
             Plan your days. Create your dreams.
+        </p>
+
+        <p style="margin-top: 14px;">
+            Questions or need help? Email us at
+            <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a>
         </p>
 
     </div>
@@ -1906,16 +1917,15 @@ const planners = {
             "novel",
 
         description:
-            "ایک منفرد اردو ناول، محبت، معافی اور خود کی تلاش کی کہانی۔",
+            "A haunting Urdu novel by Thania Intezar.",
 
         price:
-            2.99,
+            4.99,
 
         cover:
             "images/bheriya-cover.png",
 
-        link:
-            "novel-bheriya-ki-rooh.html"
+        pages: []
 
     }
 
@@ -1976,7 +1986,7 @@ const collections = {
             "Novels",
 
         description:
-            "Our novel collection will appear here.",
+            "Beautiful stories to read, enjoy and get lost in.",
 
         type:
             "novels"
@@ -2216,12 +2226,18 @@ function createPlannerCard(
 
         <div class="card-actions">
 
+            ${
+                planner.category === "novel"
+                    ? ""
+                    : `
             <button
                 type="button"
                 class="category-card-button explore-planner-btn"
             >
-                ${planner.category === "book" ? "Explore Book →" : planner.category === "novel" ? "Read Novel →" : "Explore Planner →"}
+                ${planner.category === "book" ? "Explore Book →" : "Explore Planner →"}
             </button>
+            `
+            }
 
             <button
                 type="button"
@@ -2266,32 +2282,22 @@ function createPlannerCard(
         );
 
 
-    exploreButton.addEventListener(
-        "click",
-        function() {
+    if (exploreButton) {
 
-            if (
-                planner.category ===
-                "novel"
-                &&
-                planner.link
-            ) {
+        exploreButton.addEventListener(
+            "click",
+            function() {
 
-                window.location.href =
-                    planner.link;
+                closeCollection();
 
-                return;
+                openPlanner(
+                    plannerKey
+                );
 
             }
+        );
 
-            closeCollection();
-
-            openPlanner(
-                plannerKey
-            );
-
-        }
-    );
+    }
 
 
     const addToCartButton =
@@ -3766,6 +3772,11 @@ document
 
 
 renderCart();
+
+
+if (window.location.hash === "#novels") {
+    openCollection("novels");
+}
 
 </script>
 
