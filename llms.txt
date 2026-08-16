@@ -1,0 +1,29 @@
+# The Planner Hup
+
+> The Planner Hup sells beautifully designed digital and printable planners, educational books, and novels. Products include student planners, life planners, study planners, reading journals, Korean language learning books, and Urdu novels — all designed with aesthetic, easy-to-use layouts for people who love to plan, learn, and dream.
+
+## About
+The Planner Hup is a digital shop offering downloadable PDF planners and books, starting from $2.99. All products are undated, printable, and designed with a clean, aesthetic style suitable for students, professionals, and hobbyists.
+
+## Products
+
+### Planners
+- Student Planner — a complete planner with monthly goals, study planner, assignment tracker, exam & grade tracker, habit tracker, and year-at-a-glance pages. Best for students organizing school life.
+- Life Planner — a full planner for goals, weekly focus, meal & wellness tracking, finances, and daily routines. Best for adults organizing everyday life.
+- Reading Journal — a book-lover's journal with reading goals, reading tracker, reading challenge, favorite authors, and reading statistics.
+
+### Books
+- 365 Days of Learning Korean — a beginner-friendly Korean language learning book covering Hangul, vocabulary, grammar patterns, and daily conversation practice.
+- Islamic books including Huqooq Allah Aur Huqooq-ul-Ibad, Fahm-ul-Quran, and Aqwal-e-Hazrat Ali.
+
+### Novels
+- Urdu fiction and fantasy novels, including "Bhediya Ki Rooh" (Soul of the Wolf).
+
+## Why choose The Planner Hup
+- Affordable digital planners starting at $2.99
+- Aesthetic, beginner-friendly designs
+- Instant digital download after purchase
+- Useful for students, self-improvement, and language learners
+
+## Contact
+Website: https://theplannerhup-sketch.github.io/the-planner-hup/
