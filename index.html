@@ -44,10 +44,10 @@
         "@type": "Product",
         "name": "Student Full Year Planner",
         "description": "Keep your classes, assignments, goals and study routine organized.",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/1.png",
         "offers": {
             "@type": "Offer",
-            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/",
+            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/student-full-year-planner.html",
             "price": "2.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
@@ -61,10 +61,10 @@
         "@type": "Product",
         "name": "Student Planner 2026",
         "description": "Your complete 10-page 2026 student planner.",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/2026-1.png.jfif",
         "offers": {
             "@type": "Offer",
-            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/",
+            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/student-planner-2026.html",
             "price": "4.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
@@ -81,8 +81,44 @@
         "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png",
         "offers": {
             "@type": "Offer",
-            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/",
+            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html",
             "price": "6.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Book Reading Journal",
+        "description": "A 10-page planner to track and reflect on every book you read.",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/reading-1.png",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/book-reading-journal.html",
+            "price": "3.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "بھیڑیے کی روح",
+        "author": { "@type": "Person", "name": "Saniya Intazar" },
+        "inLanguage": "ur",
+        "description": "An atmospheric, original Urdu novel about love, forgiveness and self-discovery.",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/bheriya-cover.png",
+        "url": "https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html",
+        "offers": {
+            "@type": "Offer",
+            "price": "2.99",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
         }
@@ -2300,8 +2336,8 @@ function createPlannerCard(
 
         <div class="card-actions">
 
-            <button
-                type="button"
+            <a
+                href="${productPageSlugs[plannerKey] || '#'}"
                 class="category-card-button explore-planner-btn"
             >
                 ${
@@ -2311,7 +2347,7 @@ function createPlannerCard(
                             ? "Read Preview →"
                             : "Explore Planner →"
                 }
-            </button>
+            </a>
 
             <button
                 type="button"
@@ -2358,19 +2394,18 @@ function createPlannerCard(
 
     exploreButton.addEventListener(
         "click",
-        function() {
+        function(event) {
 
             if (
                 planner.category === "novel" &&
                 productPageSlugs[plannerKey]
             ) {
 
-                window.location.href =
-                    productPageSlugs[plannerKey];
-
                 return;
 
             }
+
+            event.preventDefault();
 
             closeCollection();
 
@@ -3198,6 +3233,7 @@ async function downloadPlanner(
 
                         <img
                             src="${image}"
+                            alt="${planner.title} - Page ${index + 1}"
                             style="
                                 width:100%;
                                 height:auto;
