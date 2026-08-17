@@ -757,6 +757,10 @@
                 Blog
             </a>
 
+            <a href="about.html">
+                About
+            </a>
+
             <a href="#contact">
                 Contact
             </a>
@@ -1017,9 +1021,12 @@
 
             <div class="product-visual">
 
-                <span style="font-size: 65px;">
-                    📖
-                </span>
+                <img
+                    src="images/bheriya-cover.png"
+                    alt="Novels preview"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"
+                    loading="lazy"
+                >
 
             </div>
 
@@ -1036,13 +1043,29 @@
                 enjoy and get lost in.
             </p>
 
-            <button
-                type="button"
-                class="category-card-button"
-                onclick="openCollection('novels')"
-            >
-                Explore Novels →
-            </button>
+            <p class="product-price">
+                From $4.99
+            </p>
+
+            <div class="card-actions">
+
+                <button
+                    type="button"
+                    class="category-card-button"
+                    onclick="openCollection('novels')"
+                >
+                    Explore Novels →
+                </button>
+
+                <button
+                    type="button"
+                    class="add-to-cart-button"
+                    onclick="addToCart('bheriya-ki-rooh')"
+                >
+                    🛍 Add to Cart
+                </button>
+
+            </div>
 
         </article>
 
@@ -1885,6 +1908,31 @@ const planners = {
         pdfFile:
             "downloads/glow-up-korean.pdf"
 
+    },
+
+
+    "bheriya-ki-rooh": {
+
+        title:
+            "Bheriya Ki Rooh",
+
+        type:
+            "URDU NOVEL",
+
+        category:
+            "novel",
+
+        description:
+            "An atmospheric, original Urdu novel — a haunting, well-told tale for readers who love to get lost in a story.",
+
+        price:
+            4.99,
+
+        cover:
+            "images/bheriya-cover.png",
+
+        pages: []
+
     }
 
 };
@@ -2020,13 +2068,19 @@ function openCollection(
         ||
         collection.type ===
         "books"
+        ||
+        collection.type ===
+        "novels"
     ) {
 
         const categoryFilter =
             collection.type ===
             "planners"
                 ? "planner"
-                : "book";
+                : collection.type ===
+                  "books"
+                    ? "book"
+                    : "novel";
 
         Object.keys(
             planners
