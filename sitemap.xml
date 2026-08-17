@@ -1,27 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
     <url>
         <loc>https://theplannerhup-sketch.github.io/the-planner-hup/</loc>
-        <lastmod>2026-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/about.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
     <url>
         <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog.html</loc>
-        <lastmod>2026-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+
     <url>
         <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog-post-1.html</loc>
-        <lastmod>2026-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
     <url>
-        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/blog-life-planner-daily-routine.html</loc>
-        <lastmod>2026-08-17</lastmod>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/novels.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/student-full-year-planner.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/student-planner-2026.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/book-reading-journal.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/365-days-learning-korean.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/huqooq-allah-aur-huqooq-ul-ibad.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/hazrat-ali-majmua-e-quran.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/fahm-ul-quran.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://theplannerhup-sketch.github.io/the-planner-hup/glow-up-korean-secrets.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
 </urlset>

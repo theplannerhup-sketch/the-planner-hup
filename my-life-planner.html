@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Life Planner | The Planner Hup</title>
+
+    <meta name="description" content="My Life Planner — a complete digital life planner to organize your goals, routines and everyday moments, from The Planner Hup.">
+    <meta name="keywords" content="life planner, digital life planner, goal planner, daily routine planner, aesthetic life planner">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Planner Hup">
+    <meta name="google-site-verification" content="2W6Ls3I7ZHzfh3QOsRBbrAJ4Fc_vk6sC9QTM2h-G9_4" />
+
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:title" content="My Life Planner | The Planner Hup">
+    <meta property="og:description" content="A complete life planner to organize your goals, routines and everyday moments.">
+    <meta property="og:type" content="product">
+    <meta property="og:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html">
+    <meta property="og:site_name" content="The Planner Hup">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Life Planner | The Planner Hup">
+    <meta name="twitter:description" content="A complete life planner to organize your goals, routines and everyday moments.">
+    <meta name="twitter:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "My Life Planner",
+        "description": "A complete life planner to organize your goals, routines and everyday moments.",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life%201.png",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html",
+            "price": "6.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fffafd;
+            color: #432b37;
+            line-height: 1.7;
+        }
+
+        header.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: #fffafd;
+            border-bottom: 1px solid #f3dde6;
+        }
+
+        header.navbar .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #432b37;
+            text-decoration: none;
+        }
+
+        header.navbar nav a {
+            margin-left: 26px;
+            color: #765866;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        header.navbar nav a:hover {
+            color: #b85b82;
+        }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 50px 6% 80px;
+        }
+
+        article .product-tag {
+            display: inline-block;
+            background: #fdeef3;
+            color: #b85b82;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        article h1 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin: 0 0 10px;
+            color: #432b37;
+        }
+
+        .price-line {
+            font-size: 22px;
+            font-weight: 700;
+            color: #b85b82;
+            margin-bottom: 24px;
+        }
+
+        article .cover-image {
+            width: 100%;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff6fa;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        article .cover-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 18px;
+            padding: 26px 28px;
+            box-shadow: 0 8px 24px rgba(70, 35, 50, 0.08);
+            margin: 24px 0;
+        }
+
+        .content-card h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #432b37;
+        }
+
+        .content-card p:last-child,
+        .content-card ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3dde6;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-dot {
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #b85b82;
+            margin-top: 7px;
+        }
+
+        article p, article li {
+            font-size: 16px;
+            color: #5a4450;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #b85b82;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .cta-box {
+            background: #fdeef3;
+            border-radius: 18px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: #b85b82;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+        }
+
+        footer#contact {
+            text-align: center;
+            padding: 40px 6%;
+            background: #fff6fa;
+        }
+
+        footer#contact h2 {
+            margin: 0 0 6px;
+        }
+
+        footer#contact p {
+            color: #765866;
+            margin: 0;
+        }
+
+        footer#contact .copyright {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #a68493;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <nav>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#about">Why Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<article>
+
+    <a href="index.html#products" class="back-link">← Back to Products</a>
+
+    <span class="product-tag">Life Planner</span>
+
+    <h1>My Life Planner</h1>
+    <div class="price-line">$6.99</div>
+
+    <div class="cover-image">
+        <img src="images/life 1.png" alt="My Life Planner — Life Planner">
+    </div>
+
+    <div class="content-card">
+        <h2>About This Life Planner</h2>
+        <p>My Life Planner goes beyond school or work schedules — it's built for organizing your whole life. From daily routines to long-term goals, it gives you one calm space to plan, reflect and stay on track with what actually matters to you.</p>
+        <p>With eleven thoughtfully designed pages, it covers everything from goal-setting and habit tracking to everyday to-do lists, so you're not juggling five different apps or notebooks to stay organized.</p>
+        <p>It's designed for anyone who wants their planning to feel beautiful as well as useful — because staying organized shouldn't feel like a chore.</p>
+    </div>
+
+    <div class="content-card">
+        <h2>What's Included</h2>
+        <ul class="feature-list">
+            <li><span class="feature-dot"></span><span>11 pages covering goals, habits and daily life</span></li>
+            <li><span class="feature-dot"></span><span>Combines short-term tasks with long-term planning</span></li>
+            <li><span class="feature-dot"></span><span>Soft, elegant pink-and-white design</span></li>
+            <li><span class="feature-dot"></span><span>Works for students, professionals, and everyday life</span></li>
+        </ul>
+    </div>
+
+    <div class="cta-box">
+        Ready to get your copy?<br>
+        <a href="index.html#products" class="cta-button">View & Purchase on The Planner Hup →</a>
+    </div>
+
+</article>
+
+<footer id="contact">
+    <h2>The Planner Hup ♡</h2>
+    <p>Plan your days. Create your dreams.</p>
+    <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+</footer>
+
+</body>
+</html>
