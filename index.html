@@ -4101,6 +4101,7 @@ renderCart();
     target="_blank"
     rel="noopener"
     aria-label="Order on WhatsApp"
+    onclick="if (typeof gtag === 'function') { gtag('event', 'whatsapp_click', { 'event_category': 'engagement', 'event_label': 'WhatsApp Order Button' }); }"
     style="
         position: fixed;
         bottom: 22px;
