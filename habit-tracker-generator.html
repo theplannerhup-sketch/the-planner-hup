@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ14ZK6Z6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJ14ZK6Z6F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Daily Habit Tracker Printable | Custom Routine Generator</title>
+    <meta name="description" content="Create a free, custom daily habit tracker printable in seconds. Add your own habits, pick weekly or monthly view, and download a clean checklist as PDF.">
+    <meta name="keywords" content="free daily habit tracker printable, custom routine generator, daily checklist creator, habit tracker pdf, printable habit tracker">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Planner Hup">
+    <meta name="google-site-verification" content="2W6Ls3I7ZHzfh3QOsRBbrAJ4Fc_vk6sC9QTM2h-G9_4" />
+
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/habit-tracker-generator.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+    <meta property="og:title" content="Free Daily Habit Tracker Printable | The Planner Hup">
+    <meta property="og:description" content="Build a custom habit tracker with your own habits and download it as a printable PDF, free.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-2.png">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/habit-tracker-generator.html">
+    <meta property="og:site_name" content="The Planner Hup">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Daily Habit Tracker Printable | The Planner Hup">
+    <meta name="twitter:description" content="Build a custom habit tracker with your own habits and download it as a printable PDF, free.">
+    <meta name="twitter:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-2.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Daily Habit Tracker Generator",
+        "url": "https://theplannerhup-sketch.github.io/the-planner-hup/habit-tracker-generator.html",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Any",
+        "description": "Create a free, custom daily habit tracker printable. Add your own habits, pick weekly or monthly view, and download as PDF.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@type": "Organization", "name": "The Planner Hup" }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
+        header.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 6%; background: #fffafd; border-bottom: 1px solid #f3dde6; }
+        header.navbar .logo { font-size: 20px; font-weight: 700; color: #432b37; text-decoration: none; }
+        header.navbar nav a { margin-left: 26px; color: #765866; text-decoration: none; font-weight: 600; font-size: 15px; }
+        header.navbar nav a:hover { color: #b85b82; }
+
+        main { max-width: 760px; margin: 0 auto; padding: 50px 6% 80px; }
+        .tool-tag { display: inline-block; background: #fdeef3; color: #b85b82; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+        h1 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 12px; color: #432b37; }
+        .intro-text { font-size: 16px; color: #5a4450; margin-bottom: 30px; }
+
+        .content-card { background: white; border-radius: 18px; padding: 26px 28px; box-shadow: 0 8px 24px rgba(70, 35, 50, 0.08); margin: 24px 0; }
+        .content-card h2 { margin-top: 0; font-size: 20px; color: #432b37; }
+
+        label { display: block; font-weight: 700; font-size: 14px; margin: 14px 0 6px; color: #432b37; }
+        input[type=text], select { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1px solid #f3dde6; font-size: 15px; font-family: inherit; }
+        .habit-row { display: flex; gap: 8px; margin-bottom: 8px; }
+        .habit-row input { flex: 1; }
+        .habit-row button { background: #fdeef3; color: #b85b82; border: none; border-radius: 8px; padding: 0 14px; font-weight: 700; cursor: pointer; }
+
+        .btn-primary { background: #b85b82; color: white; border: none; padding: 14px 24px; border-radius: 30px; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22); margin-top: 10px; }
+        .btn-secondary { background: white; color: #b85b82; border: 2px solid #b85b82; padding: 12px 22px; border-radius: 30px; font-size: 14px; font-weight: 700; cursor: pointer; margin-left: 10px; margin-top: 10px; }
+
+        #tracker-preview { display: none; margin-top: 30px; }
+        table.tracker-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        table.tracker-table th, table.tracker-table td { border: 1px solid #e8c9d5; padding: 10px 6px; text-align: center; font-size: 13px; }
+        table.tracker-table th { background: #fdeef3; color: #b85b82; }
+        table.tracker-table td.habit-name { text-align: left; font-weight: 700; color: #432b37; }
+        .tracker-title { text-align: center; font-size: 22px; font-weight: 700; margin-bottom: 4px; color: #432b37; }
+        .tracker-sub { text-align: center; color: #765866; font-size: 13px; margin-bottom: 10px; }
+
+        footer#contact { text-align: center; padding: 40px 6%; background: #fff6fa; margin-top: 40px; }
+        footer#contact h2 { margin: 0 0 6px; }
+        footer#contact p { color: #765866; margin: 0; }
+        footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
+
+        @media print {
+            header.navbar, main > .content-card:first-of-type, footer, .no-print { display: none !important; }
+            #tracker-preview { display: block !important; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <nav>
+        <a href="index.html#products">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <span class="tool-tag">Free Tool</span>
+    <h1>Free Daily Habit Tracker Generator</h1>
+    <p class="intro-text">Add your own habits below, choose weekly or monthly view, and generate a clean, printable habit tracker in seconds — completely free.</p>
+
+    <div class="content-card">
+        <h2>Step 1: Add Your Habits</h2>
+        <div id="habit-inputs">
+            <div class="habit-row">
+                <input type="text" class="habit-input" placeholder="e.g. Drink 8 glasses of water">
+                <button type="button" onclick="removeRow(this)">✕</button>
+            </div>
+            <div class="habit-row">
+                <input type="text" class="habit-input" placeholder="e.g. 20 minutes of reading">
+                <button type="button" onclick="removeRow(this)">✕</button>
+            </div>
+            <div class="habit-row">
+                <input type="text" class="habit-input" placeholder="e.g. Morning walk">
+                <button type="button" onclick="removeRow(this)">✕</button>
+            </div>
+        </div>
+        <button type="button" class="btn-secondary" onclick="addRow()" style="margin-left:0;">+ Add Another Habit</button>
+
+        <label for="view-type">Step 2: Choose View</label>
+        <select id="view-type">
+            <option value="7">Weekly (7 days)</option>
+            <option value="30">Monthly (30 days)</option>
+        </select>
+
+        <label for="tracker-title-input">Step 3: Tracker Title (optional)</label>
+        <input type="text" id="tracker-title-input" placeholder="My Habit Tracker">
+
+        <br>
+        <button type="button" class="btn-primary" onclick="generateTracker()">Generate Tracker</button>
+    </div>
+
+    <div id="tracker-preview">
+        <div class="content-card">
+            <div class="tracker-title" id="preview-title">My Habit Tracker</div>
+            <div class="tracker-sub" id="preview-sub"></div>
+            <div id="table-container"></div>
+            <button type="button" class="btn-primary no-print" onclick="window.print()">Download / Print as PDF</button>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2>Why Use a Daily Habit Tracker?</h2>
+        <p>A daily habit tracker printable makes consistency visible. Instead of relying on memory, you get a simple checklist creator that turns each habit into a small daily win you can literally see building up over the week or month.</p>
+    </div>
+</main>
+
+<footer id="contact">
+    <h2>The Planner Hup ♡</h2>
+    <p>Plan your days. Create your dreams.</p>
+    <p style="margin-top: 10px;">Email us: <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a></p>
+    <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+</footer>
+
+<script>
+function addRow() {
+    const container = document.getElementById('habit-inputs');
+    const row = document.createElement('div');
+    row.className = 'habit-row';
+    row.innerHTML = '<input type="text" class="habit-input" placeholder="Add a habit"><button type="button" onclick="removeRow(this)">✕</button>';
+    container.appendChild(row);
+}
+function removeRow(btn) {
+    const rows = document.querySelectorAll('.habit-row');
+    if (rows.length > 1) btn.parentElement.remove();
+}
+function generateTracker() {
+    const inputs = document.querySelectorAll('.habit-input');
+    const habits = Array.from(inputs).map(i => i.value.trim()).filter(v => v.length > 0);
+    if (habits.length === 0) { alert('Please add at least one habit.'); return; }
+
+    const days = parseInt(document.getElementById('view-type').value, 10);
+    const titleInput = document.getElementById('tracker-title-input').value.trim();
+    document.getElementById('preview-title').textContent = titleInput || 'My Habit Tracker';
+    document.getElementById('preview-sub').textContent = days === 7 ? 'Weekly Tracker' : 'Monthly Tracker (30 Days)';
+
+    let html = '<table class="tracker-table"><thead><tr><th>Habit</th>';
+    for (let d = 1; d <= days; d++) html += '<th>' + d + '</th>';
+    html += '</tr></thead><tbody>';
+    habits.forEach(h => {
+        html += '<tr><td class="habit-name">' + h.replace(/</g,'&lt;') + '</td>';
+        for (let d = 1; d <= days; d++) html += '<td>&nbsp;</td>';
+        html += '</tr>';
+    });
+    html += '</tbody></table>';
+    document.getElementById('table-container').innerHTML = html;
+    document.getElementById('tracker-preview').style.display = 'block';
+    document.getElementById('tracker-preview').scrollIntoView({behavior:'smooth'});
+
+    if (typeof gtag === 'function') { gtag('event', 'habit_tracker_generated', { 'event_category': 'tool_usage' }); }
+}
+</script>
+
+</body>
+</html>
