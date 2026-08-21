@@ -22,6 +22,8 @@
 
     <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/time-blocking-planner.html">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <meta property="og:title" content="Online Time Blocking Tool | The Planner Hup">
     <meta property="og:description" content="Set your day's hours, add tasks, and generate a printable time-blocked daily schedule, free.">
@@ -80,11 +82,6 @@
         footer#contact h2 { margin: 0 0 6px; }
         footer#contact p { color: #765866; margin: 0; }
         footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
-
-        @media print {
-            header.navbar, footer, .no-print, #setup-card { display: none !important; }
-            body { background: white; }
-        }
     </style>
 </head>
 <body>
@@ -121,7 +118,7 @@
     <div class="content-card" id="schedule-card" style="display:none;">
         <h2 id="schedule-title">Your Time-Blocked Schedule</h2>
         <div id="schedule-container"></div>
-        <button type="button" class="btn-primary no-print" onclick="window.print()">Download / Print as PDF</button>
+        <button type="button" class="btn-primary no-print" id="download-btn" onclick="downloadAsPDF('schedule-card', 'time-blocking-schedule')">Download as PDF</button>
     </div>
 
     <div class="content-card">
@@ -160,6 +157,41 @@ function buildSchedule() {
     document.getElementById('schedule-card').style.display = 'block';
     document.getElementById('schedule-card').scrollIntoView({behavior:'smooth'});
     if (typeof gtag === 'function') { gtag('event', 'schedule_built', { 'event_category': 'tool_usage' }); }
+}
+
+function downloadAsPDF(elementId, filename) {
+    const el = document.getElementById(elementId);
+    const btn = document.getElementById('download-btn');
+    const originalText = btn.textContent;
+    btn.textContent = 'Preparing download...';
+    btn.disabled = true;
+
+    const noPrintEls = el.querySelectorAll('.no-print');
+    const prevDisplay = [];
+    noPrintEls.forEach(function(e){ prevDisplay.push(e.style.display); e.style.display = 'none'; });
+
+    html2canvas(el, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = pageWidth - 40;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const finalHeight = Math.min(imgHeight, pageHeight - 40);
+        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+        pdf.addImage(imgData, 'PNG', 20, 20, finalWidth, finalHeight);
+        pdf.save(filename + '.pdf');
+        btn.textContent = originalText;
+        btn.disabled = false;
+        if (typeof gtag === 'function') { gtag('event', 'pdf_downloaded', { 'event_category': 'tool_usage', 'event_label': filename }); }
+    }).catch(function(err) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Something went wrong generating the PDF. Please try again.');
+    });
 }
 function formatTime(h, m) {
     const period = h >= 12 ? 'PM' : 'AM';
