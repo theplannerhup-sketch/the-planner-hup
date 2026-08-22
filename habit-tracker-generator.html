@@ -88,12 +88,22 @@
         footer#contact h2 { margin: 0 0 6px; }
         footer#contact p { color: #765866; margin: 0; }
         footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
+    
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #432b37; cursor: pointer; padding: 4px 8px; }
+        @media (max-width: 700px) {
+            header.navbar { flex-wrap: wrap; }
+            .menu-toggle { display: block; }
+            header.navbar nav { display: none; width: 100%; flex-direction: column; margin-top: 14px; }
+            header.navbar nav.open { display: flex; }
+            header.navbar nav a { margin: 8px 0; }
+        }
     </style>
 </head>
 <body>
 
 <header class="navbar">
     <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
     <nav>
         <a href="index.html#products">Products</a>
         <a href="blog.html">Blog</a>
@@ -232,6 +242,11 @@ function downloadAsPDF(elementId, filename) {
         alert('Something went wrong generating the PDF. Please try again.');
     });
 }
+</script>
+
+
+<script>
+function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
 </script>
 
 </body>
