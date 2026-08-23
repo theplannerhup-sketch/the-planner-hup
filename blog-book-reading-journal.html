@@ -319,6 +319,18 @@
             header.navbar nav.open { display: flex; }
             header.navbar nav a { margin: 8px 0; }
         }
+    /* FAQ Accordion */
+        .faq-section { margin: 44px 0 24px; }
+        .faq-section > h2 { text-align: center; font-size: clamp(24px, 3.4vw, 30px); margin: 0 0 8px; color: #432b37; }
+        .faq-subtitle { text-align: center; color: #765866; margin: 0 0 26px; font-size: 15px; }
+        .faq-item { background: #ffffff; border-radius: 14px; box-shadow: 0 6px 18px rgba(70, 35, 50, 0.07); margin-bottom: 14px; overflow: hidden; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: 15px; font-weight: 700; color: #432b37; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-family: inherit; }
+        .faq-question:hover { color: #b85b82; }
+        .faq-icon { flex-shrink: 0; transition: transform 0.25s ease; color: #b85b82; font-size: 13px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-answer p { margin: 0; padding: 0 22px 20px; color: #5a4450; font-size: 14.5px; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -467,6 +479,60 @@
         <a href="index.html#products">Check out the Book Reading Journal →</a>
     </div>
 
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <p class="faq-subtitle">Common questions about keeping a book reading journal.</p>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                What is the difference between a reading journal and a reading log?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>The terms are often used interchangeably, but a reading log usually means a brief record of the books, dates, and ratings, while a reading journal (or book journal) goes deeper, with space for reflections, quotes, and personal notes about each book.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How do I start a reading journal?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Start simple: for every book, note the title, author, start and finish date, a rating, your favorite quote, and a few lines on what you thought of it. A guided journal with ready-made prompts makes this even easier.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How many books can one reading journal hold?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>It depends on the journal&#x27;s page count and how much space is given per book. The Planner Hup&#x27;s Book Reading Journal gives each book its own dedicated entry, so you always have enough room to reflect properly.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Is a reading journal only for students?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Not at all. While students often use reading journals for schoolwork, they&#x27;re just as popular with casual readers, book club members, and anyone who wants to remember more of what they read.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Can a reading journal help me read more books?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Yes. Many readers find that logging their progress keeps them motivated, helps them set realistic reading goals, and makes it easier to pick their next book based on what they enjoyed most.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Should I keep a digital reading log or a paper reading journal?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Many readers prefer paper or printable journals for reflection, since closing an app to write removes the distraction of notifications. Digital reading apps can still be useful for tracking reading time or discovering new titles.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                What should I write in a reading journal if I didn&#x27;t like the book?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Log it anyway. Noting why a book didn&#x27;t work for you is just as useful as noting what you loved, and helps you spot patterns in genres or styles you tend to avoid in future reads.</p></div>
+        </div>
+    </section>
 </article>
 
 <footer id="contact">
@@ -488,5 +554,16 @@ function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
 </script>
 
+
+<script>
+function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    item.parentElement.querySelectorAll('.faq-item.open').forEach(function (el) {
+        if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open', !wasOpen);
+}
+</script>
 </body>
 </html>

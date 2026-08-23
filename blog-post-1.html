@@ -310,6 +310,18 @@
             }
         }
     
+    /* FAQ Accordion */
+        .faq-section { margin: 44px 0 24px; }
+        .faq-section > h2 { text-align: center; font-size: clamp(24px, 3.4vw, 30px); margin: 0 0 8px; color: #432b37; }
+        .faq-subtitle { text-align: center; color: #765866; margin: 0 0 26px; font-size: 15px; }
+        .faq-item { background: #ffffff; border-radius: 14px; box-shadow: 0 6px 18px rgba(70, 35, 50, 0.07); margin-bottom: 14px; overflow: hidden; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: 15px; font-weight: 700; color: #432b37; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-family: inherit; }
+        .faq-question:hover { color: #b85b82; }
+        .faq-icon { flex-shrink: 0; transition: transform 0.25s ease; color: #b85b82; font-size: 13px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-answer p { margin: 0; padding: 0 22px 20px; color: #5a4450; font-size: 14.5px; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -403,6 +415,46 @@
         <a href="index.html#products">Browse our planners →</a>
     </div>
 
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <p class="faq-subtitle">Common questions about picking and using a digital student planner.</p>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                What is the best digital student planner for 2026?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>The best digital student planner for 2026 combines a weekly and monthly view, a dedicated assignment tracker, and space for habits and routines, rather than just a blank calendar.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Is a digital planner better than a paper planner for students?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>For most students, yes, since a digital planner goes wherever your phone or laptop goes, lets you reuse the same weekly layout all year, and can&#x27;t get lost or torn like a paper notebook.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How do I stay consistent with a student planner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Write down assignments the moment they&#x27;re given, and review your week every Sunday for ten minutes. Once those two habits stick, staying consistent gets much easier.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Do I need a different planner for a full academic year?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>If you&#x27;re juggling a full course load across multiple terms, a full-year layout helps more than a planner that resets every few months.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Can I print a digital student planner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Yes, a digital planner&#x27;s weekly and monthly spreads can be printed as many times as needed, combining the flexibility of digital with the option to go on paper.</p></div>
+        </div>
+    </section>
 </article>
 
 <footer id="contact">
@@ -412,5 +464,16 @@
     <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
 </footer>
 
+
+<script>
+function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    item.parentElement.querySelectorAll('.faq-item.open').forEach(function (el) {
+        if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open', !wasOpen);
+}
+</script>
 </body>
 </html>

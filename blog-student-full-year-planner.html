@@ -148,6 +148,18 @@
             header.navbar nav.open { display: flex; }
             header.navbar nav a { margin: 8px 0; }
         }
+    /* FAQ Accordion */
+        .faq-section { margin: 44px 0 24px; }
+        .faq-section > h2 { text-align: center; font-size: clamp(24px, 3.4vw, 30px); margin: 0 0 8px; color: #432b37; }
+        .faq-subtitle { text-align: center; color: #765866; margin: 0 0 26px; font-size: 15px; }
+        .faq-item { background: #ffffff; border-radius: 14px; box-shadow: 0 6px 18px rgba(70, 35, 50, 0.07); margin-bottom: 14px; overflow: hidden; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: 15px; font-weight: 700; color: #432b37; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-family: inherit; }
+        .faq-question:hover { color: #b85b82; }
+        .faq-icon { flex-shrink: 0; transition: transform 0.25s ease; color: #b85b82; font-size: 13px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-answer p { margin: 0; padding: 0 22px 20px; color: #5a4450; font-size: 14.5px; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -289,6 +301,60 @@
         <a href="index.html#products">Explore the Student Full Year Planner →</a>
     </div>
 
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <p class="faq-subtitle">Common questions about using a full-year student planner.</p>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                What is a full year student planner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>A full year student planner is a single planner designed to cover an entire academic year, rather than resetting or needing to be replaced every term or semester.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Why is a full year planner better than switching planners each term?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Switching planners each term means losing continuity, re-learning a new layout, and often losing track of long-term goals. A full year planner keeps everything in one continuous system from the first week to the last.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Is a full year planner harder to keep up with than a termly one?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Not if it&#x27;s structured well. A good full year planner breaks the year into months and weeks so it never feels overwhelming, even though it covers a longer span.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Who benefits most from a full year student planner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Students with a full course load across multiple terms, or anyone who wants to track long-term academic goals alongside daily assignments without losing the bigger picture.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How do I start using a full year planner partway through the year?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Start from the current month rather than trying to backfill earlier pages. A full year planner works fine starting mid-year, since each month and week stands on its own.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Does the planner include space for a class schedule and exams?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Yes. Each month includes space for your current class schedule, along with dedicated pages for tracking exam dates and assignment deadlines as they come up.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Is a digital or printable student planner better than a bound paper planner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>It depends on your habits. A printable PDF planner offers more flexibility since you can print only the pages you need, while a bound planner offers a fixed, all-in-one physical format.</p></div>
+        </div>
+    </section>
 </article>
 
 <footer id="contact">
@@ -310,5 +376,16 @@ function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
 </script>
 
+
+<script>
+function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    item.parentElement.querySelectorAll('.faq-item.open').forEach(function (el) {
+        if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open', !wasOpen);
+}
+</script>
 </body>
 </html>
