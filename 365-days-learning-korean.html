@@ -232,6 +232,27 @@
             font-size: 13px;
             color: #a68493;
         }
+    /* MOBILE NAV FIX — added so header links wrap instead of overflowing on small screens */
+        @media (max-width: 600px) {
+            header.navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px 6%;
+            }
+
+            header.navbar nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px 16px;
+            }
+
+            header.navbar nav a {
+                margin-left: 0;
+                font-size: 13px;
+            }
+        }
+    
     </style>
 </head>
 <body>
@@ -242,6 +263,7 @@
         <a href="index.html#products">Products</a>
         <a href="index.html#about">Why Us</a>
         <a href="blog.html">Blog</a>
+        <a href="tools.html">Free Tools</a>
         <a href="index.html#contact">Contact</a>
     </nav>
 </header>
