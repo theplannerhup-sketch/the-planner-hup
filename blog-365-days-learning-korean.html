@@ -145,6 +145,18 @@
         footer#contact h2 { margin: 0 0 6px; }
         footer#contact p { color: #765866; margin: 0; }
         footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
+    /* FAQ Accordion */
+        .faq-section { margin: 44px 0 24px; }
+        .faq-section > h2 { text-align: center; font-size: clamp(24px, 3.4vw, 30px); margin: 0 0 8px; color: #432b37; }
+        .faq-subtitle { text-align: center; color: #765866; margin: 0 0 26px; font-size: 15px; }
+        .faq-item { background: #ffffff; border-radius: 14px; box-shadow: 0 6px 18px rgba(70, 35, 50, 0.07); margin-bottom: 14px; overflow: hidden; }
+        .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: 15px; font-weight: 700; color: #432b37; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-family: inherit; }
+        .faq-question:hover { color: #b85b82; }
+        .faq-icon { flex-shrink: 0; transition: transform 0.25s ease; color: #b85b82; font-size: 13px; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 500px; }
+        .faq-answer p { margin: 0; padding: 0 22px 20px; color: #5a4450; font-size: 14.5px; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -284,30 +296,51 @@
         <p>Reading your first full Hangul sentence, understanding a line in a song without subtitles, or ordering food using a phrase you learned that week are all worth noticing. These small wins are what carry motivation across an entire year, far more reliably than the distant goal of "fluency" ever does.</p>
     </div>
 
-    <div class="content-card">
-        <h2>Frequently Asked Questions</h2>
-
-        <p><strong>How long does it take to learn Korean as a beginner?</strong></p>
-        <p>With consistent daily practice, most beginners can learn Hangul within a couple of weeks and start forming simple sentences within 2-3 months. Real conversational comfort usually takes 6-12 months of regular study, which is exactly why a 365-day, one-day-at-a-time approach works so well.</p>
-
-        <p><strong>Do I need to learn Hangul before anything else?</strong></p>
-        <p>Yes. Hangul is Korea's alphabet and can be learned in a few days since it's phonetic and logically designed. Skipping it and relying on romanized Korean makes pronunciation and reading much harder later on, so it's worth learning first.</p>
-
-        <p><strong>Can I learn Korean without a tutor?</strong></p>
-        <p>Yes, many learners successfully self-study Korean using a structured book, daily vocabulary practice, and consistent exposure through shows, music, or apps. A tutor can speed up speaking practice, but isn't required to build a strong foundation.</p>
-
-        <p><strong>How many new Korean words should I learn per day?</strong></p>
-        <p>5 to 10 new words a day is a sustainable pace for most beginners. That adds up to roughly 2,000-3,500 words over a year, which is enough for everyday conversations and understanding most casual Korean media.</p>
-
-        <p><strong>Is learning Korean through K-dramas and K-pop effective?</strong></p>
-        <p>It's a great supplement, not a replacement. K-dramas and K-pop help with listening comprehension, pronunciation, and motivation, but pairing them with structured vocabulary and grammar study gets you fluent far faster than immersion content alone.</p>
-    </div>
-
-    <div class="cta-box">
+        <div class="cta-box">
         Ready to start your Korean learning journey, one day at a time?<br>
         <a href="index.html#products">Explore 365 Days of Learning Korean →</a>
     </div>
 
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+        <p class="faq-subtitle">Common questions about learning Korean with a daily study routine.</p>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How long does it take to learn Korean as a beginner?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>With consistent daily practice, most beginners can learn Hangul within a couple of weeks and start forming simple sentences within 2-3 months. Real conversational comfort usually takes 6-12 months of regular study, which is exactly why a 365-day, one-day-at-a-time approach works so well.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Do I need to learn Hangul before anything else?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Yes. Hangul is Korea&#x27;s alphabet and can be learned in a few days since it&#x27;s phonetic and logically designed. Skipping it and relying on romanized Korean makes pronunciation and reading much harder later on, so it&#x27;s worth learning first.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Can I learn Korean without a tutor?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>Yes, many learners successfully self-study Korean using a structured book, daily vocabulary practice, and consistent exposure through shows, music, or apps. A tutor can speed up speaking practice, but isn&#x27;t required to build a strong foundation.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                How many new Korean words should I learn per day?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>5 to 10 new words a day is a sustainable pace for most beginners. That adds up to roughly 2,000-3,500 words over a year, which is enough for everyday conversations and understanding most casual Korean media.</p></div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" onclick="toggleFAQ(this)">
+                Is learning Korean through K-dramas and K-pop effective?
+                <span class="faq-icon">&#9662;</span>
+            </button>
+            <div class="faq-answer"><p>It&#x27;s a great supplement, not a replacement. K-dramas and K-pop help with listening comprehension, pronunciation, and motivation, but pairing them with structured vocabulary and grammar study gets you fluent far faster than immersion content alone.</p></div>
+        </div>
+    </section>
 </article>
 
 <footer id="contact">
@@ -325,5 +358,16 @@ function shareTwitter(){ window.open('https://twitter.com/intent/tweet?url=' + e
 function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then(function(){ var orig = btn.textContent; btn.textContent='✓'; setTimeout(function(){btn.textContent=orig;}, 1500); }); }
 </script>
 
+
+<script>
+function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    item.parentElement.querySelectorAll('.faq-item.open').forEach(function (el) {
+        if (el !== item) el.classList.remove('open');
+    });
+    item.classList.toggle('open', !wasOpen);
+}
+</script>
 </body>
 </html>
