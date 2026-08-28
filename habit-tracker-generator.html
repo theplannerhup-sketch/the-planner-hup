@@ -51,6 +51,34 @@
     }
     </script>
 
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Free Tools",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/tools.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Habit Tracker Generator",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/habit-tracker-generator.html"
+        }
+    ]
+}
+    </script>
+
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
@@ -107,7 +135,6 @@
     <nav>
         <a href="index.html#products">Products</a>
         <a href="blog.html">Blog</a>
-        <a href="tools.html">Free Tools</a>
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>
     </nav>
@@ -210,114 +237,38 @@ function generateTracker() {
 }
 
 function downloadAsPDF(elementId, filename) {
+    const el = document.getElementById(elementId);
     const btn = document.getElementById('download-btn');
     const originalText = btn.textContent;
     btn.textContent = 'Preparing download...';
     btn.disabled = true;
 
-    try {
+    const noPrintEls = el.querySelectorAll('.no-print');
+    const prevDisplay = [];
+    noPrintEls.forEach(function(e){ prevDisplay.push(e.style.display); e.style.display = 'none'; });
+
+    html2canvas(el, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
-        const { CheckBox } = jsPDF.AcroForm;
         const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
         const pageWidth = pdf.internal.pageSize.getWidth();
         const pageHeight = pdf.internal.pageSize.getHeight();
-        const margin = 25;
-
-        const titleText = document.getElementById('preview-title').textContent;
-        const subText = document.getElementById('preview-sub').textContent;
-        const rows = document.querySelectorAll('#table-container tr');
-        const headerCells = rows[0].querySelectorAll('th');
-        const days = headerCells.length - 1;
-        const habitRows = Array.from(rows).slice(1);
-
-        const habitColW = days > 14 ? 130 : 160;
-        const dayColW = (pageWidth - margin * 2 - habitColW) / days;
-        const rowH = 26;
-        const headerH = 24;
-        let y = margin;
-        let fieldIndex = 0;
-
-        function drawHeaderBlock() {
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(18);
-            pdf.setTextColor(67, 43, 55);
-            pdf.text(titleText, margin, y + 12);
-            y += 26;
-            pdf.setFont('helvetica', 'normal');
-            pdf.setFontSize(10);
-            pdf.setTextColor(150, 110, 130);
-            pdf.text(subText + '  \u2022  tap each box to check off a day', margin, y);
-            y += 18;
-
-            pdf.setFillColor(184, 91, 130);
-            pdf.rect(margin, y, habitColW, headerH, 'F');
-            pdf.setTextColor(255, 255, 255);
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(10);
-            pdf.text('Habit', margin + 8, y + 16);
-            for (let d = 0; d < days; d++) {
-                pdf.setFillColor(184, 91, 130);
-                pdf.rect(margin + habitColW + d * dayColW, y, dayColW, headerH, 'F');
-                pdf.setFontSize(days > 14 ? 7 : 9);
-                pdf.text(String(d + 1), margin + habitColW + d * dayColW + dayColW / 2 - 3, y + 16);
-            }
-            y += headerH;
-        }
-
-        drawHeaderBlock();
-
-        habitRows.forEach(function(row, hi) {
-            if (y + rowH > pageHeight - margin) {
-                pdf.addPage();
-                y = margin;
-                drawHeaderBlock();
-            }
-
-            const habitName = row.querySelector('.habit-name').textContent;
-            const bg = hi % 2 === 0 ? [255, 255, 255] : [253, 246, 249];
-
-            pdf.setFillColor(bg[0], bg[1], bg[2]);
-            pdf.rect(margin, y, habitColW, rowH, 'F');
-            pdf.setTextColor(67, 43, 55);
-            pdf.setFont('helvetica', 'normal');
-            pdf.setFontSize(9);
-            const displayName = habitName.length > 22 ? habitName.slice(0, 20) + '...' : habitName;
-            pdf.text(displayName, margin + 8, y + 17);
-
-            for (let d = 0; d < days; d++) {
-                const cx = margin + habitColW + d * dayColW;
-                pdf.setFillColor(bg[0], bg[1], bg[2]);
-                pdf.setDrawColor(243, 221, 230);
-                pdf.rect(cx, y, dayColW, rowH, 'FD');
-
-                const boxSize = Math.min(13, dayColW - 6);
-                const bx = cx + dayColW / 2 - boxSize / 2;
-                const by = y + rowH / 2 - boxSize / 2;
-
-                pdf.setDrawColor(184, 91, 130);
-                pdf.setLineWidth(1);
-                pdf.rect(bx, by, boxSize, boxSize, 'S');
-
-                const cb = new CheckBox();
-                cb.Rect = [bx, by, boxSize, boxSize];
-                cb.fieldName = 'habit_' + fieldIndex + '_day_' + d;
-                cb.appearanceState = 'Off';
-                pdf.addField(cb);
-            }
-            y += rowH;
-            fieldIndex++;
-        });
-
+        const imgWidth = pageWidth - 40;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const finalHeight = Math.min(imgHeight, pageHeight - 40);
+        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+        pdf.addImage(imgData, 'PNG', 20, 20, finalWidth, finalHeight);
         pdf.save(filename + '.pdf');
         btn.textContent = originalText;
         btn.disabled = false;
         if (typeof gtag === 'function') { gtag('event', 'pdf_downloaded', { 'event_category': 'tool_usage', 'event_label': filename }); }
-    } catch (err) {
-        console.error(err);
+    }).catch(function(err) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
         btn.textContent = originalText;
         btn.disabled = false;
         alert('Something went wrong generating the PDF. Please try again.');
-    }
+    });
 }
 </script>
 

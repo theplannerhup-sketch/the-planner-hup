@@ -51,6 +51,34 @@
     }
     </script>
 
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Free Tools",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/tools.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Reading Pace Calculator",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/reading-pace-calculator.html"
+        }
+    ]
+}
+    </script>
+
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
@@ -99,7 +127,6 @@
     <nav>
         <a href="index.html#products">Products</a>
         <a href="blog.html">Blog</a>
-        <a href="tools.html">Free Tools</a>
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>
     </nav>
@@ -165,79 +192,38 @@ function calculatePace() {
     if (typeof gtag === 'function') { gtag('event', 'reading_pace_calculated', { 'event_category': 'tool_usage' }); }
 }
 function downloadAsPDF(elementId, filename) {
+    const el = document.getElementById(elementId);
     const btn = document.getElementById('download-btn');
     const originalText = btn.textContent;
     btn.textContent = 'Preparing download...';
     btn.disabled = true;
 
-    try {
+    const noPrintEls = el.querySelectorAll('.no-print');
+    const prevDisplay = [];
+    noPrintEls.forEach(function(e){ prevDisplay.push(e.style.display); e.style.display = 'none'; });
+
+    html2canvas(el, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
-        const { TextField } = jsPDF.AcroForm;
         const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
         const pageWidth = pdf.internal.pageSize.getWidth();
-        const margin = 40;
-        let y = margin;
-
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(20);
-        pdf.setTextColor(67, 43, 55);
-        pdf.text('Your Daily Reading Goal', margin, y + 14);
-        y += 34;
-
-        pdf.setFillColor(253, 238, 243);
-        pdf.roundedRect(margin, y, pageWidth - margin * 2, 90, 12, 12, 'F');
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(30);
-        pdf.setTextColor(184, 91, 130);
-        pdf.text(document.getElementById('pace-result').textContent, pageWidth / 2, y + 42, { align: 'center' });
-        pdf.setFont('helvetica', 'normal');
-        pdf.setFontSize(12);
-        pdf.setTextColor(118, 88, 102);
-        pdf.text(document.getElementById('pace-sub').textContent, pageWidth / 2, y + 68, { align: 'center' });
-        y += 120;
-
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(11);
-        pdf.setTextColor(67, 43, 55);
-        pdf.text('Book Title', margin, y);
-        y += 8;
-
-        const titleField = new TextField();
-        titleField.Rect = [margin, y, pageWidth - margin * 2, 24];
-        titleField.fontSize = 11;
-        titleField.fieldName = 'book_title';
-        titleField.color = 'black';
-        pdf.setDrawColor(243, 221, 230);
-        pdf.roundedRect(margin, y, pageWidth - margin * 2, 24, 4, 4, 'S');
-        pdf.addField(titleField);
-        y += 44;
-
-        pdf.setFont('helvetica', 'bold');
-        pdf.setFontSize(11);
-        pdf.setTextColor(67, 43, 55);
-        pdf.text('Notes / Reading Log', margin, y);
-        y += 8;
-
-        const notesField = new TextField();
-        notesField.Rect = [margin, y, pageWidth - margin * 2, 180];
-        notesField.fontSize = 11;
-        notesField.multiline = true;
-        notesField.fieldName = 'reading_notes';
-        notesField.color = 'black';
-        pdf.setDrawColor(243, 221, 230);
-        pdf.roundedRect(margin, y, pageWidth - margin * 2, 180, 8, 8, 'S');
-        pdf.addField(notesField);
-
+        const pageHeight = pdf.internal.pageSize.getHeight();
+        const imgWidth = pageWidth - 40;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const finalHeight = Math.min(imgHeight, pageHeight - 40);
+        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+        pdf.addImage(imgData, 'PNG', 20, 20, finalWidth, finalHeight);
         pdf.save(filename + '.pdf');
         btn.textContent = originalText;
         btn.disabled = false;
         if (typeof gtag === 'function') { gtag('event', 'pdf_downloaded', { 'event_category': 'tool_usage', 'event_label': filename }); }
-    } catch (err) {
-        console.error(err);
+    }).catch(function(err) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
         btn.textContent = originalText;
         btn.disabled = false;
         alert('Something went wrong generating the PDF. Please try again.');
-    }
+    });
 }
 </script>
 

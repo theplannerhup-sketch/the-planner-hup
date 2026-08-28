@@ -51,6 +51,34 @@
     }
     </script>
 
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Free Tools",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/tools.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Time Blocking Planner",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/time-blocking-planner.html"
+        }
+    ]
+}
+    </script>
+
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
@@ -101,7 +129,6 @@
     <nav>
         <a href="index.html#products">Products</a>
         <a href="blog.html">Blog</a>
-        <a href="tools.html">Free Tools</a>
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>
     </nav>
@@ -171,83 +198,38 @@ function buildSchedule() {
 }
 
 function downloadAsPDF(elementId, filename) {
+    const el = document.getElementById(elementId);
     const btn = document.getElementById('download-btn');
     const originalText = btn.textContent;
     btn.textContent = 'Preparing download...';
     btn.disabled = true;
 
-    try {
+    const noPrintEls = el.querySelectorAll('.no-print');
+    const prevDisplay = [];
+    noPrintEls.forEach(function(e){ prevDisplay.push(e.style.display); e.style.display = 'none'; });
+
+    html2canvas(el, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
-        const { TextField } = jsPDF.AcroForm;
         const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
         const pageWidth = pdf.internal.pageSize.getWidth();
         const pageHeight = pdf.internal.pageSize.getHeight();
-        const margin = 40;
-        let y = margin;
-
-        function drawHeader() {
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(20);
-            pdf.setTextColor(67, 43, 55);
-            pdf.text('Your Time-Blocked Schedule', margin, y + 14);
-            y += 34;
-            pdf.setFont('helvetica', 'normal');
-            pdf.setFontSize(10);
-            pdf.setTextColor(150, 110, 130);
-            pdf.text('The Planner Hup \u2022 click any box below to type or edit', margin, y);
-            y += 24;
-        }
-        drawHeader();
-
-        const rows = document.querySelectorAll('#schedule-container .block-row');
-        const rowHeight = 32;
-        const fieldGap = 8;
-        const labelW = 85;
-        const fieldX = margin + labelW;
-        const fieldW = pageWidth - margin * 2 - labelW;
-        let fieldIndex = 0;
-
-        rows.forEach(function(row) {
-            if (y + rowHeight > pageHeight - margin) {
-                pdf.addPage();
-                y = margin;
-                drawHeader();
-            }
-
-            const timeLabel = row.querySelector('.block-time').textContent;
-            const inputVal = row.querySelector('input').value || '';
-
-            pdf.setFillColor(253, 238, 243);
-            pdf.setDrawColor(243, 221, 230);
-            pdf.roundedRect(fieldX, y, fieldW, rowHeight, 4, 4, 'FD');
-
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(11);
-            pdf.setTextColor(67, 43, 55);
-            pdf.text(timeLabel, margin, y + rowHeight / 2 + 4);
-
-            const field = new TextField();
-            field.Rect = [fieldX + 6, y + 5, fieldW - 12, rowHeight - 10];
-            field.fontSize = 11;
-            field.value = inputVal;
-            field.fieldName = 'block_' + fieldIndex;
-            field.color = 'black';
-            pdf.addField(field);
-
-            y += rowHeight + fieldGap;
-            fieldIndex++;
-        });
-
+        const imgWidth = pageWidth - 40;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const finalHeight = Math.min(imgHeight, pageHeight - 40);
+        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+        pdf.addImage(imgData, 'PNG', 20, 20, finalWidth, finalHeight);
         pdf.save(filename + '.pdf');
         btn.textContent = originalText;
         btn.disabled = false;
         if (typeof gtag === 'function') { gtag('event', 'pdf_downloaded', { 'event_category': 'tool_usage', 'event_label': filename }); }
-    } catch (err) {
-        console.error(err);
+    }).catch(function(err) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
         btn.textContent = originalText;
         btn.disabled = false;
         alert('Something went wrong generating the PDF. Please try again.');
-    }
+    });
 }
 function formatTime(h, m) {
     const period = h >= 12 ? 'PM' : 'AM';

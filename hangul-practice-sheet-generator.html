@@ -52,6 +52,34 @@
     }
     </script>
 
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Free Tools",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/tools.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hangul Practice Sheet Generator",
+            "item": "https://theplannerhup-sketch.github.io/the-planner-hup/hangul-practice-sheet-generator.html"
+        }
+    ]
+}
+    </script>
+
     <style>
         * { box-sizing: border-box; }
         body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
@@ -103,7 +131,6 @@
     <nav>
         <a href="index.html#products">Products</a>
         <a href="blog.html">Blog</a>
-        <a href="tools.html">Free Tools</a>
         <a href="about.html">About</a>
         <a href="index.html#contact">Contact</a>
     </nav>
@@ -178,118 +205,39 @@ function generateSheet() {
     if (typeof gtag === 'function') { gtag('event', 'hangul_sheet_generated', { 'event_category': 'tool_usage' }); }
 }
 
-function captureCharImage(ch) {
-    // Renders one Hangul character offscreen with the real Korean font
-    // and snapshots it as an image, since jsPDF's built-in fonts can't
-    // draw Hangul glyphs directly.
-    return new Promise(function(resolve) {
-        const holder = document.createElement('div');
-        holder.style.position = 'fixed';
-        holder.style.left = '-9999px';
-        holder.style.top = '0';
-        holder.style.width = '120px';
-        holder.style.height = '120px';
-        holder.style.display = 'flex';
-        holder.style.alignItems = 'center';
-        holder.style.justifyContent = 'center';
-        holder.style.fontFamily = "'Noto Sans KR', sans-serif";
-        holder.style.fontSize = '72px';
-        holder.style.fontWeight = '700';
-        holder.style.color = '#b85b82';
-        holder.style.background = '#ffffff';
-        holder.textContent = ch;
-        document.body.appendChild(holder);
-
-        html2canvas(holder, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
-            document.body.removeChild(holder);
-            resolve(canvas.toDataURL('image/png'));
-        }).catch(function() {
-            document.body.removeChild(holder);
-            resolve(null);
-        });
-    });
-}
-
-async function downloadAsPDF(elementId, filename) {
+function downloadAsPDF(elementId, filename) {
+    const el = document.getElementById(elementId);
     const btn = document.getElementById('download-btn');
     const originalText = btn.textContent;
     btn.textContent = 'Preparing download...';
     btn.disabled = true;
 
-    try {
+    const noPrintEls = el.querySelectorAll('.no-print');
+    const prevDisplay = [];
+    noPrintEls.forEach(function(e){ prevDisplay.push(e.style.display); e.style.display = 'none'; });
+
+    html2canvas(el, { scale: 2, backgroundColor: '#ffffff' }).then(function(canvas) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
+        const imgData = canvas.toDataURL('image/png');
         const { jsPDF } = window.jspdf;
-        const { TextField } = jsPDF.AcroForm;
         const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
         const pageWidth = pdf.internal.pageSize.getWidth();
         const pageHeight = pdf.internal.pageSize.getHeight();
-        const margin = 40;
-        let y = margin;
-
-        function drawHeader() {
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(20);
-            pdf.setTextColor(67, 43, 55);
-            pdf.text('Hangul Practice Sheet', margin, y + 14);
-            y += 30;
-            pdf.setFont('helvetica', 'normal');
-            pdf.setFontSize(10);
-            pdf.setTextColor(150, 110, 130);
-            pdf.text('The Planner Hup \u2022 click any box to type and practice', margin, y);
-            y += 24;
-        }
-        drawHeader();
-
-        const labels = document.querySelectorAll('#sheet-container .char-label');
-        const chars = Array.from(labels).map(function(l) { return l.textContent; });
-
-        const boxSize = 46;
-        const gap = 6;
-        const boxesPerRow = 8;
-        const labelW = 60;
-        const rowBlockH = boxSize + 20;
-        let fieldIndex = 0;
-
-        for (const ch of chars) {
-            if (y + rowBlockH > pageHeight - margin) {
-                pdf.addPage();
-                y = margin;
-                drawHeader();
-            }
-
-            const imgData = await captureCharImage(ch);
-            if (imgData) {
-                pdf.addImage(imgData, 'PNG', margin, y, labelW, labelW);
-            }
-
-            let bx = margin + labelW + 10;
-            for (let i = 0; i < boxesPerRow; i++) {
-                pdf.setDrawColor(232, 201, 213);
-                pdf.rect(bx, y, boxSize, boxSize, 'S');
-
-                const field = new TextField();
-                field.Rect = [bx + 2, y + 2, boxSize - 4, boxSize - 4];
-                field.fontSize = 20;
-                field.fieldName = 'trace_' + fieldIndex + '_' + i;
-                field.color = 'black';
-                pdf.addField(field);
-
-                bx += boxSize + gap;
-            }
-
-            y += rowBlockH;
-            fieldIndex++;
-        }
-
+        const imgWidth = pageWidth - 40;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const finalHeight = Math.min(imgHeight, pageHeight - 40);
+        const finalWidth = (canvas.width * finalHeight) / canvas.height;
+        pdf.addImage(imgData, 'PNG', 20, 20, finalWidth, finalHeight);
         pdf.save(filename + '.pdf');
         btn.textContent = originalText;
         btn.disabled = false;
         if (typeof gtag === 'function') { gtag('event', 'pdf_downloaded', { 'event_category': 'tool_usage', 'event_label': filename }); }
-    } catch (err) {
-        console.error(err);
+    }).catch(function(err) {
+        noPrintEls.forEach(function(e, i){ e.style.display = prevDisplay[i]; });
         btn.textContent = originalText;
         btn.disabled = false;
         alert('Something went wrong generating the PDF. Please try again.');
-    }
+    });
 }
 </script>
 
