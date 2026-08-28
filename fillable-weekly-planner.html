@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ14ZK6Z6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SJ14ZK6Z6F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fillable Free Weekly Planner | Type Online & Download PDF | The Planner Hup</title>
+    <meta name="description" content="Fill in your free weekly planner right in your browser — type your priorities, habits, schedule and reflections, then download it as a completed PDF.">
+    <meta name="keywords" content="fillable planner online, editable weekly planner pdf, type in planner online, digital fillable planner free">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Planner Hup">
+    <meta name="google-site-verification" content="2W6Ls3I7ZHzfh3QOsRBbrAJ4Fc_vk6sC9QTM2h-G9_4" />
+
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/fillable-weekly-planner.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <meta property="og:title" content="Fillable Free Weekly Planner | The Planner Hup">
+    <meta property="og:description" content="Type directly into your weekly planner online, then download it as a completed PDF — free.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/weekly-1.png">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/fillable-weekly-planner.html">
+    <meta property="og:site_name" content="The Planner Hup">
+
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
+        header.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 6%; background: #fffafd; border-bottom: 1px solid #f3dde6; }
+        header.navbar .logo { font-size: 20px; font-weight: 700; color: #432b37; text-decoration: none; }
+        header.navbar nav a { margin-left: 26px; color: #765866; text-decoration: none; font-weight: 600; font-size: 15px; }
+        header.navbar nav a:hover { color: #b85b82; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #432b37; cursor: pointer; padding: 4px 8px; }
+        @media (max-width: 700px) {
+            header.navbar { flex-wrap: wrap; }
+            .menu-toggle { display: block; }
+            header.navbar nav { display: none; width: 100%; flex-direction: column; margin-top: 14px; }
+            header.navbar nav.open { display: flex; }
+            header.navbar nav a { margin: 8px 0; }
+        }
+
+        main { max-width: 640px; margin: 0 auto; padding: 40px 6% 80px; }
+        .product-tag { display: inline-block; background: #fdeef3; color: #b85b82; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+        h1 { font-size: clamp(24px, 4vw, 34px); margin: 0 0 10px; color: #432b37; text-align: center; }
+        .intro-text { font-size: 15px; color: #5a4450; margin-bottom: 20px; text-align: center; }
+
+        .download-cta { text-align: center; margin: 24px 0; position: sticky; top: 10px; z-index: 50; }
+        .btn-primary { display: inline-block; background: #b85b82; color: white; border: none; padding: 14px 28px; border-radius: 30px; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 7px 18px rgba(184, 91, 130, 0.3); }
+        .btn-primary:disabled { opacity: 0.7; }
+
+        .page-wrap { position: relative; width: 100%; margin: 0 auto 24px; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(70,35,50,0.12); }
+        .page-wrap img.bg { width: 100%; display: block; }
+        .field {
+            position: absolute;
+            border: none;
+            background: transparent;
+            outline: none;
+            resize: none;
+            font-family: 'Georgia', serif;
+            color: #6b3b52;
+            padding: 0;
+        }
+        .field:focus { background: rgba(184,91,130,0.06); }
+        .checkbox-field {
+            position: absolute;
+            cursor: pointer;
+        }
+        .checkbox-field input { width: 100%; height: 100%; cursor: pointer; accent-color: #b85b82; }
+
+        .page-label { text-align: center; font-size: 12px; font-weight: 700; color: #b85b82; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+        footer#contact { text-align: center; padding: 40px 6%; background: #fff6fa; margin-top: 40px; }
+        footer#contact h2 { margin: 0 0 6px; }
+        footer#contact p { color: #765866; margin: 0; }
+        footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+    <nav>
+        <a href="index.html#products">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="tools.html">Free Tools</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <div style="text-align:center;"><span class="product-tag">Fillable • Free</span></div>
+    <h1>Fillable Weekly Planner</h1>
+    <p class="intro-text">Type directly onto your planner below, then download your completed pages as one PDF — no printing required until you're ready.</p>
+
+    <div class="download-cta">
+        <button type="button" class="btn-primary" id="download-btn" onclick="downloadFilledPDF()">Download My Filled Planner (PDF) →</button>
+    </div>
+
+    <!-- PAGE 1: COVER (static, not fillable) -->
+    <div class="page-label">Cover</div>
+    <div class="page-wrap" id="page-1">
+        <img class="bg" src="images/weekly-1.png" alt="Weekly Planner cover">
+    </div>
+
+    <!-- PAGE 2: WEEKLY OVERVIEW -->
+    <div class="page-label">Weekly Overview</div>
+    <div class="page-wrap" id="page-2">
+        <img class="bg" src="images/weekly-2.png" alt="This Week overview">
+        <textarea class="field" style="left:2.7%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:16.1%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:29.5%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:42.9%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:56.3%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:69.7%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+        <textarea class="field" style="left:83.1%; top:24%; width:12.6%; height:69%; font-size:1.6vw;" placeholder=""></textarea>
+    </div>
+
+    <!-- PAGE 3: PRIORITIES + TO-DO -->
+    <div class="page-label">Top Priorities &amp; To-Do</div>
+    <div class="page-wrap" id="page-3">
+        <img class="bg" src="images/weekly-3.png" alt="My Top Priorities and To-Do List">
+        <input class="field" style="left:20%; top:22.5%; width:70%; height:5%; font-size:2.6vw;" type="text">
+        <input class="field" style="left:20%; top:34%; width:70%; height:5%; font-size:2.6vw;" type="text">
+        <input class="field" style="left:20%; top:45.5%; width:70%; height:5%; font-size:2.6vw;" type="text">
+
+        <input class="field" style="left:16%; top:58.3%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:61.9%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:65.5%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:69.1%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:72.7%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:76.3%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:79.9%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:83.5%; width:76%; height:3%; font-size:2vw;" type="text">
+        <input class="field" style="left:16%; top:87.1%; width:76%; height:3%; font-size:2vw;" type="text">
+    </div>
+
+    <!-- PAGE 4: HABIT TRACKER -->
+    <div class="page-label">Habit Tracker</div>
+    <div class="page-wrap" id="page-4">
+        <img class="bg" src="images/weekly-4.png" alt="Habit Tracker grid">
+        <input class="field" style="left:5%; top:43%; width:26%; height:5.5%; font-size:2vw;" type="text" placeholder="">
+        <input class="field" style="left:5%; top:51.5%; width:26%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5%; top:60%; width:26%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5%; top:68.5%; width:26%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5%; top:77%; width:26%; height:5.5%; font-size:2vw;" type="text">
+
+        <!-- checkboxes: 5 rows x 7 days -->
+        <div id="habit-checkboxes"></div>
+    </div>
+
+    <!-- PAGE 5: WEEKLY REFLECTION -->
+    <div class="page-label">Weekly Reflection</div>
+    <div class="page-wrap" id="page-5">
+        <img class="bg" src="images/weekly-5.png" alt="Weekly Reflection page">
+        <textarea class="field" style="left:11%; top:29%; width:78%; height:15%; font-size:1.8vw;"></textarea>
+        <textarea class="field" style="left:11%; top:51%; width:78%; height:15%; font-size:1.8vw;"></textarea>
+        <textarea class="field" style="left:11%; top:73%; width:60%; height:11%; font-size:1.8vw;"></textarea>
+    </div>
+
+    <div class="download-cta">
+        <button type="button" class="btn-primary" onclick="downloadFilledPDF()">Download My Filled Planner (PDF) →</button>
+    </div>
+</main>
+
+<footer id="contact">
+    <h2>The Planner Hup ♡</h2>
+    <p>Plan your days. Create your dreams.</p>
+    <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+</footer>
+
+<script>
+function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
+
+// Build the 5x7 habit tracker checkbox grid
+(function() {
+    const container = document.getElementById('habit-checkboxes');
+    const rowTops = [45.2, 53.7, 62.2, 70.7, 79.2];
+    const colLefts = [34.5, 42.7, 50.9, 59.1, 67.3, 75.5, 83.7];
+    let html = '';
+    rowTops.forEach(top => {
+        colLefts.forEach(left => {
+            html += '<div class="checkbox-field" style="left:' + left + '%; top:' + top + '%; width:5.5%; height:3.8%;"><input type="checkbox"></div>';
+        });
+    });
+    container.innerHTML = html;
+})();
+
+async function downloadFilledPDF() {
+    const btn = document.getElementById('download-btn');
+    const originalText = btn.textContent;
+    btn.textContent = 'Preparing your PDF...';
+    btn.disabled = true;
+
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
+        const pageIds = ['page-1', 'page-2', 'page-3', 'page-4', 'page-5'];
+
+        for (let i = 0; i < pageIds.length; i++) {
+            const el = document.getElementById(pageIds[i]);
+
+            // Flatten all live inputs/textareas/checkboxes into plain visible
+            // text snapshots before capture, since html2canvas cannot
+            // reliably render form field values or checked checkboxes.
+            const snapshots = flattenFieldsForCapture(el);
+
+            const canvas = await html2canvas(el, { scale: 2, backgroundColor: '#ffffff' });
+
+            restoreFieldsAfterCapture(snapshots);
+
+            const imgData = canvas.toDataURL('image/jpeg', 0.92);
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const imgWidth = pageWidth;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            const finalHeight = Math.min(imgHeight, pageHeight);
+            const finalWidth = (canvas.width * finalHeight) / canvas.height;
+            if (i > 0) pdf.addPage();
+            pdf.addImage(imgData, 'JPEG', (pageWidth - finalWidth) / 2, 0, finalWidth, finalHeight);
+        }
+
+        pdf.save('my-weekly-planner.pdf');
+        if (typeof gtag === 'function') { gtag('event', 'fillable_planner_downloaded', { 'event_category': 'lead_magnet' }); }
+    } catch (err) {
+        alert('Something went wrong generating your PDF. Please try again.');
+    }
+
+    btn.textContent = originalText;
+    btn.disabled = false;
+}
+
+// Temporarily replaces every input/textarea/checkbox inside `container`
+// with a plain text/checkmark element in the exact same position, so
+// html2canvas captures what the user actually typed or checked.
+function flattenFieldsForCapture(container) {
+    const created = [];
+
+    container.querySelectorAll('textarea.field, input.field').forEach(function(fieldEl) {
+        const snap = document.createElement('div');
+        snap.textContent = fieldEl.value || '';
+        snap.style.cssText = fieldEl.style.cssText;
+        snap.style.position = 'absolute';
+        snap.style.overflow = 'hidden';
+        snap.style.whiteSpace = 'pre-wrap';
+        snap.style.wordBreak = 'break-word';
+        snap.style.fontFamily = "'Georgia', serif";
+        snap.style.color = '#6b3b52';
+        fieldEl.style.visibility = 'hidden';
+        container.appendChild(snap);
+        created.push({ original: fieldEl, snap: snap });
+    });
+
+    container.querySelectorAll('.checkbox-field input[type=checkbox]').forEach(function(cb) {
+        const wrap = cb.closest('.checkbox-field');
+        const snap = document.createElement('div');
+        snap.textContent = cb.checked ? '✓' : '';
+        snap.style.cssText = wrap.style.cssText;
+        snap.style.position = 'absolute';
+        snap.style.display = 'flex';
+        snap.style.alignItems = 'center';
+        snap.style.justifyContent = 'center';
+        snap.style.fontSize = '1.4vw';
+        snap.style.fontWeight = 'bold';
+        snap.style.color = '#b85b82';
+        wrap.style.visibility = 'hidden';
+        container.appendChild(snap);
+        created.push({ original: wrap, snap: snap });
+    });
+
+    return created;
+}
+
+function restoreFieldsAfterCapture(snapshots) {
+    snapshots.forEach(function(item) {
+        item.original.style.visibility = 'visible';
+        item.snap.remove();
+    });
+}
+</script>
+
+</body>
+</html>
