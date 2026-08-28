@@ -1216,56 +1216,6 @@
 
 
         <!-- =====================================
-             FREE WEEKLY PLANNER
-        ====================================== -->
-
-        <article class="product-card" style="border: 2px solid #b85b82;">
-
-            <div class="product-visual">
-
-                <img
-                    src="images/weekly-1.png"
-                    alt="Free Weekly Planner"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <p class="product-type">
-                FREE
-            </p>
-
-            <h3>
-                Free Weekly Planner
-            </h3>
-
-            <p>
-                Add your goals, generate your own
-                weekly planner, and download it — free.
-            </p>
-
-            <p class="product-price">
-                $0.00
-            </p>
-
-            <div class="card-actions">
-
-                <a
-                    href="free-weekly-planner.html"
-                    class="category-card-button"
-                    style="display: inline-block; text-align: center; text-decoration: none;"
-                >
-                    Get It Free →
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- =====================================
              BOOKS
         ====================================== -->
 
@@ -2261,6 +2211,42 @@ const planners = {
             "images/bheriya-cover.png",
 
         pages: []
+
+    },
+
+
+    "free-weekly": {
+
+        title:
+            "Free Weekly Planner",
+
+        type:
+            "FREE PLANNER",
+
+        category:
+            "planner",
+
+        description:
+            "A beautifully designed, free 5-page weekly planner — cover, weekly overview, priorities, habit tracker and reflection.",
+
+        price:
+            0.00,
+
+        free:
+            true,
+
+        cover:
+            "images/weekly-1.png",
+
+        pages: [
+
+            "images/weekly-1.png",
+            "images/weekly-2.png",
+            "images/weekly-3.png",
+            "images/weekly-4.png",
+            "images/weekly-5.png"
+
+        ]
 
     }
 
@@ -4019,6 +4005,15 @@ let purchasedPlanners = loadPurchased();
 
 
 function isPurchased(plannerKey) {
+
+    if (
+        planners[plannerKey] &&
+        planners[plannerKey].free
+    ) {
+
+        return true;
+
+    }
 
     return purchasedPlanners.indexOf(plannerKey) !== -1;
 
