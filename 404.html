@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Not Found | The Planner Hup</title>
+
+    <meta name="description" content="Oops! The page you're looking for doesn't exist on The Planner Hup. Head back home to explore our planners, books and novels.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="The Planner Hup">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Cpath d='M50 82 C28 66 12 50 12 32 C12 18 23 9 34 9 C43 9 48 15 50 21 C52 15 57 9 66 9 C77 9 88 18 88 32 C88 50 72 66 50 82 Z' fill='none' stroke='%23b85f82' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .notfound-wrap {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .notfound-card {
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            background: #fffafd;
+            border-radius: 26px;
+            padding: 50px clamp(24px, 6vw, 56px);
+            box-shadow: 0 16px 40px rgba(70, 35, 50, 0.12);
+        }
+
+        .notfound-heart {
+            font-size: 54px;
+            margin-bottom: 6px;
+        }
+
+        .notfound-code {
+            font-size: clamp(48px, 10vw, 72px);
+            font-weight: 800;
+            color: #b85b82;
+            line-height: 1;
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+        }
+
+        .notfound-card h1 {
+            color: #432b37;
+            font-size: clamp(20px, 3.5vw, 26px);
+            margin: 0 0 12px;
+        }
+
+        .notfound-card p {
+            color: #765866;
+            font-size: 15.5px;
+            line-height: 1.7;
+            margin: 0 0 30px;
+        }
+
+        .notfound-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .notfound-btn {
+            display: inline-block;
+            padding: 13px 26px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .notfound-btn.primary {
+            background: #b85b82;
+            color: white;
+            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+        }
+
+        .notfound-btn.primary:hover {
+            transform: translateY(-2px);
+            background: #a84d73;
+        }
+
+        .notfound-btn.secondary {
+            background: white;
+            color: #7d3e5c;
+            border: 1px solid #f0c3d4;
+        }
+
+        .notfound-btn.secondary:hover {
+            background: #fdeef3;
+        }
+
+        .notfound-links {
+            margin-top: 26px;
+            font-size: 13px;
+            color: #a68493;
+        }
+
+        .notfound-links a {
+            color: #b85b82;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .notfound-links a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ14ZK6Z6F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SJ14ZK6Z6F');
+    </script>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        The Planner Hup ♡
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+    <div class="nav-actions">
+
+        <nav>
+            <a href="index.html#products">Products</a>
+            <a href="index.html#about">Why Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="tools.html">Free Tools</a>
+            <a href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<main>
+
+    <div class="notfound-wrap">
+
+        <div class="notfound-card">
+
+            <div class="notfound-heart">♡</div>
+            <p class="notfound-code">404</p>
+
+            <h1>Oops! This page took a different path.</h1>
+            <p>
+                The page you're looking for might have been moved, renamed, or never existed.
+                But don't worry — your planners, books and novels are just a click away.
+            </p>
+
+            <div class="notfound-actions">
+                <a href="index.html" class="notfound-btn primary">← Back to Home</a>
+                <a href="index.html#products" class="notfound-btn secondary">Browse Planners</a>
+            </div>
+
+            <p class="notfound-links">
+                Or check out our <a href="blog.html">Blog</a>,
+                <a href="faq.html">FAQ</a>, or
+                <a href="index.html#contact">Contact</a> page.
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer id="contact">
+
+    <div>
+        <h2>The Planner Hup ♡</h2>
+        <p>Plan your days. Create your dreams.</p>
+        <p style="margin-top: 14px;">
+            Questions or need help? Email us at
+            <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a>
+        </p>
+    </div>
+
+    <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+
+    <p style="margin-top: 10px; font-size: 12px;">
+        <a href="faq.html" style="color:#b85b82; text-decoration:none; font-weight:700;">FAQ &amp; How It Works</a> ·
+        <a href="privacy-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Privacy Policy</a> ·
+        <a href="terms-and-conditions.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Terms &amp; Conditions</a> ·
+        <a href="refund-and-return-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Refund &amp; Return Policy</a>
+    </p>
+
+</footer>
+
+<a
+    href="https://wa.me/923434457596?text=Hi!%20I'd%20like%20to%20place%20an%20order%20from%20The%20Planner%20Hup."
+    target="_blank"
+    rel="noopener"
+    aria-label="Order on WhatsApp"
+    style="
+        position: fixed;
+        bottom: 22px;
+        right: 22px;
+        width: 58px;
+        height: 58px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        z-index: 9999;
+        text-decoration: none;
+    "
+>
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.897 6.48L4 29l7.72-1.859A11.94 11.94 0 0016.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3zm6.472 16.845c-.276.776-1.586 1.485-2.192 1.548-.586.061-1.148.245-3.868-.807-3.276-1.269-5.383-4.5-5.545-4.712-.161-.212-1.318-1.751-1.318-3.34 0-1.589.834-2.369 1.13-2.693.276-.302.6-.377.8-.377.2 0 .4.002.575.011.184.009.432-.07.676.516.276.652.936 2.253 1.018 2.417.081.163.135.354.027.566-.108.212-.163.343-.323.53-.163.19-.343.424-.49.57-.163.163-.333.34-.143.667.19.327.844 1.393 1.812 2.256 1.245 1.112 2.293 1.456 2.62 1.62.327.163.518.137.708-.082.19-.22.816-.951 1.033-1.277.217-.327.435-.272.734-.163.3.108 1.9.897 2.226 1.06.327.163.545.245.626.38.081.136.081.784-.196 1.56z"/>
+    </svg>
+</a>
+
+<script>
+function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
+</script>
+
+</body>
+
+</html>
