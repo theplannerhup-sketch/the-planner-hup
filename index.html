@@ -950,6 +950,60 @@
 
         }
 
+        .reviews-section {
+            padding: 70px 6%;
+            background: #fff6fa;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 8px 24px rgba(70, 35, 50, 0.08);
+        }
+
+        .review-card .review-stars {
+            color: #f0b429;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .review-card h4 {
+            margin: 8px 0 4px;
+            color: #432b37;
+            font-size: 15px;
+        }
+
+        .review-card p {
+            margin: 0;
+            color: #5a4450;
+            font-size: 14px;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 28px;
+            color: #e5d5db;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f0b429;
+        }
+
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -1484,6 +1538,101 @@
 
 
 <!-- =========================================
+     REVIEWS
+========================================= -->
+
+<section class="reviews-section" id="reviews">
+
+    <p class="section-label" style="text-align:center;">
+        WHAT PEOPLE SAY
+    </p>
+
+    <h2 style="text-align:center; margin: 0 0 12px;">
+        Customer Reviews
+    </h2>
+
+    <p id="reviewsEmptyState" style="text-align:center; color:#765866; max-width:480px; margin:0 auto 30px;">
+        We're just getting started — be the first to share your experience with The Planner Hup! ♡
+    </p>
+
+    <div id="reviewsList" style="max-width:640px; margin:0 auto 30px; display:flex; flex-direction:column; gap:16px;"></div>
+
+    <div style="text-align:center;">
+        <button
+            type="button"
+            class="primary-btn"
+            onclick="toggleReviewForm()"
+        >
+            Leave a Review
+        </button>
+    </div>
+
+    <form
+        id="reviewForm"
+        style="display:none; max-width:480px; margin:24px auto 0; background:#fdeef3; border-radius:18px; padding:26px; text-align:left;"
+        onsubmit="submitReview(event)"
+    >
+
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+            Your Name
+        </label>
+        <input
+            type="text"
+            id="reviewName"
+            required
+            style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #f3dde6; margin-bottom:16px; font-family:Arial, sans-serif;"
+        >
+
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+            Which product?
+        </label>
+        <input
+            type="text"
+            id="reviewProduct"
+            placeholder="e.g. Student Planner 2026"
+            style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #f3dde6; margin-bottom:16px; font-family:Arial, sans-serif;"
+        >
+
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+            Your Rating
+        </label>
+        <div class="star-rating" style="margin-bottom:16px;">
+            <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+        </div>
+
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+            Your Review
+        </label>
+        <textarea
+            id="reviewText"
+            required
+            rows="4"
+            style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #f3dde6; margin-bottom:16px; font-family:Arial, sans-serif; resize:vertical;"
+        ></textarea>
+
+        <button
+            type="submit"
+            class="primary-btn"
+            style="width:100%;"
+        >
+            Submit Review
+        </button>
+
+        <p style="font-size:12px; color:#a68493; margin:10px 0 0; text-align:center;">
+            This opens your email app to send us your review directly.
+        </p>
+
+    </form>
+
+</section>
+
+
+
+<!-- =========================================
      CTA
 ========================================= -->
 
@@ -1546,7 +1695,8 @@
 
     <p style="margin-top: 10px; font-size: 12px;">
         <a href="faq.html" style="color:#b85b82; text-decoration:none; font-weight:700;">FAQ &amp; How It Works</a> ·
-        <a href="privacy-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Privacy Policy</a>
+        <a href="privacy-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Privacy Policy</a> ·
+        <a href="terms-and-conditions.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Terms &amp; Conditions</a>
     </p>
 
     <p style="margin-top: 14px; font-size: 11px; opacity: 0.55;">
@@ -4243,6 +4393,232 @@ document
         }
 
     });
+
+
+function toggleReviewForm() {
+
+    const form =
+        document.getElementById(
+            "reviewForm"
+        );
+
+    form.style.display =
+        form.style.display === "none"
+            ? "block"
+            : "none";
+
+}
+
+
+function getSavedReviews() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem(
+                "plannerHupReviews"
+            )
+        ) || [];
+
+    } catch (e) {
+
+        return [];
+
+    }
+
+}
+
+
+function renderReviews() {
+
+    const reviews =
+        getSavedReviews();
+
+    const list =
+        document.getElementById(
+            "reviewsList"
+        );
+
+    const emptyState =
+        document.getElementById(
+            "reviewsEmptyState"
+        );
+
+    if (!reviews.length) {
+
+        emptyState.style.display =
+            "block";
+
+        list.innerHTML =
+            "";
+
+        return;
+
+    }
+
+    emptyState.style.display =
+        "none";
+
+    list.innerHTML =
+        reviews
+            .slice()
+            .reverse()
+            .map(function(r) {
+
+                return `
+                    <div class="review-card">
+                        <div class="review-stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</div>
+                        <h4>${r.name}${r.product ? " — " + r.product : ""}</h4>
+                        <p>${r.text}</p>
+                    </div>
+                `;
+
+            })
+            .join("");
+
+}
+
+
+function submitReview(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById(
+            "reviewName"
+        ).value.trim();
+
+    const product =
+        document.getElementById(
+            "reviewProduct"
+        ).value.trim();
+
+    const text =
+        document.getElementById(
+            "reviewText"
+        ).value.trim();
+
+    const ratingInput =
+        document.querySelector(
+            'input[name="rating"]:checked'
+        );
+
+    const rating =
+        ratingInput
+            ? parseInt(ratingInput.value)
+            : 5;
+
+    const reviews =
+        getSavedReviews();
+
+    reviews.push({
+        name: name,
+        product: product,
+        text: text,
+        rating: rating
+    });
+
+    localStorage.setItem(
+        "plannerHupReviews",
+        JSON.stringify(reviews)
+    );
+
+    renderReviews();
+
+    const subject =
+        encodeURIComponent(
+            "New review for The Planner Hup" + (product ? " - " + product : "")
+        );
+
+    const body =
+        encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Product: " + product + "\n" +
+            "Rating: " + rating + "/5\n\n" +
+            "Review:\n" + text
+        );
+
+    window.location.href =
+        "mailto:theplannerhup@gmail.com?subject=" + subject + "&body=" + body;
+
+    document.getElementById(
+        "reviewForm"
+    ).reset();
+
+    document.getElementById(
+        "reviewForm"
+    ).style.display =
+        "none";
+
+}
+
+
+renderReviews();
+
+
+document.querySelectorAll(
+    'a[href^="https://wa.me/923434457596"]'
+).forEach(function(link) {
+
+    link.addEventListener(
+        "click",
+        function() {
+
+            setTimeout(
+                function() {
+
+                    const reviewsSection =
+                        document.getElementById(
+                            "reviews"
+                        );
+
+                    if (reviewsSection) {
+
+                        const banner =
+                            document.createElement(
+                                "div"
+                            );
+
+                        banner.textContent =
+                            "💛 Once you've received your order, we'd love a quick review!";
+
+                        banner.style.cssText =
+                            "position:fixed; bottom:90px; right:22px; background:#432b37; color:white; padding:12px 18px; border-radius:14px; font-size:13px; max-width:240px; z-index:9998; box-shadow:0 6px 18px rgba(0,0,0,0.25); cursor:pointer;";
+
+                        banner.onclick =
+                            function() {
+
+                                reviewsSection.scrollIntoView({
+                                    behavior: "smooth"
+                                });
+
+                                banner.remove();
+
+                            };
+
+                        document.body.appendChild(
+                            banner
+                        );
+
+                        setTimeout(
+                            function() {
+
+                                banner.remove();
+
+                            },
+                            8000
+                        );
+
+                    }
+
+                },
+                4000
+            );
+
+        }
+    );
+
+});
 
 
 renderCart();
