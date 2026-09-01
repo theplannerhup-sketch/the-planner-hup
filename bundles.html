@@ -5,35 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free Downloads | The Planner Hup</title>
+    <title>Bundles &amp; Special Offers | The Planner Hup</title>
 
-    <meta name="description" content="Download free planners and tools from The Planner Hup — no sign-up required. Join our list to get new freebies first.">
-    <meta name="keywords" content="free planner download, free weekly planner, fillable planner free, printable planner free download">
+    <meta name="description" content="Save more with The Planner Hup's bundles — Student Starter Kit, Korean Language Bundle, and Buy Any 2 Get 10% Off.">
+    <meta name="keywords" content="planner bundle, student starter kit, korean language bundle, planner discount pakistan">
     <meta name="robots" content="index, follow">
     <meta name="author" content="The Planner Hup">
 
-    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/freebies.html">
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/bundles.html">
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Cpath d='M50 82 C28 66 12 50 12 32 C12 18 23 9 34 9 C43 9 48 15 50 21 C52 15 57 9 66 9 C77 9 88 18 88 32 C88 50 72 66 50 82 Z' fill='none' stroke='%23b85f82' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-    <meta property="og:title" content="Free Downloads | The Planner Hup">
-    <meta property="og:description" content="Free planners and tools — no sign-up required to download.">
+    <meta property="og:title" content="Bundles &amp; Special Offers | The Planner Hup">
+    <meta property="og:description" content="Save more when you bundle planners, books and novels together.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/freebies.html">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/bundles.html">
     <meta property="og:site_name" content="The Planner Hup">
 
     <link rel="stylesheet" href="style.css">
 
     <style>
 
-        .freebies-hero {
+        .bundles-hero {
             max-width: 780px;
             margin: 0 auto;
             padding: 60px 20px 10px;
             text-align: center;
         }
 
-        .freebies-badge {
+        .bundles-badge {
             display: inline-block;
             background: #fdeef3;
             color: #b85b82;
@@ -45,13 +45,13 @@
             letter-spacing: 0.4px;
         }
 
-        .freebies-hero h1 {
+        .bundles-hero h1 {
             color: #432b37;
             font-size: clamp(28px, 5vw, 44px);
             margin: 0 0 14px;
         }
 
-        .freebies-hero p.subtitle {
+        .bundles-hero p.subtitle {
             color: #765866;
             font-size: 16px;
             max-width: 560px;
@@ -59,142 +59,106 @@
             line-height: 1.7;
         }
 
-        .freebies-wrap {
+        .bundles-wrap {
             max-width: 1000px;
             margin: 0 auto;
             padding: 30px 20px 80px;
         }
 
-        .freebie-grid {
+        .bundle-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
-            margin-bottom: 56px;
+            margin-bottom: 20px;
         }
 
-        .freebie-card {
+        .bundle-card {
             background: #fffafd;
             border-radius: 22px;
-            padding: 26px;
+            padding: 28px 24px;
             box-shadow: 0 12px 34px rgba(70, 35, 50, 0.10);
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
-        .freebie-card .freebie-icon {
-            font-size: 34px;
-            margin-bottom: 12px;
+        .bundle-card.featured {
+            border: 2px solid #b85b82;
         }
 
-        .freebie-card h3 {
+        .bundle-card .bundle-ribbon {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #b85b82;
+            color: white;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .bundle-card .bundle-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .bundle-card h3 {
             color: #432b37;
-            font-size: 18px;
-            margin: 0 0 8px;
+            font-size: 19px;
+            margin: 0 0 6px;
         }
 
-        .freebie-card p {
-            color: #765866;
-            font-size: 14.5px;
-            line-height: 1.6;
+        .bundle-card .bundle-discount {
+            color: #b85b82;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .bundle-card ul {
             margin: 0 0 20px;
+            padding-left: 20px;
             flex-grow: 1;
         }
 
-        .freebie-card a.freebie-btn {
+        .bundle-card li {
+            color: #5a4650;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .bundle-card a.bundle-btn {
             display: inline-block;
             text-align: center;
-            background: #b85b82;
+            background: #25D366;
             color: white;
             padding: 12px 20px;
             border-radius: 30px;
             font-size: 14px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+            box-shadow: 0 7px 18px rgba(37, 211, 102, 0.24);
         }
 
-        .freebie-card a.freebie-btn:hover {
-            background: #a84d73;
+        .bundle-card a.bundle-btn:hover {
+            transform: translateY(-2px);
         }
 
-        .optin-section {
-            background: linear-gradient(135deg, #fdeef3, #fff3f7);
-            border: 1px solid #f3c9d9;
-            border-radius: 24px;
-            padding: clamp(28px, 5vw, 46px);
+        .bundle-note {
             text-align: center;
-        }
-
-        .optin-section h2 {
-            color: #432b37;
-            font-size: clamp(22px, 3.5vw, 28px);
-            margin: 0 0 10px;
-        }
-
-        .optin-section p {
-            color: #765866;
-            font-size: 15px;
-            max-width: 480px;
-            margin: 0 auto 26px;
+            color: #a68493;
+            font-size: 13.5px;
+            margin: 30px auto 0;
+            max-width: 520px;
             line-height: 1.7;
         }
 
-        .optin-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .optin-form input[type="text"],
-        .optin-form input[type="email"] {
-            flex: 1 1 200px;
-            padding: 13px 18px;
-            border-radius: 30px;
-            border: 1px solid #f0c3d4;
-            font-size: 14px;
-            font-family: inherit;
-            outline: none;
-        }
-
-        .optin-form input:focus {
-            border-color: #b85b82;
-        }
-
-        .optin-form button {
-            flex: 0 0 auto;
-            padding: 13px 26px;
-            border-radius: 30px;
-            border: none;
-            background: #b85b82;
-            color: white;
-            font-size: 14px;
+        .bundle-note a {
+            color: #b85b82;
             font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
-        }
-
-        .optin-form button:hover {
-            background: #a84d73;
-        }
-
-        .optin-note {
-            margin-top: 16px;
-            font-size: 12.5px;
-            color: #a68493;
-        }
-
-        .optin-confirm {
-            display: none;
-            margin-top: 18px;
-            background: white;
-            border-radius: 14px;
-            padding: 14px 18px;
-            color: #7d3e5c;
-            font-size: 14px;
-            font-weight: 600;
+            text-decoration: none;
         }
 
     </style>
@@ -238,60 +202,71 @@
 
 <main>
 
-    <div class="freebies-hero">
-        <span class="freebies-badge">🎁 100% Free</span>
-        <h1>Free downloads to help you start planning today</h1>
+    <div class="bundles-hero">
+        <span class="bundles-badge">💰 Save More</span>
+        <h1>Bundles &amp; Special Offers</h1>
         <p class="subtitle">
-            No sign-up, no payment — just download and start using. Try our planners for free, then explore the full
-            collection whenever you're ready.
+            Pair your favorite planners, books and novels together and save. Message us on WhatsApp with your
+            chosen items to lock in your discount.
         </p>
     </div>
 
-    <div class="freebies-wrap">
+    <div class="bundles-wrap">
 
-        <div class="freebie-grid">
+        <div class="bundle-grid">
 
-            <div class="freebie-card">
-                <div class="freebie-icon">📄</div>
-                <h3>Free Weekly Planner</h3>
-                <p>
-                    A clean, printable weekly planner — perfect for organizing your tasks, goals, and routine one
-                    week at a time. Download instantly, no sign-up needed.
-                </p>
-                <a href="free-weekly-planner.html" class="freebie-btn">Download Free →</a>
+            <div class="bundle-card featured">
+                <span class="bundle-ribbon">Most Popular</span>
+                <div class="bundle-icon">🎁</div>
+                <h3>Buy Any 2, Get 10% Off</h3>
+                <p class="bundle-discount">Use code BUNDLE10</p>
+                <ul>
+                    <li>Pick any 2 planners, books, or novels from our full collection</li>
+                    <li>Mix and match — no restrictions</li>
+                    <li>Discount applied when you order on WhatsApp</li>
+                </ul>
+                <a class="bundle-btn" target="_blank" rel="noopener"
+                   href="https://wa.me/923434457596?text=Hi!%20I'd%20like%20to%20use%20the%20BUNDLE10%20offer%20-%20Buy%20Any%202%2C%20Get%2010%25%20Off.">
+                    Order This Bundle →
+                </a>
             </div>
 
-            <div class="freebie-card">
-                <div class="freebie-icon">✍️</div>
-                <h3>Fillable Weekly Planner</h3>
-                <p>
-                    Prefer typing over printing? This version lets you type directly onto your planner using apps
-                    like GoodNotes, Notability, or Adobe Reader — no printer needed.
-                </p>
-                <a href="fillable-weekly-planner.html" class="freebie-btn">Download Free →</a>
+            <div class="bundle-card">
+                <div class="bundle-icon">🎓</div>
+                <h3>Student Starter Kit</h3>
+                <p class="bundle-discount">Save 10% when bundled</p>
+                <ul>
+                    <li><a href="student-full-year-planner.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Student Full Year Planner</a></li>
+                    <li><a href="my-life-planner.html" style="color:#b85b82; text-decoration:none; font-weight:700;">My Life Planner</a></li>
+                    <li><a href="book-reading-journal.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Book Reading Journal</a></li>
+                </ul>
+                <a class="bundle-btn" target="_blank" rel="noopener"
+                   href="https://wa.me/923434457596?text=Hi!%20I'd%20like%20to%20order%20the%20Student%20Starter%20Kit%20bundle%20(Student%20Full%20Year%20Planner%20%2B%20My%20Life%20Planner%20%2B%20Book%20Reading%20Journal).">
+                    Order This Bundle →
+                </a>
+            </div>
+
+            <div class="bundle-card">
+                <div class="bundle-icon">🇰🇷</div>
+                <h3>Korean Language Bundle</h3>
+                <p class="bundle-discount">Save 10% when bundled</p>
+                <ul>
+                    <li><a href="365-days-learning-korean.html" style="color:#b85b82; text-decoration:none; font-weight:700;">365 Days of Learning Korean</a></li>
+                    <li><a href="glow-up-korean-secrets.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Glow-Up Korean Secrets</a></li>
+                </ul>
+                <a class="bundle-btn" target="_blank" rel="noopener"
+                   href="https://wa.me/923434457596?text=Hi!%20I'd%20like%20to%20order%20the%20Korean%20Language%20Bundle%20(365%20Days%20of%20Learning%20Korean%20%2B%20Glow-Up%20Korean%20Secrets).">
+                    Order This Bundle →
+                </a>
             </div>
 
         </div>
 
-        <div class="optin-section">
-            <h2>Want new freebies first?</h2>
-            <p>
-                Join our list and we'll personally send you new free planners and tools as soon as they drop —
-                straight to your inbox, no spam.
-            </p>
-
-            <form class="optin-form" onsubmit="handleOptin(event)">
-                <input type="text" id="optinName" placeholder="Your name" required>
-                <input type="email" id="optinEmail" placeholder="Your email" required>
-                <button type="submit">Join the List ♡</button>
-            </form>
-
-            <p class="optin-note">We respect your privacy — see our <a href="privacy-policy.html" style="color:#b85b82; font-weight:700; text-decoration:none;">Privacy Policy</a>.</p>
-
-            <div class="optin-confirm" id="optinConfirm">
-                💌 Your email app is opening — just hit send and you're on the list!
-            </div>
-        </div>
+        <p class="bundle-note">
+            Prices are confirmed when you message us with your chosen items. Have a different combination in mind?
+            Just ask — we're happy to bundle any 2 items together for 10% off. See our
+            <a href="faq.html">FAQ</a> for more on how ordering works.
+        </p>
 
     </div>
 
@@ -352,21 +327,6 @@
 
 <script>
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
-
-function handleOptin(e) {
-    e.preventDefault();
-    const name = document.getElementById('optinName').value;
-    const email = document.getElementById('optinEmail').value;
-
-    const subject = encodeURIComponent("Add me to The Planner Hup freebies list");
-    const body = encodeURIComponent(
-        "Hi! Please add me to the freebies list.\n\nName: " + name + "\nEmail: " + email
-    );
-
-    window.location.href = "mailto:theplannerhup@gmail.com?subject=" + subject + "&body=" + body;
-
-    document.getElementById('optinConfirm').style.display = 'block';
-}
 </script>
 
 </body>
