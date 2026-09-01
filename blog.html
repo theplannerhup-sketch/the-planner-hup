@@ -111,6 +111,76 @@
             font-size: 16px;
         }
 
+        .author-banner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 6%;
+        }
+
+        .author-banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #fdeef3, #fff3f7);
+            border: 1px solid #f3c9d9;
+            border-radius: 20px;
+            padding: 22px 28px;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s ease;
+        }
+
+        .author-banner-inner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(184, 91, 130, 0.16);
+        }
+
+        .author-banner-text .blog-tag {
+            display: inline-block;
+            background: white;
+            color: #b85b82;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .author-banner-text h2 {
+            font-size: 19px;
+            margin: 0 0 6px;
+            color: #432b37;
+        }
+
+        .author-banner-text p {
+            font-size: 14px;
+            color: #765866;
+            margin: 0;
+            line-height: 1.5;
+            max-width: 480px;
+        }
+
+        .author-banner .category-card-button {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 30px;
+            background: #b85b82;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .author-banner-inner:hover .category-card-button {
+            background: #a84d73;
+        }
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
@@ -224,6 +294,7 @@
             header.navbar nav { display: none; width: 100%; flex-direction: column; margin-top: 14px; }
             header.navbar nav.open { display: flex; }
             header.navbar nav a { margin: 8px 0; }
+            .author-banner-inner { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -244,6 +315,17 @@
 
 <div class="blog-hero">
     <h1>Planning Tips &amp; Study Habits for Students</h1>
+</div>
+
+<div class="author-banner">
+    <a href="author.html" class="author-banner-inner">
+        <div class="author-banner-text">
+            <span class="blog-tag">✍️ Meet the Author</span>
+            <h2>Get to know Sania Intazar</h2>
+            <p>The designer, founder and author behind The Planner Hup's planners, books and novels.</p>
+        </div>
+        <span class="category-card-button">Meet the Author →</span>
+    </a>
 </div>
 
 <div class="blog-grid">
@@ -305,6 +387,14 @@
     <p>Plan your days. Create your dreams.</p>
     <p style="margin-top: 10px;">Email us: <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a></p>
     <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
+    <p style="margin-top: 10px; font-size: 12px;">
+        <a href="faq.html" style="color:#b85b82; text-decoration:none; font-weight:700;">FAQ &amp; How It Works</a> ·
+        <a href="privacy-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Privacy Policy</a> ·
+        <a href="terms-and-conditions.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Terms &amp; Conditions</a> ·
+        <a href="refund-and-return-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Refund &amp; Return Policy</a> ·
+        <a href="author.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Meet the Author</a> ·
+        <a href="gift-a-planner.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Gift a Planner</a>
+    </p>
 </footer>
 
 
