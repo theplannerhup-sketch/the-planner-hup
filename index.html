@@ -1004,6 +1004,97 @@
             color: #f0b429;
         }
 
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown-toggle {
+            background: none;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #765866;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-dropdown-toggle:hover {
+            color: #b85b82;
+        }
+
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 28px;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(70, 35, 50, 0.18);
+            padding: 10px 0;
+            min-width: 210px;
+            z-index: 500;
+        }
+
+        .nav-dropdown-menu.open {
+            display: block;
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 9px 18px;
+            color: #5a4450 !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-decoration: none;
+            margin: 0 !important;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: #fdeef3;
+            color: #b85b82 !important;
+        }
+
+        .explore-more-section {
+            padding: 60px 6%;
+            background: #fffafd;
+        }
+
+        .explore-more-grid {
+            max-width: 900px;
+            margin: 30px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .explore-more-card {
+            background: white;
+            border-radius: 14px;
+            padding: 20px 12px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(70, 35, 50, 0.08);
+            transition: transform 0.15s;
+        }
+
+        .explore-more-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .explore-more-card .emoji {
+            font-size: 26px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .explore-more-card span.label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #432b37;
+        }
+
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -1091,6 +1182,30 @@
             <a href="about.html">
                 About
             </a>
+
+            <div class="nav-dropdown">
+
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    onclick="toggleNavDropdown(event)"
+                >
+                    More ▾
+                </button>
+
+                <div class="nav-dropdown-menu" id="navDropdownMenu">
+                    <a href="faq.html">FAQ &amp; How It Works</a>
+                    <a href="author.html">Meet the Author</a>
+                    <a href="gift-a-planner.html">Gift a Planner</a>
+                    <a href="freebies.html">Free Downloads</a>
+                    <a href="bundles.html">Bundles &amp; Offers</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                    <a href="refund-and-return-policy.html">Refund &amp; Return Policy</a>
+                </div>
+
+            </div>
 
             <a href="#contact">
                 Contact
@@ -1627,6 +1742,77 @@
         </p>
 
     </form>
+
+</section>
+
+
+
+<!-- =========================================
+     EXPLORE MORE
+========================================= -->
+
+<section class="explore-more-section">
+
+    <p class="section-label" style="text-align:center;">
+        EXPLORE MORE
+    </p>
+
+    <h2 style="text-align:center; margin: 0 0 6px;">
+        Everything Else on The Planner Hup
+    </h2>
+
+    <p style="text-align:center; color:#765866; max-width:480px; margin:0 auto;">
+        Policies, extras and a little more about us.
+    </p>
+
+    <div class="explore-more-grid">
+
+        <a href="faq.html" class="explore-more-card">
+            <span class="emoji">❓</span>
+            <span class="label">FAQ &amp; How It Works</span>
+        </a>
+
+        <a href="author.html" class="explore-more-card">
+            <span class="emoji">✍️</span>
+            <span class="label">Meet the Author</span>
+        </a>
+
+        <a href="gift-a-planner.html" class="explore-more-card">
+            <span class="emoji">🎁</span>
+            <span class="label">Gift a Planner</span>
+        </a>
+
+        <a href="freebies.html" class="explore-more-card">
+            <span class="emoji">⬇️</span>
+            <span class="label">Free Downloads</span>
+        </a>
+
+        <a href="bundles.html" class="explore-more-card">
+            <span class="emoji">📦</span>
+            <span class="label">Bundles &amp; Offers</span>
+        </a>
+
+        <a href="reviews.html" class="explore-more-card">
+            <span class="emoji">⭐</span>
+            <span class="label">Reviews</span>
+        </a>
+
+        <a href="privacy-policy.html" class="explore-more-card">
+            <span class="emoji">🔒</span>
+            <span class="label">Privacy Policy</span>
+        </a>
+
+        <a href="terms-and-conditions.html" class="explore-more-card">
+            <span class="emoji">📄</span>
+            <span class="label">Terms &amp; Conditions</span>
+        </a>
+
+        <a href="refund-and-return-policy.html" class="explore-more-card">
+            <span class="emoji">↩️</span>
+            <span class="label">Refund &amp; Return Policy</span>
+        </a>
+
+    </div>
 
 </section>
 
@@ -4660,6 +4846,18 @@ renderCart();
 
 <script>
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
+
+function toggleNavDropdown(event) {
+    event.stopPropagation();
+    document.getElementById('navDropdownMenu').classList.toggle('open');
+}
+
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('navDropdownMenu');
+    if (menu && menu.classList.contains('open') && !menu.contains(event.target)) {
+        menu.classList.remove('open');
+    }
+});
 </script>
 
 </body>
