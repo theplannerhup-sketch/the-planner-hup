@@ -6,6 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b85b82">
+    <link rel="icon" type="image/png" href="images/icon-192.png">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Planner Hup">
+
     <title>The Planner Hup | Planners • Books • Novels ♡</title>
 
     <meta name="description" content="The Planner Hup offers beautiful, elegant planners, books and novels for people who love to plan, learn and dream. Shop student planners, life planners and more.">
@@ -1212,6 +1220,17 @@
             </a>
 
         </nav>
+
+        <button
+            type="button"
+            class="cart-icon-button"
+            id="installAppButton"
+            onclick="installPlannerHupApp()"
+            aria-label="Install app"
+            style="display:none; margin-right: 8px;"
+        >
+            📲
+        </button>
 
         <button
             type="button"
@@ -4814,6 +4833,53 @@ document.querySelectorAll(
 
 
 renderCart();
+
+
+let deferredInstallPrompt = null;
+
+window.addEventListener("beforeinstallprompt", function(event) {
+
+    event.preventDefault();
+
+    deferredInstallPrompt = event;
+
+    const btn = document.getElementById("installAppButton");
+    if (btn) {
+        btn.style.display = "inline-flex";
+    }
+
+});
+
+function installPlannerHupApp() {
+
+    if (!deferredInstallPrompt) {
+        return;
+    }
+
+    deferredInstallPrompt.prompt();
+
+    deferredInstallPrompt.userChoice.then(function() {
+        deferredInstallPrompt = null;
+        const btn = document.getElementById("installAppButton");
+        if (btn) {
+            btn.style.display = "none";
+        }
+    });
+
+}
+
+window.addEventListener("appinstalled", function() {
+    const btn = document.getElementById("installAppButton");
+    if (btn) {
+        btn.style.display = "none";
+    }
+});
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register("sw.js").catch(function() {});
+    });
+}
 
 </script>
 
