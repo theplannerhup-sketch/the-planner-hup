@@ -1,0 +1,130 @@
+/**
+ * i18n.css
+ * -----------------------------------------------------------------------
+ * Language switcher styling — minimalist, pastel, sits top-right of the
+ * navbar/header. Two variants included: pill-toggle (recommended, default)
+ * and a dropdown fallback if you prefer a compact single control.
+ * Copy the variables into your existing :root if you already have a
+ * pastel palette, or use the fallbacks below as-is.
+ * -----------------------------------------------------------------------
+ */
+
+:root {
+  --lang-bg: #f5f3ff;          /* soft lavender background */
+  --lang-border: #e4defc;
+  --lang-text: #6b5ca5;
+  --lang-active-bg: #a78bfa;   /* pastel purple accent */
+  --lang-active-text: #ffffff;
+  --lang-hover-bg: #ece7fd;
+  --lang-radius: 999px;
+  --lang-shadow: 0 2px 8px rgba(107, 92, 165, 0.12);
+}
+
+/* ---------- Container: positions the switcher top-right ---------- */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--lang-bg);
+  border: 1px solid var(--lang-border);
+  border-radius: var(--lang-radius);
+  box-shadow: var(--lang-shadow);
+}
+
+/* Place this inside your navbar's flex container, e.g.:
+   .navbar { display:flex; justify-content:space-between; align-items:center; } */
+.navbar .lang-switcher {
+  margin-left: auto; /* pushes it to the top-right if navbar is a flex row */
+}
+
+/* ---------- Pill toggle buttons (recommended) ---------- */
+.lang-switcher button[data-lang-option] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--lang-text);
+  background: transparent;
+  border: none;
+  border-radius: var(--lang-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.lang-switcher button[data-lang-option]:hover {
+  background: var(--lang-hover-bg);
+  transform: translateY(-1px);
+}
+
+.lang-switcher button[data-lang-option]:active {
+  transform: translateY(0);
+}
+
+.lang-switcher button[data-lang-option].active {
+  background: var(--lang-active-bg);
+  color: var(--lang-active-text);
+  box-shadow: 0 1px 4px rgba(167, 139, 250, 0.4);
+}
+
+.lang-switcher button[data-lang-option] .flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Accessible focus ring (keep for keyboard users, don't remove) */
+.lang-switcher button[data-lang-option]:focus-visible {
+  outline: 2px solid var(--lang-active-bg);
+  outline-offset: 2px;
+}
+
+/* ---------- Dropdown variant (optional alternative) ---------- */
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--lang-text);
+  background: var(--lang-bg);
+  border: 1px solid var(--lang-border);
+  border-radius: var(--lang-radius);
+  padding: 8px 32px 8px 14px;
+  cursor: pointer;
+  box-shadow: var(--lang-shadow);
+  transition: background-color 0.2s ease;
+}
+
+.lang-dropdown select:hover {
+  background-color: var(--lang-hover-bg);
+}
+
+.lang-dropdown::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--lang-text);
+  font-size: 0.75rem;
+}
+
+/* ---------- Mobile: shrink padding, keep it usable at small widths ---------- */
+@media (max-width: 480px) {
+  .lang-switcher button[data-lang-option] {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  .lang-switcher button[data-lang-option] span.label {
+    display: none; /* show flag only on very small screens, save space */
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- data-i18n-attr="content" lets i18n.js swap this on language change -->
+  <meta name="description" content="Download free printable Hangul practice sheets." data-i18n="meta.description" data-i18n-attr="content">
+
+  <title data-i18n="meta.title">Free Hangul Practice Sheets | Learn Korean for Beginners</title>
+
+  <!--
+    ============================================================
+    SEO: HREFLANG PLACEMENT (read before you skip this)
+    ============================================================
+    hreflang tags tell Google "this same page also exists in
+    language X at URL Y" — but ONLY WORK if that URL actually
+    serves that language's content when crawled (client-side JS
+    swaps are not enough; Googlebot mostly won't wait for/trust it).
+
+    Minimum real setup for GitHub Pages:
+      1. Keep this file as your English version at:
+         https://yourname.github.io/repo/
+      2. Duplicate it into an /id/ subfolder as a pre-translated
+         static file (or a build step that pre-renders the 'id'
+         strings into /id/index.html at deploy time):
+         https://yourname.github.io/repo/id/
+      3. Add the block below to the <head> of BOTH versions.
+
+    <link rel="alternate" hreflang="en" href="https://yourname.github.io/repo/" />
+    <link rel="alternate" hreflang="id" href="https://yourname.github.io/repo/id/" />
+    <link rel="alternate" hreflang="x-default" href="https://yourname.github.io/repo/" />
+
+    Until /id/ exists as a real URL, you can still add these tags
+    pointing at ?lang=id as a soft signal, but treat that as a
+    placeholder, not a real fix — prioritize the static /id/ folder
+    when you have time. The JS toggle below is still 100% worth
+    shipping in the meantime for the CRO/UX win.
+    ============================================================
+  -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="i18n.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Hangul Sheets</div>
+
+    <nav class="nav-links">
+      <a href="#" data-i18n="nav.home">Home</a>
+      <a href="#" data-i18n="nav.sheets">Practice Sheets</a>
+      <a href="#" data-i18n="nav.guide">Beginner Guide</a>
+      <a href="#" data-i18n="nav.about">About</a>
+    </nav>
+
+    <!-- LANGUAGE SWITCHER: pill-toggle variant -->
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+      <button type="button" data-lang-option="en" onclick="setLanguage('en')">
+        <span class="flag">🇬🇧</span><span class="label">English</span>
+      </button>
+      <button type="button" data-lang-option="id" onclick="setLanguage('id')">
+        <span class="flag">🇮🇩</span><span class="label">Bahasa Indonesia</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="badge" data-i18n="hero.badge">100% Free · No Sign-Up</span>
+      <h1 data-i18n="hero.heading">Free Hangul Practice Sheets</h1>
+      <h2 data-i18n="hero.subheading">Learn Korean for Beginners</h2>
+      <p data-i18n="hero.description">
+        Printable, easy-to-use worksheets to help you master the Korean alphabet.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" data-i18n="hero.ctaPrimary">Download Now</button>
+        <button class="btn-secondary" data-i18n="hero.ctaSecondary">See All Sheets</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 data-i18n="features.title">Why Use Our Practice Sheets?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3 data-i18n="features.item1Title">Beginner-Friendly</h3>
+          <p data-i18n="features.item1Desc">Clear stroke order guides for every Hangul character.</p>
+        </div>
+        <div class="feature-card">
+          <h3 data-i18n="features.item2Title">Print-Ready PDFs</h3>
+          <p data-i18n="features.item2Desc">Clean, ink-friendly layouts optimized for home printing.</p>
+        </div>
+        <div class="feature-card">
+          <h3 data-i18n="features.item3Title">Completely Free</h3>
+          <p data-i18n="features.item3Desc">No account, no email, no hidden paywall — just download.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2 data-i18n="cta.heading">Ready to start learning Hangul?</h2>
+      <button class="btn-primary" data-i18n="cta.button">Get Your Free Sheet</button>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer.madeWith">Made for Korean language learners worldwide.</p>
+    <p>&copy; 2026 Hangul Sheets. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <!-- Load order matters: translations dictionary, then the engine -->
+  <script src="i18n-translations.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>
