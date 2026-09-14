@@ -1,0 +1,88 @@
+<!-- =========================================================
+     FEATURE 4: NAVIGATION UPDATE
+     Clearly separates "Free Tools" from "Premium Digital Planners"
+
+     Add this CSS once, either inside style.css or in a page's
+     inline <style> block:
+
+        .nav-premium-link {
+            background: linear-gradient(135deg, var(--rose, #b85f82), var(--dark-rose, #8f4765));
+            color: #fff !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .nav-premium-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px rgba(184, 95, 130, 0.3);
+            color: #fff !important;
+        }
+        .nav-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--border, #efd9e2);
+            margin: 0 10px;
+            display: inline-block;
+        }
+     ========================================================= -->
+
+
+<!-- ============================================================
+     A) MAIN SITE HEADER (index.html — inside the existing <nav>,
+     around line 1182). Insert a divider + premium link right
+     after "Free Tools":
+     ============================================================ -->
+
+<nav>
+    <a href="#products">Products</a>
+    <a href="#about">Why Us</a>
+    <a href="blog.html">Blog</a>
+
+    <a href="tools.html">Free Tools</a>
+
+    <span class="nav-divider"></span>
+
+    <a href="index.html#premium-store" class="nav-premium-link">
+        ✨ Premium Planners
+    </a>
+
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About</a>
+    <!-- ...rest of nav-dropdown + Contact stays as-is... -->
+</nav>
+
+
+<!-- ============================================================
+     B) TOOL PAGES HEADER (hangul-practice-sheet-generator.html,
+     habit-tracker-generator.html, gpa-calculator.html, etc.)
+     Their nav is simpler — apply the same pattern:
+     ============================================================ -->
+
+<header class="navbar">
+    <a href="index.html" class="logo">The Planner Hup ♡</a>
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+    <nav>
+        <a href="tools.html">← All Free Tools</a>
+        <span class="nav-divider"></span>
+        <a href="index.html#premium-store" class="nav-premium-link">✨ Premium Planners</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+
+<!-- ============================================================
+     C) tools.html (the Free Tools hub page itself) — add a
+     callout banner at the top pointing to the premium store,
+     right after the page's <h1>:
+     ============================================================ -->
+
+<div style="background: linear-gradient(135deg, #fdf0f5, #f7dce7); border-radius: 16px; padding: 16px 22px; margin: 20px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+    <span style="color: #4a343d; font-weight: 600; font-size: 14.5px;">
+        Want more than a free sheet? Get the full premium workbook bundles →
+    </span>
+    <a href="index.html#premium-store" class="nav-premium-link" style="white-space: nowrap;">
+        ✨ Browse Premium Planners
+    </a>
+</div>

@@ -1,0 +1,169 @@
+<!-- =========================================================
+     PREMIUM STORE SECTION
+     Feature 2: Digital storefront (Gumroad overlay integration)
+     Feature 3: Mockup placeholders
+
+     WHERE TO PASTE:
+     In index.html, right after the existing "OUR COLLECTION"
+     products section closes — i.e. right after the </section>
+     that follows id="products" (around line 1633 in the current
+     file, just before the "WHY THE PLANNER HUP?" section).
+
+     REQUIRES:
+       <link rel="stylesheet" href="premium-store.css">  (in <head>)
+       <script src="premium-store.js"></script>          (before </body>)
+
+     TO SWAP IN YOUR REAL PRODUCTS:
+       1. Replace href="https://GUMROAD_USERNAME.gumroad.com/l/PRODUCT_ID?wanted=true"
+          with your real Gumroad product URL for each card.
+       2. Replace the <img> src inside .mockup-screen with a real
+          iPad/tablet mockup image of that planner. Until you have
+          one, the pastel placeholder box below will display instead.
+       3. Edit title / price / description text per product.
+       ========================================================= -->
+
+<section class="premium-store" id="premium-store">
+
+    <p class="section-label">PREMIUM DIGITAL PLANNERS</p>
+    <h2>Upgrade your planning game ✨</h2>
+    <p class="section-description">
+        Beautifully designed digital workbooks, planners and Notion
+        templates — built for people who are serious about their goals.
+    </p>
+
+    <div class="premium-grid">
+
+        <!-- ============ PRODUCT 1 ============ -->
+        <div class="premium-card">
+            <span class="card-badge">BEST SELLER</span>
+
+            <div class="mockup-frame">
+                <div class="mockup-camera"></div>
+                <div class="mockup-screen">
+                    <!-- Swap this src for a real iPad mockup image -->
+                    <img src="images/PASTE-HANGUL-BUNDLE-MOCKUP.png"
+                         alt="30-Day Ultimate Hangul Workbook Bundle shown on an iPad"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="mockup-placeholder-label" style="display:none;">
+                        <span class="icon">🖼️</span>
+                        <span>Add iPad mockup image here</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-category">WORKBOOK BUNDLE</p>
+            <h3>30-Day Ultimate Hangul Workbook Bundle</h3>
+            <p class="card-description">
+                150+ pages of guided Hangul writing practice, vocabulary
+                drills and a 30-day study planner — goes far beyond the
+                free tracing sheet generator.
+            </p>
+
+            <div class="card-price-row">
+                <span class="price-current">$12.99</span>
+                <span class="price-original">$19.99</span>
+            </div>
+
+            <!-- GUMROAD OVERLAY BUTTON — replace the href with your real product link -->
+            <a href="https://GUMROAD_USERNAME.gumroad.com/l/hangul-bundle?wanted=true"
+               class="gumroad-button"
+               data-gumroad-single-product="true"
+               onclick="PlannerHupStore.trackBuyClick('hangul_bundle')">
+                Buy Now — $12.99
+            </a>
+        </div>
+
+        <!-- ============ PRODUCT 2 ============ -->
+        <div class="premium-card">
+            <span class="card-badge">NEW</span>
+
+            <div class="mockup-frame">
+                <div class="mockup-camera"></div>
+                <div class="mockup-screen">
+                    <img src="images/PASTE-LIFE-PLANNER-MOCKUP.png"
+                         alt="Aesthetic Life Planner Notion Template shown on a tablet"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="mockup-placeholder-label" style="display:none;">
+                        <span class="icon">🖼️</span>
+                        <span>Add iPad mockup image here</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-category">NOTION TEMPLATE</p>
+            <h3>Aesthetic Life Planner — Notion Template</h3>
+            <p class="card-description">
+                A fully linked Notion dashboard for goals, habits, journaling
+                and study tracking, in the same soft, pastel style as your
+                printable planners.
+            </p>
+
+            <div class="card-price-row">
+                <span class="price-current">$9.99</span>
+            </div>
+
+            <a href="https://GUMROAD_USERNAME.gumroad.com/l/life-planner-notion?wanted=true"
+               class="gumroad-button"
+               data-gumroad-single-product="true"
+               onclick="PlannerHupStore.trackBuyClick('life_planner_notion')">
+                Buy Now — $9.99
+            </a>
+        </div>
+
+        <!-- ============ PRODUCT 3 ============ -->
+        <div class="premium-card">
+            <span class="card-badge">BUNDLE & SAVE</span>
+
+            <div class="mockup-frame">
+                <div class="mockup-camera"></div>
+                <div class="mockup-screen">
+                    <img src="images/PASTE-STUDY-BUNDLE-MOCKUP.png"
+                         alt="Premium Study and Productivity Bundle shown on an iPad"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="mockup-placeholder-label" style="display:none;">
+                        <span class="icon">🖼️</span>
+                        <span>Add iPad mockup image here</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="card-category">PLANNER + WORKBOOK</p>
+            <h3>Premium Study &amp; Productivity Bundle</h3>
+            <p class="card-description">
+                Our full-year student planner paired with a guided study
+                workbook — everything you need to plan, track and finish
+                the semester strong.
+            </p>
+
+            <div class="card-price-row">
+                <span class="price-current">$19.99</span>
+                <span class="price-original">$29.99</span>
+            </div>
+
+            <!-- PAYHIP ALTERNATIVE — use this markup instead of Gumroad's
+                 if you prefer Payhip. Requires payhip.js (see premium-store.js
+                 comments) instead of gumroad.js.
+
+            <a href="https://payhip.com/b/PRODUCT_ID"
+               class="payhip-buy-button"
+               data-theme="none"
+               onclick="PlannerHupStore.trackBuyClick('study_bundle')">
+                Buy Now — $19.99
+            </a>
+            -->
+
+            <a href="https://GUMROAD_USERNAME.gumroad.com/l/study-bundle?wanted=true"
+               class="gumroad-button"
+               data-gumroad-single-product="true"
+               onclick="PlannerHupStore.trackBuyClick('study_bundle')">
+                Buy Now — $19.99
+            </a>
+        </div>
+
+    </div>
+
+    <p class="premium-store-footnote">
+        🔒 Secure checkout via Gumroad · Instant download after payment
+    </p>
+
+</section>

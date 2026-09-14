@@ -1,0 +1,215 @@
+/* =========================================================
+   THE PLANNER HUP — PREMIUM STORE SECTION
+   Feature 2 + 3: Storefront grid + modern pastel UI + mockups
+
+   Add to <head> of index.html (or wherever the section lives):
+   <link rel="stylesheet" href="premium-store.css">
+
+   Reuses the site's existing palette from style.css:
+   --rose: #b85f82   --dark-rose: #8f4765   --cream: #fff9fb
+   --soft-pink: #fdf0f5   --brown: #4a343d   --text: #6f5a63
+   ========================================================= */
+
+.premium-store {
+    padding: 90px 6% 100px;
+    background: linear-gradient(180deg, var(--soft-pink, #fdf0f5) 0%, var(--cream, #fff9fb) 100%);
+}
+
+.premium-store .section-label {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--rose, #b85f82);
+    background: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.premium-store h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--brown, #4a343d);
+    margin: 0 0 10px;
+}
+
+.premium-store .section-description {
+    max-width: 560px;
+    color: var(--text, #6f5a63);
+    font-size: 15.5px;
+    margin-bottom: 48px;
+}
+
+/* ---------- Product grid ---------- */
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 980px) {
+    .premium-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+    .premium-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Product card ---------- */
+.premium-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 22px 22px 26px;
+    box-shadow: 0 10px 30px rgba(74, 52, 61, 0.08);
+    border: 1px solid var(--border, #efd9e2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(74, 52, 61, 0.14);
+}
+
+.premium-card .card-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: var(--dark-rose, #8f4765);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* ---------- iPad / tablet mockup frame ---------- */
+/* Swap the <img> src inside .mockup-screen with your real
+   product mockup image (e.g. a planner shown on an iPad). */
+.mockup-frame {
+    background: linear-gradient(160deg, #2c2c2e, #1a1a1c);
+    border-radius: 22px;
+    padding: 14px 14px 26px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.mockup-camera {
+    width: 6px;
+    height: 6px;
+    background: #555;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+}
+
+.mockup-screen {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--soft-pink, #fdf0f5), var(--pink, #f7dce7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mockup-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Placeholder state shown until a real mockup image is added */
+.mockup-screen .mockup-placeholder-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--dark-rose, #8f4765);
+    text-align: center;
+    padding: 0 16px;
+}
+.mockup-screen .mockup-placeholder-label .icon { font-size: 30px; }
+.mockup-screen .mockup-placeholder-label span { font-size: 12.5px; font-weight: 600; opacity: 0.8; }
+
+/* ---------- Card content ---------- */
+.premium-card .card-category {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--rose, #b85f82);
+    margin-bottom: 8px;
+}
+
+.premium-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    color: var(--brown, #4a343d);
+    margin: 0 0 8px;
+}
+
+.premium-card .card-description {
+    font-size: 14px;
+    color: var(--text, #6f5a63);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.premium-card .card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.premium-card .price-current {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--brown, #4a343d);
+}
+
+.premium-card .price-original {
+    font-size: 14px;
+    color: #b7a1ac;
+    text-decoration: line-through;
+}
+
+/* ---------- Buy Now button ---------- */
+/* This class is what Gumroad's overlay script (gumroad.js) looks
+   for, so keep class="gumroad-button" on the <a> tag itself. */
+.premium-card .gumroad-button,
+.premium-card .payhip-buy-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--rose, #b85f82), var(--dark-rose, #8f4765));
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 13px 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 22px rgba(184, 95, 130, 0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.premium-card .gumroad-button:hover,
+.premium-card .payhip-buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(184, 95, 130, 0.34);
+}
+
+.premium-store-footnote {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--text, #6f5a63);
+}
