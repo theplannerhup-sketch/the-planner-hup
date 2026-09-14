@@ -294,13 +294,20 @@ a {
     max-width: 1120px;
     margin: auto;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Flex-wrap (instead of a fixed 3-column grid) so that when the
+       card count isn't a multiple of 3, the last row centers itself
+       instead of leaving cards stuck to the left with empty gaps. */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
 }
 
 .product-card {
     position: relative;
+
+    flex: 1 1 320px;
+    max-width: 350px;
 
     padding: 30px;
     text-align: left;
@@ -520,8 +527,12 @@ footer p {
     }
 
     .product-grid {
-        grid-template-columns: 1fr;
         max-width: 520px;
+    }
+
+    .product-card {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .why-us {
