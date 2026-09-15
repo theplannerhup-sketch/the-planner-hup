@@ -1,104 +1,194 @@
 /**
- * i18n-translations.js
+ * i18n-translations.js — The Planner Hup
  * -----------------------------------------------------------------------
- * Structured JSON-style translation dictionary for the Hangul practice
- * sheet site. Add new keys here as you add new UI text — never hardcode
- * user-facing strings directly in HTML once this system is wired up.
- *
- * NAMING CONVENTION: dot.notation keys, grouped by section
- * (nav.*, hero.*, features.*, cta.*, footer.*, meta.*)
- *
- * Indonesian strings below use high-search-volume local phrasing
- * (e.g. "Lembar Latihan Hangul Gratis", "Belajar Bahasa Korea untuk Pemula")
- * rather than literal machine translation, since Indonesian learners
- * commonly search those exact terms.
+ * Real dictionary matching this site's actual copy (planners, Islamic
+ * books, Urdu novels store) — NOT generic placeholder text.
+ * Add more keys here as you tag more of the page with data-i18n.
  * -----------------------------------------------------------------------
  */
 
 const translations = {
   en: {
     meta: {
-      title: "Free Hangul Practice Sheets | Learn Korean for Beginners",
+      title: "Minimalist Digital & Printable Planners | The Planner Hup",
       description:
-        "Download free printable Hangul practice sheets. Perfect for beginners learning to read and write Korean — no sign-up required."
+        "Shop beautiful minimalist planners, Islamic books & Urdu novels. Printable and digital, instant download. Plan your days beautifully today."
     },
     nav: {
-      home: "Home",
-      sheets: "Practice Sheets",
-      guide: "Beginner Guide",
+      products: "Products",
+      whyUs: "Why Us",
+      blog: "Blog",
+      freeTools: "Free Tools",
+      faq: "FAQ",
       about: "About",
-      langLabel: "Language"
+      more: "More ▾",
+      contact: "Contact",
+      dropdown: {
+        faq: "FAQ & How It Works",
+        author: "Meet the Author",
+        gift: "Gift a Planner",
+        freebies: "Free Downloads",
+        bundles: "Bundles & Offers",
+        reviews: "Reviews",
+        privacy: "Privacy Policy",
+        terms: "Terms & Conditions",
+        refund: "Refund & Return Policy"
+      }
     },
     hero: {
-      badge: "100% Free · No Sign-Up",
-      heading: "Free Hangul Practice Sheets",
-      subheading: "Learn Korean for Beginners",
-      description:
-        "Printable, easy-to-use worksheets to help you master the Korean alphabet — from your very first letter to full syllable blocks.",
-      ctaPrimary: "Download Now",
-      ctaSecondary: "See All Sheets"
+      eyebrow: "PLAN • READ • DREAM",
+      heading1: "Make your days",
+      heading2: "beautifully organized.",
+      text: "Beautiful planners, books and novels for people who love to plan, learn and dream.",
+      ctaPrimary: "Explore Collection →",
+      ctaSecondary: "Discover More",
+      noteOne: "✨ Dream Big",
+      noteTwo: "🌷 You got this!",
+      cardHeading: "Your little<br>world of ideas ♡",
+      line1: "☐ Plan your goals",
+      line2: "☐ Learn something new",
+      line3: "☐ Read a little",
+      line4: "☐ Dream bigger"
     },
-    features: {
-      title: "Why Use Our Practice Sheets?",
-      item1Title: "Beginner-Friendly",
-      item1Desc: "Clear stroke order guides for every Hangul character.",
-      item2Title: "Print-Ready PDFs",
-      item2Desc: "Clean, ink-friendly layouts optimized for home printing.",
-      item3Title: "Completely Free",
-      item3Desc: "No account, no email, no hidden paywall — just download."
+    bundle: {
+      title: "🎁 Bundle Offer: Buy Any 2 Planners or Books, Get 10% Off",
+      text: "Message us on WhatsApp with the 2 items you'd like and mention code",
+      textEnd: "to get your discount."
+    },
+    products: {
+      label: "OUR COLLECTION",
+      heading: "Find something made for you ✨",
+      desc: "Choose from our planners, books, novels and free downloads."
+    },
+    whyUs: {
+      label: "WHY THE PLANNER HUP?",
+      heading: "Planning, learning and reading can all feel beautiful. ♡",
+      text: "We believe useful things can also be beautiful, simple and inspiring.",
+      cta: "Explore Collection",
+      benefit1Title: "Simple",
+      benefit1Desc: "Easy to understand and easy to use.",
+      benefit2Title: "Beautiful",
+      benefit2Desc: "Designed to make planning feel special.",
+      benefit3Title: "Practical",
+      benefit3Desc: "Made for real everyday routines."
+    },
+    reviews: {
+      label: "WHAT PEOPLE SAY",
+      heading: "Customer Reviews",
+      empty: "We're just getting started — be the first to share your experience with The Planner Hup! ♡",
+      cta: "Leave a Review"
+    },
+    reviewForm: {
+      name: "Your Name",
+      product: "Which product?",
+      productPlaceholder: "e.g. Student Planner 2026",
+      rating: "Your Rating",
+      review: "Your Review",
+      submit: "Submit Review",
+      note: "This opens your email app to send us your review directly."
     },
     cta: {
-      heading: "Ready to start learning Hangul?",
-      button: "Get Your Free Sheet"
+      label: "YOUR NEXT CHAPTER",
+      heading: "Plan it. Read it. Dream it.",
+      text: "Start small. Dream big. Create beautifully.",
+      button: "Start Exploring ✨"
     },
     footer: {
-      rights: "All rights reserved.",
-      madeWith: "Made for Korean language learners worldwide."
+      tagline: "Plan your days. Create your dreams.",
+      contactText: "Questions or need help? Email us at"
     }
   },
 
   id: {
     meta: {
-      title: "Lembar Latihan Hangul Gratis | Belajar Bahasa Korea untuk Pemula",
+      title: "Planner Digital & Cetak Minimalis | The Planner Hup",
       description:
-        "Unduh lembar latihan Hangul gratis yang bisa dicetak. Cocok untuk pemula yang ingin belajar membaca dan menulis huruf Korea — tanpa perlu daftar."
+        "Belanja planner minimalis, buku Islami & novel Urdu yang indah. Bisa dicetak atau digital, langsung unduh. Rencanakan harimu dengan indah mulai hari ini."
     },
     nav: {
-      home: "Beranda",
-      sheets: "Lembar Latihan",
-      guide: "Panduan Pemula",
+      products: "Produk",
+      whyUs: "Kenapa Kami",
+      blog: "Blog",
+      freeTools: "Alat Gratis",
+      faq: "FAQ",
       about: "Tentang Kami",
-      langLabel: "Bahasa"
+      more: "Lainnya ▾",
+      contact: "Kontak",
+      dropdown: {
+        faq: "FAQ & Cara Kerja",
+        author: "Kenalan dengan Penulis",
+        gift: "Hadiahkan Planner",
+        freebies: "Unduhan Gratis",
+        bundles: "Paket & Promo",
+        reviews: "Ulasan",
+        privacy: "Kebijakan Privasi",
+        terms: "Syarat & Ketentuan",
+        refund: "Kebijakan Pengembalian"
+      }
     },
     hero: {
-      badge: "100% Gratis · Tanpa Daftar",
-      heading: "Lembar Latihan Hangul Gratis",
-      subheading: "Belajar Bahasa Korea untuk Pemula",
-      description:
-        "Lembar kerja siap cetak yang mudah digunakan untuk membantu kamu menguasai huruf Korea — mulai dari huruf pertama hingga rangkaian suku kata lengkap.",
-      ctaPrimary: "Unduh Sekarang",
-      ctaSecondary: "Lihat Semua Lembar"
+      eyebrow: "RENCANAKAN • BACA • BERMIMPI",
+      heading1: "Jadikan harimu",
+      heading2: "tertata dengan indah.",
+      text: "Planner, buku, dan novel yang indah untuk kamu yang suka merencanakan, belajar, dan bermimpi.",
+      ctaPrimary: "Jelajahi Koleksi →",
+      ctaSecondary: "Lihat Selengkapnya",
+      noteOne: "✨ Bermimpi Besar",
+      noteTwo: "🌷 Kamu pasti bisa!",
+      cardHeading: "Dunia kecil<br>penuh ide ♡",
+      line1: "☐ Rencanakan tujuanmu",
+      line2: "☐ Pelajari hal baru",
+      line3: "☐ Baca sedikit",
+      line4: "☐ Bermimpi lebih besar"
     },
-    features: {
-      title: "Kenapa Pakai Lembar Latihan Kami?",
-      item1Title: "Ramah untuk Pemula",
-      item1Desc: "Panduan urutan goresan yang jelas untuk setiap huruf Hangul.",
-      item2Title: "PDF Siap Cetak",
-      item2Desc: "Tata letak rapi dan hemat tinta, dioptimalkan untuk printer rumahan.",
-      item3Title: "Sepenuhnya Gratis",
-      item3Desc: "Tanpa akun, tanpa email, tanpa biaya tersembunyi — langsung unduh."
+    bundle: {
+      title: "🎁 Promo Paket: Beli 2 Planner atau Buku, Dapat Diskon 10%",
+      text: "Chat kami di WhatsApp dengan 2 produk pilihanmu dan sebutkan kode",
+      textEnd: "untuk mendapatkan diskon."
+    },
+    products: {
+      label: "KOLEKSI KAMI",
+      heading: "Temukan yang cocok untukmu ✨",
+      desc: "Pilih dari planner, buku, novel, dan unduhan gratis kami."
+    },
+    whyUs: {
+      label: "KENAPA THE PLANNER HUP?",
+      heading: "Merencanakan, belajar, dan membaca bisa terasa indah. ♡",
+      text: "Kami percaya hal yang bermanfaat juga bisa indah, sederhana, dan menginspirasi.",
+      cta: "Jelajahi Koleksi",
+      benefit1Title: "Sederhana",
+      benefit1Desc: "Mudah dipahami dan mudah digunakan.",
+      benefit2Title: "Indah",
+      benefit2Desc: "Dirancang agar merencanakan terasa istimewa.",
+      benefit3Title: "Praktis",
+      benefit3Desc: "Dibuat untuk rutinitas sehari-hari."
+    },
+    reviews: {
+      label: "KATA MEREKA",
+      heading: "Ulasan Pelanggan",
+      empty: "Kami baru saja mulai — jadilah yang pertama berbagi pengalamanmu dengan The Planner Hup! ♡",
+      cta: "Tulis Ulasan"
+    },
+    reviewForm: {
+      name: "Nama Kamu",
+      product: "Produk apa?",
+      productPlaceholder: "misalnya Student Planner 2026",
+      rating: "Rating Kamu",
+      review: "Ulasan Kamu",
+      submit: "Kirim Ulasan",
+      note: "Ini akan membuka aplikasi email kamu untuk mengirim ulasan langsung ke kami."
     },
     cta: {
-      heading: "Siap mulai belajar Hangul?",
-      button: "Dapatkan Lembar Gratismu"
+      label: "BAB SELANJUTNYA",
+      heading: "Rencanakan. Baca. Wujudkan mimpimu.",
+      text: "Mulai dari kecil. Bermimpi besar. Ciptakan dengan indah.",
+      button: "Mulai Jelajahi ✨"
     },
     footer: {
-      rights: "Hak cipta dilindungi.",
-      madeWith: "Dibuat untuk para pembelajar bahasa Korea di seluruh dunia."
+      tagline: "Rencanakan harimu. Wujudkan mimpimu.",
+      contactText: "Ada pertanyaan atau butuh bantuan? Email kami di"
     }
   }
 };
 
-// Exposed globally so i18n.js can read it (works with plain <script> tags,
-// no bundler required — matches a static GitHub Pages setup).
 window.translations = translations;

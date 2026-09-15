@@ -14,9 +14,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Planner Hup">
 
-    <title>Minimalist Digital & Printable Planners | The Planner Hup</title>
+    <title data-i18n="meta.title">Minimalist Digital & Printable Planners | The Planner Hup</title>
 
-    <meta name="description" content="Shop beautiful minimalist planners, Islamic books &amp; Urdu novels. Printable and digital, instant download. Plan your days beautifully today.">
+    <meta name="description" content="Shop beautiful minimalist planners, Islamic books &amp; Urdu novels. Printable and digital, instant download. Plan your days beautifully today." data-i18n="meta.description" data-i18n-attr="content">
     <meta name="keywords" content="digital planner, printable planner, student planner, aesthetic planner, cute planner, life planner, study planner, undated planner, planners books novels, The Planner Hup">
     <meta name="robots" content="index, follow">
     <meta name="author" content="The Planner Hup">
@@ -1114,6 +1114,18 @@
       gtag('config', 'G-SJ14ZK6Z6F');
     </script>
 
+    <!-- Language switcher styles (EN / Bahasa Indonesia) -->
+    <link rel="stylesheet" href="i18n.css">
+
+    <!--
+      SEO: HREFLANG PLACEMENT
+      Once you have a real Indonesian-language URL (e.g. /id/index.html),
+      add here:
+      <link rel="alternate" hreflang="en" href="https://theplannerhup-sketch.github.io/the-planner-hup/" />
+      <link rel="alternate" hreflang="id" href="https://theplannerhup-sketch.github.io/the-planner-hup/id/" />
+      <link rel="alternate" hreflang="x-default" href="https://theplannerhup-sketch.github.io/the-planner-hup/" />
+    -->
+
 </head>
 
 
@@ -1167,27 +1179,27 @@
 
         <nav>
 
-            <a href="#products">
+            <a href="#products" data-i18n="nav.products">
                 Products
             </a>
 
-            <a href="#about">
+            <a href="#about" data-i18n="nav.whyUs">
                 Why Us
             </a>
 
-            <a href="blog.html">
+            <a href="blog.html" data-i18n="nav.blog">
                 Blog
             </a>
 
-            <a href="tools.html">
+            <a href="tools.html" data-i18n="nav.freeTools">
                 Free Tools
             </a>
 
-            <a href="faq.html">
+            <a href="faq.html" data-i18n="nav.faq">
                 FAQ
             </a>
 
-            <a href="about.html">
+            <a href="about.html" data-i18n="nav.about">
                 About
             </a>
 
@@ -1197,27 +1209,38 @@
                     type="button"
                     class="nav-dropdown-toggle"
                     onclick="toggleNavDropdown(event)"
+                    data-i18n="nav.more"
                 >
                     More ▾
                 </button>
 
                 <div class="nav-dropdown-menu" id="navDropdownMenu">
-                    <a href="faq.html">FAQ &amp; How It Works</a>
-                    <a href="author.html">Meet the Author</a>
-                    <a href="gift-a-planner.html">Gift a Planner</a>
-                    <a href="freebies.html">Free Downloads</a>
-                    <a href="bundles.html">Bundles &amp; Offers</a>
-                    <a href="reviews.html">Reviews</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-                    <a href="refund-and-return-policy.html">Refund &amp; Return Policy</a>
+                    <a href="faq.html" data-i18n="nav.dropdown.faq">FAQ &amp; How It Works</a>
+                    <a href="author.html" data-i18n="nav.dropdown.author">Meet the Author</a>
+                    <a href="gift-a-planner.html" data-i18n="nav.dropdown.gift">Gift a Planner</a>
+                    <a href="freebies.html" data-i18n="nav.dropdown.freebies">Free Downloads</a>
+                    <a href="bundles.html" data-i18n="nav.dropdown.bundles">Bundles &amp; Offers</a>
+                    <a href="reviews.html" data-i18n="nav.dropdown.reviews">Reviews</a>
+                    <a href="privacy-policy.html" data-i18n="nav.dropdown.privacy">Privacy Policy</a>
+                    <a href="terms-and-conditions.html" data-i18n="nav.dropdown.terms">Terms &amp; Conditions</a>
+                    <a href="refund-and-return-policy.html" data-i18n="nav.dropdown.refund">Refund &amp; Return Policy</a>
                 </div>
 
             </div>
 
-            <a href="#contact">
+            <a href="#contact" data-i18n="nav.contact">
                 Contact
             </a>
+
+            <!-- LANGUAGE SWITCHER -->
+            <div class="lang-switcher" role="group" aria-label="Language selector">
+                <button type="button" data-lang-option="en" onclick="setLanguage('en')">
+                    <span class="flag">🇬🇧</span><span class="label">EN</span>
+                </button>
+                <button type="button" data-lang-option="id" onclick="setLanguage('id')">
+                    <span class="flag">🇮🇩</span><span class="label">ID</span>
+                </button>
+            </div>
 
         </nav>
 
@@ -1260,16 +1283,16 @@
 
     <div class="hero-content">
 
-        <p class="eyebrow">
+        <p class="eyebrow" data-i18n="hero.eyebrow">
             PLAN • READ • DREAM
         </p>
 
         <h1>
-            Make your days
-            <span>beautifully organized.</span>
+            <span data-i18n="hero.heading1">Make your days</span>
+            <span data-i18n="hero.heading2">beautifully organized.</span>
         </h1>
 
-        <p class="hero-text">
+        <p class="hero-text" data-i18n="hero.text">
             Beautiful planners, books and novels
             for people who love to plan, learn and dream.
         </p>
@@ -1279,6 +1302,7 @@
             <a
                 href="#products"
                 class="primary-btn"
+                data-i18n="hero.ctaPrimary"
             >
                 Explore Collection →
             </a>
@@ -1286,6 +1310,7 @@
             <a
                 href="#about"
                 class="secondary-btn"
+                data-i18n="hero.ctaSecondary"
             >
                 Discover More
             </a>
@@ -1297,27 +1322,27 @@
 
     <div class="hero-card">
 
-        <div class="floating-note note-one">
+        <div class="floating-note note-one" data-i18n="hero.noteOne">
             ✨ Dream Big
         </div>
 
         <div class="planner-preview">
 
-            <p class="preview-small">
+            <p class="preview-small" data-i18n="hero.eyebrow">
                 PLAN • READ • DREAM
             </p>
 
-            <h2>
+            <h2 data-i18n="hero.cardHeading" data-i18n-html="true">
                 Your little<br>
                 world of ideas ♡
             </h2>
 
             <div class="planner-lines">
 
-                <span>☐ Plan your goals</span>
-                <span>☐ Learn something new</span>
-                <span>☐ Read a little</span>
-                <span>☐ Dream bigger</span>
+                <span data-i18n="hero.line1">☐ Plan your goals</span>
+                <span data-i18n="hero.line2">☐ Learn something new</span>
+                <span data-i18n="hero.line3">☐ Read a little</span>
+                <span data-i18n="hero.line4">☐ Dream bigger</span>
 
             </div>
 
@@ -1327,7 +1352,7 @@
 
         </div>
 
-        <div class="floating-note note-two">
+        <div class="floating-note note-two" data-i18n="hero.noteTwo">
             🌷 You got this!
         </div>
 
@@ -1361,7 +1386,7 @@
             font-weight: 800;
             color: #b85b82;
             font-size: 17px;
-        ">
+        " data-i18n="bundle.title">
             🎁 Bundle Offer: Buy Any 2 Planners or Books, Get 10% Off
         </p>
 
@@ -1370,8 +1395,8 @@
             color: #765866;
             font-size: 14px;
         ">
-            Message us on WhatsApp with the 2 items you'd like and mention code
-            <strong style="color:#b85b82;">BUNDLE10</strong> to get your discount.
+            <span data-i18n="bundle.text">Message us on WhatsApp with the 2 items you'd like and mention code</span>
+            <strong style="color:#b85b82;">BUNDLE10</strong> <span data-i18n="bundle.textEnd">to get your discount.</span>
         </p>
 
     </div>
@@ -1389,15 +1414,15 @@
     id="products"
 >
 
-    <p class="section-label">
+    <p class="section-label" data-i18n="products.label">
         OUR COLLECTION
     </p>
 
-    <h2>
+    <h2 data-i18n="products.heading">
         Find something made for you ✨
     </h2>
 
-    <p class="section-description">
+    <p class="section-description" data-i18n="products.desc">
         Choose from our planners, books, novels and free downloads.
     </p>
 
@@ -1695,16 +1720,16 @@
 
     <div class="why-content">
 
-        <p class="section-label">
+        <p class="section-label" data-i18n="whyUs.label">
             WHY THE PLANNER HUP?
         </p>
 
-        <h2>
+        <h2 data-i18n="whyUs.heading">
             Planning, learning and reading
             can all feel beautiful. ♡
         </h2>
 
-        <p>
+        <p data-i18n="whyUs.text">
             We believe useful things can also be
             beautiful, simple and inspiring.
         </p>
@@ -1712,6 +1737,7 @@
         <a
             href="#products"
             class="primary-btn"
+            data-i18n="whyUs.cta"
         >
             Explore Collection
         </a>
@@ -1725,11 +1751,11 @@
 
             <span>✦</span>
 
-            <h3>
+            <h3 data-i18n="whyUs.benefit1Title">
                 Simple
             </h3>
 
-            <p>
+            <p data-i18n="whyUs.benefit1Desc">
                 Easy to understand and easy to use.
             </p>
 
@@ -1740,11 +1766,11 @@
 
             <span>♡</span>
 
-            <h3>
+            <h3 data-i18n="whyUs.benefit2Title">
                 Beautiful
             </h3>
 
-            <p>
+            <p data-i18n="whyUs.benefit2Desc">
                 Designed to make planning feel special.
             </p>
 
@@ -1755,11 +1781,11 @@
 
             <span>✿</span>
 
-            <h3>
+            <h3 data-i18n="whyUs.benefit3Title">
                 Practical
             </h3>
 
-            <p>
+            <p data-i18n="whyUs.benefit3Desc">
                 Made for real everyday routines.
             </p>
 
@@ -1777,15 +1803,15 @@
 
 <section class="reviews-section" id="reviews">
 
-    <p class="section-label" style="text-align:center;">
+    <p class="section-label" style="text-align:center;" data-i18n="reviews.label">
         WHAT PEOPLE SAY
     </p>
 
-    <h2 style="text-align:center; margin: 0 0 12px;">
+    <h2 style="text-align:center; margin: 0 0 12px;" data-i18n="reviews.heading">
         Customer Reviews
     </h2>
 
-    <p id="reviewsEmptyState" style="text-align:center; color:#765866; max-width:480px; margin:0 auto 30px;">
+    <p id="reviewsEmptyState" style="text-align:center; color:#765866; max-width:480px; margin:0 auto 30px;" data-i18n="reviews.empty">
         We're just getting started — be the first to share your experience with The Planner Hup! ♡
     </p>
 
@@ -1796,6 +1822,7 @@
             type="button"
             class="primary-btn"
             onclick="toggleReviewForm()"
+            data-i18n="reviews.cta"
         >
             Leave a Review
         </button>
@@ -1807,7 +1834,7 @@
         onsubmit="submitReview(event)"
     >
 
-        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;" data-i18n="reviewForm.name">
             Your Name
         </label>
         <input
@@ -1817,17 +1844,19 @@
             style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #f3dde6; margin-bottom:16px; font-family:Arial, sans-serif;"
         >
 
-        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;" data-i18n="reviewForm.product">
             Which product?
         </label>
         <input
             type="text"
             id="reviewProduct"
             placeholder="e.g. Student Planner 2026"
+            data-i18n="reviewForm.productPlaceholder"
+            data-i18n-attr="placeholder"
             style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid #f3dde6; margin-bottom:16px; font-family:Arial, sans-serif;"
         >
 
-        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;" data-i18n="reviewForm.rating">
             Your Rating
         </label>
         <div class="star-rating" style="margin-bottom:16px;">
@@ -1838,7 +1867,7 @@
             <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
         </div>
 
-        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;">
+        <label style="display:block; font-weight:700; font-size:13px; color:#432b37; margin-bottom:6px;" data-i18n="reviewForm.review">
             Your Review
         </label>
         <textarea
@@ -1852,11 +1881,12 @@
             type="submit"
             class="primary-btn"
             style="width:100%;"
+            data-i18n="reviewForm.submit"
         >
             Submit Review
         </button>
 
-        <p style="font-size:12px; color:#a68493; margin:10px 0 0; text-align:center;">
+        <p style="font-size:12px; color:#a68493; margin:10px 0 0; text-align:center;" data-i18n="reviewForm.note">
             This opens your email app to send us your review directly.
         </p>
 
@@ -1872,22 +1902,23 @@
 
 <section class="cta">
 
-    <p class="section-label">
+    <p class="section-label" data-i18n="cta.label">
         YOUR NEXT CHAPTER
     </p>
 
-    <h2>
+    <h2 data-i18n="cta.heading">
         Plan it. Read it.
         Dream it.
     </h2>
 
-    <p>
+    <p data-i18n="cta.text">
         Start small. Dream big. Create beautifully.
     </p>
 
     <a
         href="#products"
         class="primary-btn"
+        data-i18n="cta.button"
     >
         Start Exploring ✨
     </a>
@@ -1912,12 +1943,12 @@
         </h2>
 
 
-        <p>
+        <p data-i18n="footer.tagline">
             Plan your days. Create your dreams.
         </p>
 
         <p style="margin-top: 14px;">
-            Questions or need help? Email us at
+            <span data-i18n="footer.contactText">Questions or need help? Email us at</span>
             <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a>
         </p>
 
@@ -4954,6 +4985,10 @@ document.addEventListener('click', function(event) {
     }
 });
 </script>
+
+<!-- Language switcher: EN / Bahasa Indonesia (load order matters) -->
+<script src="i18n-translations.js"></script>
+<script src="i18n.js"></script>
 
 </body>
 
