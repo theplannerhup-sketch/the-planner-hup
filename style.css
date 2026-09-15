@@ -386,6 +386,15 @@ a {
     font-weight: 700;
 }
 
+/* FIX: the 2 free-download cards (Coloring Book, Guides) use <a> links
+   instead of <button> for their CTA, so the ".product-card a" rule above
+   was overriding the button's white text with dark-rose — making the
+   text hard to read against the pink button background. This rule wins
+   because it's more specific, and restores the correct white text. */
+.product-card a.category-card-button {
+    color: white;
+}
+
 /* WHY US */
 
 .why-us {
