@@ -241,6 +241,65 @@
             color: var(--rose);
         }
 
+        /* ---------- three-button row: Explore / Download / Add to Cart ---------- */
+        .freebie-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .guide-card .freebie-btn-row {
+            flex-direction: column;
+            margin-top: 6px;
+        }
+        .explore-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: transparent;
+            border: 1.5px solid var(--rose);
+            color: var(--dark-rose);
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 10px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .explore-btn:hover {
+            background: var(--rose);
+            color: #fff;
+        }
+        .add-to-cart-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--brown);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 10px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.15s ease;
+        }
+        .add-to-cart-btn:hover {
+            opacity: 0.9;
+        }
+        .add-to-cart-btn.added {
+            background: #3f9142;
+        }
+        .coloring-feature-body .explore-btn,
+        .coloring-feature-body .add-to-cart-btn {
+            font-size: 14.5px;
+            padding: 14px 24px;
+        }
+        .guide-card .explore-btn,
+        .guide-card .add-to-cart-btn,
+        .guide-card .guide-download-btn {
+            width: 100%;
+            text-align: center;
+        }
+
         /* ---------- PREVIEW MODAL — like the product "Explore" popup ---------- */
         .freebie-modal-overlay {
             display: none;
@@ -518,13 +577,36 @@
             </p>
             <span class="age-tag">👑 Ages 4–8</span>
             <br>
-            <a
-                href="downloads/princess-coloring-book.pdf"
-                download
-                class="free-download-btn"
-            >
-                ⬇ Download Free
-            </a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'COLOR & PLAY',
+                        title: 'Princess Coloring Book',
+                        desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                        img: 'downloads-previews/princess-coloring-book.png',
+                        pdf: 'downloads/princess-coloring-book.pdf',
+                        extra: '👑 Ages 4–8'
+                    })"
+                >
+                    🔍 Explore
+                </button>
+                <a
+                    href="downloads/princess-coloring-book.pdf"
+                    download
+                    class="free-download-btn"
+                >
+                    ⬇ Download Free
+                </a>
+                <button
+                    type="button"
+                    class="add-to-cart-btn"
+                    onclick="addFreebieToCart('Princess Coloring Book', this)"
+                >
+                    🛍 Add to Cart
+                </button>
+            </div>
         </div>
 
     </div>
@@ -563,7 +645,21 @@
                 })"
             >How to Manage Time — The Swiss Way</h3>
             <p class="desc">Learn punctuality, precision planning, and time discipline inspired by Swiss culture.</p>
-            <a href="downloads/how-to-manage-time-swiss-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'GUIDE',
+                        title: 'How to Manage Time — The Swiss Way',
+                        desc: 'Learn punctuality, precision planning, and time discipline inspired by Swiss culture.',
+                        img: 'downloads-previews/swiss-way.png',
+                        pdf: 'downloads/how-to-manage-time-swiss-way.pdf'
+                    })"
+                >🔍 Explore</button>
+                <a href="downloads/how-to-manage-time-swiss-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+                <button type="button" class="add-to-cart-btn" onclick="addFreebieToCart('How to Manage Time — The Swiss Way', this)">🛍 Add to Cart</button>
+            </div>
         </article>
 
         <article class="guide-card">
@@ -591,7 +687,21 @@
                 })"
             >How to Master Anything — The Chinese Way</h3>
             <p class="desc">Gongfu, Wu Wei, Guanxi and more — timeless Chinese principles for mastering any skill.</p>
-            <a href="downloads/how-to-master-anything-chinese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'GUIDE',
+                        title: 'How to Master Anything — The Chinese Way',
+                        desc: 'Gongfu, Wu Wei, Guanxi and more — timeless Chinese principles for mastering any skill.',
+                        img: 'downloads-previews/chinese-way.png',
+                        pdf: 'downloads/how-to-master-anything-chinese-way.pdf'
+                    })"
+                >🔍 Explore</button>
+                <a href="downloads/how-to-master-anything-chinese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+                <button type="button" class="add-to-cart-btn" onclick="addFreebieToCart('How to Master Anything — The Chinese Way', this)">🛍 Add to Cart</button>
+            </div>
         </article>
 
         <article class="guide-card">
@@ -619,7 +729,21 @@
                 })"
             >How to Master Anything — The Korean Way</h3>
             <p class="desc">Nunchi, Ppalli-Ppalli, Han and more — Korean wisdom for fast, resilient learning.</p>
-            <a href="downloads/how-to-master-anything-korean-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'GUIDE',
+                        title: 'How to Master Anything — The Korean Way',
+                        desc: 'Nunchi, Ppalli-Ppalli, Han and more — Korean wisdom for fast, resilient learning.',
+                        img: 'downloads-previews/korean-way.png',
+                        pdf: 'downloads/how-to-master-anything-korean-way.pdf'
+                    })"
+                >🔍 Explore</button>
+                <a href="downloads/how-to-master-anything-korean-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+                <button type="button" class="add-to-cart-btn" onclick="addFreebieToCart('How to Master Anything — The Korean Way', this)">🛍 Add to Cart</button>
+            </div>
         </article>
 
         <article class="guide-card">
@@ -647,7 +771,21 @@
                 })"
             >How to Learn Anything — The Japanese Way</h3>
             <p class="desc">Shuhari, Kaizen, Hansei and more — the Japanese approach to lifelong learning.</p>
-            <a href="downloads/how-to-learn-anything-japanese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'GUIDE',
+                        title: 'How to Learn Anything — The Japanese Way',
+                        desc: 'Shuhari, Kaizen, Hansei and more — the Japanese approach to lifelong learning.',
+                        img: 'downloads-previews/japanese-way.png',
+                        pdf: 'downloads/how-to-learn-anything-japanese-way.pdf'
+                    })"
+                >🔍 Explore</button>
+                <a href="downloads/how-to-learn-anything-japanese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+                <button type="button" class="add-to-cart-btn" onclick="addFreebieToCart('How to Learn Anything — The Japanese Way', this)">🛍 Add to Cart</button>
+            </div>
         </article>
 
         <article class="guide-card">
@@ -675,7 +813,21 @@
                 })"
             >How to Build Network — The American Way</h3>
             <p class="desc">Elevator pitch, small talk, follow-ups, and personal branding — build your network the American way.</p>
-            <a href="downloads/how-to-build-network-american-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'GUIDE',
+                        title: 'How to Build Network — The American Way',
+                        desc: 'Elevator pitch, small talk, follow-ups, and personal branding — build your network the American way.',
+                        img: 'downloads-previews/american-way.png',
+                        pdf: 'downloads/how-to-build-network-american-way.pdf'
+                    })"
+                >🔍 Explore</button>
+                <a href="downloads/how-to-build-network-american-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
+                <button type="button" class="add-to-cart-btn" onclick="addFreebieToCart('How to Build Network — The American Way', this)">🛍 Add to Cart</button>
+            </div>
         </article>
 
     </div>
@@ -807,6 +959,29 @@ function closeFreebiePreview() {
 function closeFreebiePreviewOnBackdrop(event) {
     if (event.target.id === 'freebieModalOverlay') {
         closeFreebiePreview();
+    }
+}
+
+/* ---------- Add-to-cart for free coloring book / guides ---------- */
+function addFreebieToCart(name, btn) {
+    var countEl = document.getElementById('cartCount');
+    var current = parseInt(countEl.textContent, 10) || 0;
+    countEl.textContent = current + 1;
+
+    try {
+        var stored = localStorage.getItem('plannerHupCartCount');
+        var storedCount = stored ? parseInt(stored, 10) : current;
+        localStorage.setItem('plannerHupCartCount', (storedCount + 1));
+    } catch (e) {}
+
+    if (btn) {
+        var original = btn.textContent;
+        btn.textContent = '✓ Added';
+        btn.classList.add('added');
+        setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove('added');
+        }, 1500);
     }
 }
 </script>
