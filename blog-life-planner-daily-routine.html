@@ -28,14 +28,14 @@
     <meta property="og:title" content="My Life Planner: A Daily Routine That Sticks">
     <meta property="og:description" content="How My Life Planner helps you build a calm daily routine and balance self-care with your to-do list.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-2.png">
+    <meta property="og:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png">
     <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/blog-life-planner-daily-routine.html">
     <meta property="og:site_name" content="The Planner Hup">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="My Life Planner: A Daily Routine That Sticks">
     <meta name="twitter:description" content="How My Life Planner helps you build a calm daily routine and balance self-care with your to-do list.">
-    <meta name="twitter:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-2.png">
+    <meta name="twitter:image" content="https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png">
 
     <script type="application/ld+json">
     {
@@ -43,7 +43,7 @@
         "@type": "BlogPosting",
         "headline": "My Life Planner: Build a Daily Routine That Actually Sticks",
         "description": "How My Life Planner helps you build a calm daily routine, balance self-care with your to-do list, and actually stick with it past week one.",
-        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life-2.png",
+        "image": "https://theplannerhup-sketch.github.io/the-planner-hup/images/life-1.png",
         "author": { "@type": "Organization", "name": "The Planner Hup" },
         "publisher": { "@type": "Organization", "name": "The Planner Hup" },
         "mainEntityOfPage": "https://theplannerhup-sketch.github.io/the-planner-hup/blog-life-planner-daily-routine.html",
@@ -146,38 +146,246 @@
 
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: Arial, sans-serif; background: #fffafd; color: #432b37; line-height: 1.7; }
-        header.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 6%; background: #fffafd; border-bottom: 1px solid #f3dde6; }
-        header.navbar .logo { font-size: 20px; font-weight: 700; color: #432b37; text-decoration: none; }
-        header.navbar nav a { margin-left: 26px; color: #765866; text-decoration: none; font-weight: 600; font-size: 15px; }
-        header.navbar nav a:hover { color: #b85b82; }
-        article { max-width: 720px; margin: 0 auto; padding: 50px 6% 80px; }
-        article .blog-tag { display: inline-block; background: #fdeef3; color: #b85b82; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
-        article h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 20px; color: #432b37; }
-        article .cover-image { width: 100%; height: 320px; border-radius: 20px; overflow: hidden; background: #fff6fa; margin-bottom: 30px; }
-        article .cover-image img { width: 100%; height: 100%; object-fit: cover; }
-        .content-card { background: white; border-radius: 18px; padding: 26px 28px; box-shadow: 0 8px 24px rgba(70, 35, 50, 0.08); margin: 24px 0; }
-        .content-card h2 { margin-top: 0; font-size: 22px; color: #432b37; }
-        .feature-list { list-style: none; padding: 0; margin: 0; }
-        .feature-list li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3dde6; }
-        .feature-list li:last-child { border-bottom: none; }
-        .feature-dot { flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #b85b82; margin-top: 7px; }
-        .intro-text { font-size: 17px; color: #5a4450; }
-        article p, article li { font-size: 16px; color: #5a4450; }
-        article a { color: #b85b82; font-weight: 700; text-decoration: none; }
-        article a:hover { text-decoration: underline; }
-        .cta-box { background: #fdeef3; border-radius: 18px; padding: 24px; text-align: center; font-size: 16px; }
-        .back-link { display: inline-block; margin-bottom: 24px; font-size: 14px; }
-        .share-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 20px 0; }
-        .share-bar span.share-label { font-size: 13px; font-weight: 700; color: #765866; }
-        .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: #fdeef3; color: #b85b82; text-decoration: none; font-size: 16px; border: none; cursor: pointer; }
-        .share-btn:hover { background: #b85b82; color: white; }
-        footer#contact { text-align: center; padding: 40px 6%; background: #fff6fa; }
-        footer#contact h2 { margin: 0 0 6px; }
-        footer#contact p { color: #765866; margin: 0; }
-        footer#contact .copyright { margin-top: 16px; font-size: 13px; color: #a68493; }
-    
-        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #432b37; cursor: pointer; padding: 4px 8px; }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.7;
+        }
+
+        header.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+
+        header.navbar .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        header.navbar nav a {
+            margin-left: 26px;
+            color: #444;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        header.navbar nav a:hover {
+            color: #b85b82;
+        }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 6% 90px;
+        }
+
+        article .blog-tag {
+            display: block;
+            color: #999;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        article h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.25;
+            margin: 0 0 26px;
+            color: #1a1a1a;
+        }
+
+        article .cover-image {
+            width: 100%;
+            height: 360px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #f4f4f4;
+            margin-bottom: 20px;
+        }
+
+        article .cover-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-card {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            margin: 42px 0;
+        }
+
+        .content-card h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: 26px;
+            margin: 0 0 16px;
+            color: #1a1a1a;
+        }
+
+        .content-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 26px 0 8px;
+            color: #1a1a1a;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-dot {
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #b85b82;
+            margin-top: 9px;
+        }
+
+        .intro-text {
+            font-size: 18px;
+            color: #444;
+        }
+
+        article p, article li {
+            font-size: 16.5px;
+            color: #444;
+        }
+
+        article a {
+            color: #b85b82;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(184, 91, 130, 0.35);
+        }
+
+        article a:hover {
+            border-bottom-color: #b85b82;
+        }
+
+        .cta-box {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 30px 26px;
+            text-align: center;
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            margin-top: 12px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 13px;
+            color: #999;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border-bottom: none;
+        }
+
+        .back-link:hover {
+            color: #1a1a1a;
+        }
+
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 26px 0 10px;
+        }
+
+        .share-bar span.share-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #fafafa;
+            border: 1px solid #eee;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+            color: white;
+        }
+
+        footer#contact {
+            text-align: center;
+            padding: 40px 6%;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+        }
+
+        footer#contact h2 {
+            margin: 0 0 6px;
+            font-family: Georgia, serif;
+            font-weight: 400;
+        }
+
+        footer#contact p {
+            color: #666;
+            margin: 0;
+        }
+
+        footer#contact .copyright {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #1a1a1a; cursor: pointer; padding: 4px 8px; }
         @media (max-width: 700px) {
             header.navbar { flex-wrap: wrap; }
             .menu-toggle { display: block; }
@@ -210,7 +418,7 @@
     <h1>My Life Planner: Build a Daily Routine That Actually Sticks</h1>
 
     <div class="cover-image">
-        <img src="images/life-2.png" alt="My Life Planner daily routine and self-care">
+        <img src="images/life-1.png" alt="My Life Planner daily routine and self-care">
     </div>
 
     <div class="share-bar">
