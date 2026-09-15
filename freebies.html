@@ -231,6 +231,109 @@
             background: var(--rose);
             color: #fff !important;
         }
+
+        /* ---------- click-to-preview triggers ---------- */
+        .freebie-preview-trigger {
+            cursor: pointer;
+        }
+        .coloring-feature-body h3.freebie-preview-trigger:hover,
+        .guide-card h3.freebie-preview-trigger:hover {
+            color: var(--rose);
+        }
+
+        /* ---------- PREVIEW MODAL — like the product "Explore" popup ---------- */
+        .freebie-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(74, 52, 61, 0.55);
+            z-index: 999;
+            padding: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+        .freebie-modal-overlay.open {
+            display: flex;
+        }
+        .freebie-modal {
+            position: relative;
+            background: #fff;
+            border-radius: 28px;
+            max-width: 780px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 0;
+            box-shadow: 0 30px 70px rgba(74, 52, 61, 0.35);
+        }
+        @media (max-width: 700px) {
+            .freebie-modal {
+                grid-template-columns: 1fr;
+            }
+        }
+        .freebie-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: #ffffffdd;
+            color: var(--brown);
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .freebie-modal-visual {
+            background: #fff6fa;
+        }
+        .freebie-modal-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+        .freebie-modal-body {
+            padding: 32px 30px;
+        }
+        .freebie-modal-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--rose);
+            background: var(--soft-pink);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .freebie-modal-body h3 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(22px, 3vw, 28px);
+            margin: 0 0 12px;
+            color: var(--brown);
+        }
+        .freebie-modal-desc {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .freebie-modal-extra {
+            display: inline-block;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--dark-rose);
+            background: #fdeef3;
+            border: 1px solid #f3c7dc;
+            padding: 5px 12px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
     </style>
 
 </head>
@@ -378,7 +481,17 @@
     <!-- ============ COLORING BOOK — its own featured layout ============ -->
     <div class="coloring-feature" id="coloring-section">
 
-        <div class="coloring-feature-visual">
+        <div
+            class="coloring-feature-visual freebie-preview-trigger"
+            onclick="openFreebiePreview({
+                badge: 'COLOR & PLAY',
+                title: 'Princess Coloring Book',
+                desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                img: 'downloads-previews/princess-coloring-book.png',
+                pdf: 'downloads/princess-coloring-book.pdf',
+                extra: '👑 Ages 4–8'
+            })"
+        >
             <img
                 src="downloads-previews/princess-coloring-book.png"
                 alt="Princess Coloring Book"
@@ -388,7 +501,17 @@
 
         <div class="coloring-feature-body">
             <span class="mini-badge">COLOR &amp; PLAY</span>
-            <h3>Princess Coloring Book</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'COLOR & PLAY',
+                    title: 'Princess Coloring Book',
+                    desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                    img: 'downloads-previews/princess-coloring-book.png',
+                    pdf: 'downloads/princess-coloring-book.pdf',
+                    extra: '👑 Ages 4–8'
+                })"
+            >Princess Coloring Book</h3>
             <p class="desc">
                 22 pages of cute princess coloring pages, ready to print at home.
                 A fun, screen-free activity kids can start on right away.
@@ -416,51 +539,141 @@
     <div class="guides-grid">
 
         <article class="guide-card">
-            <div class="guide-cover">
+            <div
+                class="guide-cover freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Manage Time — The Swiss Way',
+                    desc: 'Learn punctuality, precision planning, and time discipline inspired by Swiss culture.',
+                    img: 'downloads-previews/swiss-way.png',
+                    pdf: 'downloads/how-to-manage-time-swiss-way.pdf'
+                })"
+            >
                 <img src="downloads-previews/swiss-way.png" alt="How to Manage Time — The Swiss Way" loading="lazy">
             </div>
             <span class="guide-badge">GUIDE</span>
-            <h3>How to Manage Time — The Swiss Way</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Manage Time — The Swiss Way',
+                    desc: 'Learn punctuality, precision planning, and time discipline inspired by Swiss culture.',
+                    img: 'downloads-previews/swiss-way.png',
+                    pdf: 'downloads/how-to-manage-time-swiss-way.pdf'
+                })"
+            >How to Manage Time — The Swiss Way</h3>
             <p class="desc">Learn punctuality, precision planning, and time discipline inspired by Swiss culture.</p>
             <a href="downloads/how-to-manage-time-swiss-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
         </article>
 
         <article class="guide-card">
-            <div class="guide-cover">
+            <div
+                class="guide-cover freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Master Anything — The Chinese Way',
+                    desc: 'Gongfu, Wu Wei, Guanxi and more — timeless Chinese principles for mastering any skill.',
+                    img: 'downloads-previews/chinese-way.png',
+                    pdf: 'downloads/how-to-master-anything-chinese-way.pdf'
+                })"
+            >
                 <img src="downloads-previews/chinese-way.png" alt="How to Master Anything — The Chinese Way" loading="lazy">
             </div>
             <span class="guide-badge">GUIDE</span>
-            <h3>How to Master Anything — The Chinese Way</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Master Anything — The Chinese Way',
+                    desc: 'Gongfu, Wu Wei, Guanxi and more — timeless Chinese principles for mastering any skill.',
+                    img: 'downloads-previews/chinese-way.png',
+                    pdf: 'downloads/how-to-master-anything-chinese-way.pdf'
+                })"
+            >How to Master Anything — The Chinese Way</h3>
             <p class="desc">Gongfu, Wu Wei, Guanxi and more — timeless Chinese principles for mastering any skill.</p>
             <a href="downloads/how-to-master-anything-chinese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
         </article>
 
         <article class="guide-card">
-            <div class="guide-cover">
+            <div
+                class="guide-cover freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Master Anything — The Korean Way',
+                    desc: 'Nunchi, Ppalli-Ppalli, Han and more — Korean wisdom for fast, resilient learning.',
+                    img: 'downloads-previews/korean-way.png',
+                    pdf: 'downloads/how-to-master-anything-korean-way.pdf'
+                })"
+            >
                 <img src="downloads-previews/korean-way.png" alt="How to Master Anything — The Korean Way" loading="lazy">
             </div>
             <span class="guide-badge">GUIDE</span>
-            <h3>How to Master Anything — The Korean Way</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Master Anything — The Korean Way',
+                    desc: 'Nunchi, Ppalli-Ppalli, Han and more — Korean wisdom for fast, resilient learning.',
+                    img: 'downloads-previews/korean-way.png',
+                    pdf: 'downloads/how-to-master-anything-korean-way.pdf'
+                })"
+            >How to Master Anything — The Korean Way</h3>
             <p class="desc">Nunchi, Ppalli-Ppalli, Han and more — Korean wisdom for fast, resilient learning.</p>
             <a href="downloads/how-to-master-anything-korean-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
         </article>
 
         <article class="guide-card">
-            <div class="guide-cover">
+            <div
+                class="guide-cover freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Learn Anything — The Japanese Way',
+                    desc: 'Shuhari, Kaizen, Hansei and more — the Japanese approach to lifelong learning.',
+                    img: 'downloads-previews/japanese-way.png',
+                    pdf: 'downloads/how-to-learn-anything-japanese-way.pdf'
+                })"
+            >
                 <img src="downloads-previews/japanese-way.png" alt="How to Learn Anything — The Japanese Way" loading="lazy">
             </div>
             <span class="guide-badge">GUIDE</span>
-            <h3>How to Learn Anything — The Japanese Way</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Learn Anything — The Japanese Way',
+                    desc: 'Shuhari, Kaizen, Hansei and more — the Japanese approach to lifelong learning.',
+                    img: 'downloads-previews/japanese-way.png',
+                    pdf: 'downloads/how-to-learn-anything-japanese-way.pdf'
+                })"
+            >How to Learn Anything — The Japanese Way</h3>
             <p class="desc">Shuhari, Kaizen, Hansei and more — the Japanese approach to lifelong learning.</p>
             <a href="downloads/how-to-learn-anything-japanese-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
         </article>
 
         <article class="guide-card">
-            <div class="guide-cover">
+            <div
+                class="guide-cover freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Build Network — The American Way',
+                    desc: 'Elevator pitch, small talk, follow-ups, and personal branding — build your network the American way.',
+                    img: 'downloads-previews/american-way.png',
+                    pdf: 'downloads/how-to-build-network-american-way.pdf'
+                })"
+            >
                 <img src="downloads-previews/american-way.png" alt="How to Build Network — The American Way" loading="lazy">
             </div>
             <span class="guide-badge">GUIDE</span>
-            <h3>How to Build Network — The American Way</h3>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'GUIDE',
+                    title: 'How to Build Network — The American Way',
+                    desc: 'Elevator pitch, small talk, follow-ups, and personal branding — build your network the American way.',
+                    img: 'downloads-previews/american-way.png',
+                    pdf: 'downloads/how-to-build-network-american-way.pdf'
+                })"
+            >How to Build Network — The American Way</h3>
             <p class="desc">Elevator pitch, small talk, follow-ups, and personal branding — build your network the American way.</p>
             <a href="downloads/how-to-build-network-american-way.pdf" download class="guide-download-btn">⬇ Download Free</a>
         </article>
@@ -468,6 +681,24 @@
     </div>
 
 </section>
+
+<!-- ============ FREEBIE PREVIEW MODAL — like the product "Explore" popup ============ -->
+<div class="freebie-modal-overlay" id="freebieModalOverlay" onclick="closeFreebiePreviewOnBackdrop(event)">
+    <div class="freebie-modal">
+        <button type="button" class="freebie-modal-close" onclick="closeFreebiePreview()" aria-label="Close preview">✕</button>
+        <div class="freebie-modal-visual">
+            <img id="freebieModalImg" src="" alt="">
+        </div>
+        <div class="freebie-modal-body">
+            <span class="freebie-modal-badge" id="freebieModalBadge"></span>
+            <h3 id="freebieModalTitle"></h3>
+            <p class="freebie-modal-desc" id="freebieModalDesc"></p>
+            <span class="freebie-modal-extra" id="freebieModalExtra" style="display:none;"></span>
+            <br>
+            <a id="freebieModalDownload" href="#" download class="free-download-btn">⬇ Download Free</a>
+        </div>
+    </div>
+</div>
 
 </main>
 
@@ -546,6 +777,38 @@ function openCart() {
 }
 
 function installPlannerHupApp() {}
+
+/* ---------- Freebie preview modal (like the product "Explore" popup) ---------- */
+function openFreebiePreview(item) {
+    document.getElementById('freebieModalImg').src = item.img;
+    document.getElementById('freebieModalImg').alt = item.title;
+    document.getElementById('freebieModalBadge').textContent = item.badge;
+    document.getElementById('freebieModalTitle').textContent = item.title;
+    document.getElementById('freebieModalDesc').textContent = item.desc;
+    document.getElementById('freebieModalDownload').href = item.pdf;
+
+    var extra = document.getElementById('freebieModalExtra');
+    if (item.extra) {
+        extra.textContent = item.extra;
+        extra.style.display = 'inline-block';
+    } else {
+        extra.style.display = 'none';
+    }
+
+    document.getElementById('freebieModalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFreebiePreview() {
+    document.getElementById('freebieModalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeFreebiePreviewOnBackdrop(event) {
+    if (event.target.id === 'freebieModalOverlay') {
+        closeFreebiePreview();
+    }
+}
 </script>
 
 </body>
