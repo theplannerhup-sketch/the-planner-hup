@@ -1232,14 +1232,28 @@
                 Contact
             </a>
 
-            <!-- LANGUAGE SWITCHER -->
-            <div class="lang-switcher" role="group" aria-label="Language selector">
-                <button type="button" data-lang-option="en" onclick="setLanguage('en')">
-                    <span class="flag">🇬🇧</span><span class="label">EN</span>
+            <!-- LANGUAGE SWITCHER: compact globe dropdown (EN / ID / KO) -->
+            <div class="lang-switcher-compact" id="langSwitcherCompact">
+                <button
+                    type="button"
+                    class="lang-globe-btn"
+                    onclick="toggleLangMenu(event)"
+                    aria-label="Change language"
+                    aria-haspopup="true"
+                >
+                    🌐
                 </button>
-                <button type="button" data-lang-option="id" onclick="setLanguage('id')">
-                    <span class="flag">🇮🇩</span><span class="label">ID</span>
-                </button>
+                <div class="lang-menu" id="langMenu">
+                    <button type="button" data-lang-option="en" onclick="setLanguage('en')">
+                        <span class="flag">🇬🇧</span> English
+                    </button>
+                    <button type="button" data-lang-option="id" onclick="setLanguage('id')">
+                        <span class="flag">🇮🇩</span> Bahasa Indonesia
+                    </button>
+                    <button type="button" data-lang-option="ko" onclick="setLanguage('ko')">
+                        <span class="flag">🇰🇷</span> 한국어
+                    </button>
+                </div>
             </div>
 
         </nav>

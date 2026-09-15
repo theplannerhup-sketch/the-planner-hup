@@ -81,6 +81,83 @@
   outline-offset: 2px;
 }
 
+/* ---------- Compact globe-icon dropdown (recommended: low visual clutter) ---------- */
+.lang-switcher-compact {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-globe-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--lang-border);
+  background: var(--lang-bg);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.lang-globe-btn:hover {
+  background: var(--lang-hover-bg);
+  transform: translateY(-1px);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  background: #ffffff;
+  border: 1px solid var(--lang-border);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(107, 92, 165, 0.18);
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 500;
+}
+
+.lang-menu.open {
+  display: flex;
+}
+
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--lang-text);
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.lang-menu button:hover {
+  background: var(--lang-hover-bg);
+}
+
+.lang-menu button.active {
+  background: var(--lang-active-bg);
+  color: #ffffff;
+}
+
+.lang-menu .flag {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
 /* ---------- Dropdown variant (optional alternative) ---------- */
 .lang-dropdown {
   position: relative;

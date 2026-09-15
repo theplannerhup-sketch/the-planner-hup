@@ -29,11 +29,13 @@
 
   const STORAGE_KEY = "site_lang";
   const DEFAULT_LANG = "en";
-  const SUPPORTED_LANGS = ["en", "id"];
+  const SUPPORTED_LANGS = ["en", "id", "ko"];
 
   /**
    * STEP 1: SMART AUTO-DETECTION
    * Priority: saved user choice > browser language > default ('en').
+   * Checks ALL of navigator.languages (not just the first) so a visitor
+   * with e.g. ["en-US", "ko-KR"] as a fallback list still gets matched.
    */
   function detectLanguage() {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -41,12 +43,14 @@
       return saved;
     }
 
-    // navigator.language e.g. "id", "id-ID", "en-US"
-    const browserLang = (navigator.language || navigator.userLanguage || "")
-      .toLowerCase();
+    const browserLangs = (navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || ""]
+    ).map((l) => l.toLowerCase());
 
-    if (browserLang.startsWith("id")) {
-      return "id";
+    for (const lang of browserLangs) {
+      if (lang.startsWith("id")) return "id";
+      if (lang.startsWith("ko")) return "ko";
     }
 
     return DEFAULT_LANG;
@@ -126,10 +130,34 @@
     if (!SUPPORTED_LANGS.includes(lang)) return;
     localStorage.setItem(STORAGE_KEY, lang);
     applyLanguage(lang);
+    closeLangMenu();
   }
 
   // Expose for switcher markup (onclick="setLanguage('id')") and console debugging
   window.setLanguage = setLanguage;
+
+  /**
+   * Compact globe-icon dropdown: toggles the language list open/closed.
+   */
+  function toggleLangMenu(event) {
+    event.stopPropagation();
+    const menu = document.getElementById("langMenu");
+    if (!menu) return;
+    menu.classList.toggle("open");
+  }
+
+  function closeLangMenu() {
+    const menu = document.getElementById("langMenu");
+    if (menu) menu.classList.remove("open");
+  }
+
+  window.toggleLangMenu = toggleLangMenu;
+
+  // Close the menu when clicking anywhere outside it
+  document.addEventListener("click", (e) => {
+    const wrapper = document.getElementById("langSwitcherCompact");
+    if (wrapper && !wrapper.contains(e.target)) closeLangMenu();
+  });
 
   // Boot on DOM ready
   document.addEventListener("DOMContentLoaded", () => {

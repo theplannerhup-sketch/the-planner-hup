@@ -188,6 +188,97 @@ const translations = {
       tagline: "Rencanakan harimu. Wujudkan mimpimu.",
       contactText: "Ada pertanyaan atau butuh bantuan? Email kami di"
     }
+  },
+
+  ko: {
+    meta: {
+      title: "미니멀 디지털 & 프린터블 플래너 | The Planner Hup",
+      description:
+        "아름다운 미니멀 플래너, 이슬람 서적 & 우르두 소설을 만나보세요. 인쇄용 및 디지털 파일, 즉시 다운로드. 오늘부터 아름답게 하루를 계획해보세요."
+    },
+    nav: {
+      products: "제품",
+      whyUs: "소개",
+      blog: "블로그",
+      freeTools: "무료 도구",
+      faq: "자주 묻는 질문",
+      about: "회사 소개",
+      more: "더보기 ▾",
+      contact: "문의하기",
+      dropdown: {
+        faq: "FAQ & 이용 방법",
+        author: "작가 소개",
+        gift: "플래너 선물하기",
+        freebies: "무료 다운로드",
+        bundles: "번들 & 할인",
+        reviews: "리뷰",
+        privacy: "개인정보 처리방침",
+        terms: "이용약관",
+        refund: "환불 및 반품 정책"
+      }
+    },
+    hero: {
+      eyebrow: "계획 • 독서 • 꿈",
+      heading1: "당신의 하루를",
+      heading2: "아름답게 정리하세요.",
+      text: "계획하고, 배우고, 꿈꾸는 것을 좋아하는 사람들을 위한 아름다운 플래너, 책, 소설.",
+      ctaPrimary: "컬렉션 보기 →",
+      ctaSecondary: "더 알아보기",
+      noteOne: "✨ 큰 꿈을 꾸세요",
+      noteTwo: "🌷 당신은 할 수 있어요!",
+      cardHeading: "당신만의 작은<br>아이디어 세상 ♡",
+      line1: "☐ 목표를 계획하세요",
+      line2: "☐ 새로운 것을 배우세요",
+      line3: "☐ 조금이라도 읽으세요",
+      line4: "☐ 더 크게 꿈꾸세요"
+    },
+    bundle: {
+      title: "🎁 번들 혜택: 플래너 또는 책 2개 구매 시 10% 할인",
+      text: "원하는 상품 2개를 알려주시고 WhatsApp으로 메시지를 보내주세요. 코드",
+      textEnd: "를 언급하시면 할인을 받으실 수 있습니다."
+    },
+    products: {
+      label: "우리의 컬렉션",
+      heading: "당신을 위한 것을 찾아보세요 ✨",
+      desc: "플래너, 책, 소설, 무료 다운로드 중에서 선택하세요."
+    },
+    whyUs: {
+      label: "왜 The Planner Hup인가요?",
+      heading: "계획하고, 배우고, 읽는 것 모두 아름다울 수 있어요. ♡",
+      text: "우리는 유용한 것도 아름답고, 단순하고, 영감을 줄 수 있다고 믿습니다.",
+      cta: "컬렉션 보기",
+      benefit1Title: "간단함",
+      benefit1Desc: "이해하기 쉽고 사용하기 쉬워요.",
+      benefit2Title: "아름다움",
+      benefit2Desc: "계획이 특별하게 느껴지도록 디자인했어요.",
+      benefit3Title: "실용적",
+      benefit3Desc: "실제 일상 루틴을 위해 만들어졌어요."
+    },
+    reviews: {
+      label: "고객들의 이야기",
+      heading: "고객 리뷰",
+      empty: "이제 막 시작했어요 — The Planner Hup에 대한 첫 경험을 공유해주세요! ♡",
+      cta: "리뷰 남기기"
+    },
+    reviewForm: {
+      name: "이름",
+      product: "어떤 제품인가요?",
+      productPlaceholder: "예: Student Planner 2026",
+      rating: "평점",
+      review: "리뷰 내용",
+      submit: "리뷰 제출",
+      note: "이메일 앱이 열려 리뷰를 직접 보낼 수 있습니다."
+    },
+    cta: {
+      label: "다음 챕터",
+      heading: "계획하고. 읽고. 꿈꾸세요.",
+      text: "작게 시작하세요. 크게 꿈꾸세요. 아름답게 만들어가세요.",
+      button: "지금 둘러보기 ✨"
+    },
+    footer: {
+      tagline: "당신의 하루를 계획하고, 당신의 꿈을 만들어가세요.",
+      contactText: "질문이 있거나 도움이 필요하신가요? 이메일을 보내주세요:"
+    }
   }
 };
 
