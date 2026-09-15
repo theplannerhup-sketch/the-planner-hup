@@ -98,9 +98,9 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fffafd;
-            color: #432b37;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
         }
 
         header.navbar {
@@ -108,22 +108,22 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background: #fffafd;
-            border-bottom: 1px solid #f3dde6;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
         }
 
         header.navbar .logo {
             font-size: 20px;
             font-weight: 700;
-            color: #432b37;
+            color: #1a1a1a;
             text-decoration: none;
         }
 
         header.navbar nav a {
             margin-left: 26px;
-            color: #765866;
+            color: #444;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 15px;
         }
 
@@ -131,50 +131,51 @@
             color: #b85b82;
         }
 
-        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #432b37; cursor: pointer; padding: 4px 8px; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: #1a1a1a; cursor: pointer; padding: 4px 8px; }
 
         .post-hero {
             text-align: center;
-            padding: 55px 6% 20px;
+            padding: 60px 6% 20px;
         }
 
         .post-hero span.blog-tag {
-            display: inline-block;
-            background: #fdeef3;
-            color: #b85b82;
+            display: block;
+            color: #999;
             font-size: 12px;
             font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 14px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
         }
 
         .post-hero h1 {
-            font-size: clamp(26px, 4vw, 40px);
-            margin: 0 0 14px;
-            color: #432b37;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: clamp(30px, 4.5vw, 44px);
+            margin: 0 0 16px;
+            color: #1a1a1a;
             max-width: 780px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .post-hero p.subtitle {
-            color: #765866;
-            max-width: 620px;
+            color: #666;
+            max-width: 600px;
             margin: 0 auto;
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.6;
         }
 
         .post-hero-image {
             max-width: 900px;
-            margin: 30px auto 0;
+            margin: 34px auto 0;
             padding: 0 6%;
         }
 
         .post-hero-image img {
             width: 100%;
-            border-radius: 20px;
+            border-radius: 6px;
             display: block;
         }
 
@@ -182,20 +183,22 @@
             max-width: 720px;
             margin: 40px auto 0;
             padding: 0 6%;
-            font-size: 16px;
+            font-size: 16.5px;
             line-height: 1.8;
-            color: #432b37;
+            color: #444;
         }
 
         article.post-content h2 {
-            font-size: 23px;
-            margin: 42px 0 14px;
-            color: #432b37;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 400;
+            font-size: 26px;
+            margin: 44px 0 16px;
+            color: #1a1a1a;
         }
 
         article.post-content p {
             margin: 0 0 18px;
-            color: #4d3541;
+            color: #444;
         }
 
         article.post-content ul {
@@ -205,48 +208,48 @@
 
         article.post-content li {
             margin-bottom: 8px;
-            color: #4d3541;
+            color: #444;
         }
 
         article.post-content a.inline-link {
             color: #b85b82;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
+            border-bottom: 1px solid rgba(184, 91, 130, 0.35);
         }
 
         article.post-content a.inline-link:hover {
-            text-decoration: underline;
+            border-bottom-color: #b85b82;
         }
 
         .cta-box {
-            background: linear-gradient(135deg, #fdeef3, #fff3f7);
-            border: 1px solid #f3c9d9;
-            border-radius: 20px;
-            padding: 26px 28px;
-            margin: 30px 0;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 28px;
+            margin: 34px 0;
             text-align: center;
         }
 
         .cta-box p {
             margin: 0 0 16px;
-            color: #432b37;
+            color: #1a1a1a;
             font-weight: 600;
         }
 
         .cta-box a.category-card-button {
             display: inline-block;
-            padding: 13px 26px;
+            padding: 12px 24px;
             border-radius: 30px;
-            background: #b85b82;
+            background: #1a1a1a;
             color: white;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 700;
-            box-shadow: 0 7px 18px rgba(184, 91, 130, 0.22);
+            font-weight: 600;
         }
 
         .cta-box a.category-card-button:hover {
-            background: #a84d73;
+            background: #b85b82;
         }
 
         .faq-section {
@@ -256,28 +259,28 @@
         }
 
         .faq-section h2 {
-            font-size: 23px;
-            margin: 0 0 20px;
-            color: #432b37;
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: 26px;
+            margin: 0 0 24px;
+            color: #1a1a1a;
         }
 
         .faq-item {
-            background: white;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin-bottom: 14px;
-            box-shadow: 0 6px 20px rgba(70, 35, 50, 0.08);
+            padding: 20px 0;
+            border-top: 1px solid #eee;
         }
 
         .faq-item h3 {
             font-size: 16px;
+            font-weight: 700;
             margin: 0 0 8px;
-            color: #432b37;
+            color: #1a1a1a;
         }
 
         .faq-item p {
-            font-size: 14px;
-            color: #765866;
+            font-size: 14.5px;
+            color: #666;
             margin: 0;
             line-height: 1.6;
         }
@@ -289,31 +292,38 @@
         }
 
         .back-to-blog a {
-            color: #b85b82;
-            font-weight: 700;
+            color: #999;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+        }
+
+        .back-to-blog a:hover {
+            color: #1a1a1a;
         }
 
         footer#contact {
             text-align: center;
             padding: 40px 6%;
-            background: #fff6fa;
+            background: #fafafa;
+            border-top: 1px solid #eee;
         }
 
         footer#contact h2 {
             margin: 0 0 6px;
+            font-family: Georgia, serif;
+            font-weight: 400;
         }
 
         footer#contact p {
-            color: #765866;
+            color: #666;
             margin: 0;
         }
 
         footer#contact .copyright {
             margin-top: 16px;
             font-size: 13px;
-            color: #a68493;
+            color: #999;
         }
 
         @media (max-width: 700px) {
@@ -322,6 +332,134 @@
             header.navbar nav { display: none; width: 100%; flex-direction: column; margin-top: 14px; }
             header.navbar nav.open { display: flex; }
             header.navbar nav a { margin: 8px 0; }
+        }
+
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 26px 0 0;
+        }
+
+        .share-bar span.share-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #fafafa;
+            border: 1px solid #eee;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+            color: white;
+        }
+
+        .author-mini-banner {
+            max-width: 720px;
+            margin: 20px auto 0;
+            padding: 0 6%;
+        }
+
+        .author-mini-banner a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .author-mini-banner .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #eee2e7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .author-mini-banner .author-info p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #666;
+        }
+
+        .author-mini-banner .author-info strong {
+            display: block;
+            font-size: 14.5px;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .related-posts {
+            max-width: 720px;
+            margin: 20px auto 60px;
+            padding: 0 6%;
+        }
+
+        .related-posts h2 {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: 22px;
+            margin: 0 0 20px;
+            color: #1a1a1a;
+        }
+
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+        }
+
+        .related-posts-grid a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-posts-grid .related-tag {
+            display: block;
+            color: #999;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .related-posts-grid h3 {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        .related-posts-grid a:hover h3 {
+            color: #b85b82;
         }
     </style>
 </head>
@@ -348,6 +486,24 @@
 
 <div class="post-hero-image">
     <img src="images/korean-1.png" alt="Daily Korean study routine for beginners">
+</div>
+
+<div class="share-bar">
+    <span class="share-label">Share:</span>
+    <button class="share-btn" onclick="shareWhatsApp()" aria-label="Share on WhatsApp">💬</button>
+    <button class="share-btn" onclick="shareFacebook()" aria-label="Share on Facebook">f</button>
+    <button class="share-btn" onclick="shareTwitter()" aria-label="Share on X">𝕏</button>
+    <button class="share-btn" onclick="copyLink(this)" aria-label="Copy link">🔗</button>
+</div>
+
+<div class="author-mini-banner">
+    <a href="author.html">
+        <span class="author-avatar">✍️</span>
+        <span class="author-info">
+            <strong>Sania Intazar</strong>
+            <p>Founder &amp; author at The Planner Hup</p>
+        </span>
+    </a>
 </div>
 
 <article class="post-content">
@@ -412,9 +568,34 @@
     </div>
 </div>
 
+<div class="related-posts">
+    <h2>You Might Also Like</h2>
+    <div class="related-posts-grid">
+        <a href="blog-365-days-learning-korean.html">
+            <span class="related-tag">Korean Learning</span>
+            <h3>365 Days of Learning Korean: A Beginner's Guide</h3>
+        </a>
+        <a href="glow-up-korean-secrets.html">
+            <span class="related-tag">Skincare Guide</span>
+            <h3>Glow-Up Korean Secrets: Natural Remedies &amp; Daily Rituals</h3>
+        </a>
+        <a href="blog-life-planner-daily-routine.html">
+            <span class="related-tag">Daily Routine</span>
+            <h3>My Life Planner: Build a Daily Routine That Actually Sticks</h3>
+        </a>
+    </div>
+</div>
+
 <div class="back-to-blog">
     <a href="blog.html">← Back to Blog</a>
 </div>
+
+<script>
+function shareWhatsApp(){ window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' - ' + window.location.href), '_blank'); }
+function shareFacebook(){ window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank'); }
+function shareTwitter(){ window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank'); }
+function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then(function(){ var orig = btn.textContent; btn.textContent='✓'; setTimeout(function(){btn.textContent=orig;}, 1500); }); }
+</script>
 
 <footer id="contact">
     <h2>The Planner Hup ♡</h2>

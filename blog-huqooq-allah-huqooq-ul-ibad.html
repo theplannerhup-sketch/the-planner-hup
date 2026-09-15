@@ -324,6 +324,134 @@
             header.navbar nav.open { display: flex; }
             header.navbar nav a { margin: 8px 0; }
         }
+
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 26px 0 0;
+        }
+
+        .share-bar span.share-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #fafafa;
+            border: 1px solid #eee;
+            color: #444;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+            color: white;
+        }
+
+        .author-mini-banner {
+            max-width: 720px;
+            margin: 20px auto 0;
+            padding: 0 6%;
+        }
+
+        .author-mini-banner a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 16px 20px;
+        }
+
+        .author-mini-banner .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #eee2e7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .author-mini-banner .author-info p {
+            margin: 0;
+            font-size: 13.5px;
+            color: #666;
+        }
+
+        .author-mini-banner .author-info strong {
+            display: block;
+            font-size: 14.5px;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .related-posts {
+            max-width: 720px;
+            margin: 20px auto 60px;
+            padding: 0 6%;
+        }
+
+        .related-posts h2 {
+            font-family: Georgia, serif;
+            font-weight: 400;
+            font-size: 22px;
+            margin: 0 0 20px;
+            color: #1a1a1a;
+        }
+
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+        }
+
+        .related-posts-grid a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-posts-grid .related-tag {
+            display: block;
+            color: #999;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .related-posts-grid h3 {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+            color: #1a1a1a;
+        }
+
+        .related-posts-grid a:hover h3 {
+            color: #b85b82;
+        }
     </style>
 </head>
 <body>
@@ -349,6 +477,24 @@
 
 <div class="post-hero-image">
     <img src="images/book 1.png" alt="Huqooq Allah Aur Huqooq-ul-Ibad book cover">
+</div>
+
+<div class="share-bar">
+    <span class="share-label">Share:</span>
+    <button class="share-btn" onclick="shareWhatsApp()" aria-label="Share on WhatsApp">💬</button>
+    <button class="share-btn" onclick="shareFacebook()" aria-label="Share on Facebook">f</button>
+    <button class="share-btn" onclick="shareTwitter()" aria-label="Share on X">𝕏</button>
+    <button class="share-btn" onclick="copyLink(this)" aria-label="Copy link">🔗</button>
+</div>
+
+<div class="author-mini-banner">
+    <a href="author.html">
+        <span class="author-avatar">✍️</span>
+        <span class="author-info">
+            <strong>Sania Intazar</strong>
+            <p>Founder &amp; author at The Planner Hup</p>
+        </span>
+    </a>
 </div>
 
 <article class="post-content">
@@ -407,9 +553,34 @@
     </div>
 </div>
 
+<div class="related-posts">
+    <h2>You Might Also Like</h2>
+    <div class="related-posts-grid">
+        <a href="fahm-ul-quran.html">
+            <span class="related-tag">Islamic Book</span>
+            <h3>Fahm-ul-Quran: Building Deeper Understanding of the Quran</h3>
+        </a>
+        <a href="hazrat-ali-majmua-e-quran.html">
+            <span class="related-tag">Islamic Book</span>
+            <h3>Hazrat Ali Ka Majmua-e-Quran: Reflections and Wisdom</h3>
+        </a>
+        <a href="blog-life-planner-daily-routine.html">
+            <span class="related-tag">Daily Routine</span>
+            <h3>My Life Planner: Build a Daily Routine That Actually Sticks</h3>
+        </a>
+    </div>
+</div>
+
 <div class="back-to-blog">
     <a href="blog.html">← Back to Blog</a>
 </div>
+
+<script>
+function shareWhatsApp(){ window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' - ' + window.location.href), '_blank'); }
+function shareFacebook(){ window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank'); }
+function shareTwitter(){ window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank'); }
+function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then(function(){ var orig = btn.textContent; btn.textContent='✓'; setTimeout(function(){btn.textContent=orig;}, 1500); }); }
+</script>
 
 <footer id="contact">
     <h2>The Planner Hup ♡</h2>
