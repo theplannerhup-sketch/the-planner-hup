@@ -63,6 +63,42 @@
             margin: 0;
         }
 
+        /* ---------- PAGE HERO — small, single-column header for this
+           inner page. The homepage's ".hero" class is 88vh tall and
+           built for a 2-column layout (text + planner mockup card);
+           reusing it here left a big empty-looking block since this
+           page has no second column. This is sized to fit its content
+           instead. ---------- */
+        .freebie-page-hero {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 70px 6% 20px;
+            text-align: center;
+        }
+        .freebie-page-hero .eyebrow {
+            color: var(--rose);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+        .freebie-page-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.1;
+            color: var(--brown);
+            margin-bottom: 16px;
+        }
+        .freebie-page-hero h1 span {
+            display: block;
+            color: var(--rose);
+        }
+        .freebie-page-hero .hero-text {
+            font-size: 15.5px;
+            color: var(--text);
+            margin: 0 auto;
+        }
+
         /* ---------- COLORING BOOK — single featured card ---------- */
         .coloring-feature {
             max-width: 1000px;
@@ -91,6 +127,8 @@
             overflow: hidden;
             aspect-ratio: 1 / 1;
             box-shadow: 0 18px 40px rgba(184, 95, 130, 0.18);
+            background: #fdeef5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8b8cf' width='40' height='40'%3E%3Cpath d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E") no-repeat center center;
+            background-size: 40px;
         }
         .coloring-feature-visual img {
             width: 100%;
@@ -179,7 +217,8 @@
             border-radius: 14px;
             overflow: hidden;
             margin-bottom: 16px;
-            background: #f4f0f1;
+            background: #f4f0f1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d7bfc8' width='32' height='32'%3E%3Cpath d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E") no-repeat center center;
+            background-size: 32px;
             box-shadow: 0 6px 16px rgba(74, 52, 61, 0.12);
         }
         .guide-card .guide-cover img {
@@ -499,25 +538,21 @@
 
 <main>
 
-<section class="hero" style="padding-bottom: 20px;">
+<section class="freebie-page-hero">
 
-    <div class="hero-content">
+    <p class="eyebrow">
+        FREE FOR YOU
+    </p>
 
-        <p class="eyebrow">
-            FREE FOR YOU
-        </p>
+    <h1>
+        Free Downloads
+        <span>coloring pages &amp; guides ♡</span>
+    </h1>
 
-        <h1>
-            Free Downloads
-            <span>coloring pages &amp; guides ♡</span>
-        </h1>
-
-        <p class="hero-text">
-            Enjoy these free printables — a princess coloring book and
-            five self-growth guides. Download instantly, no sign-up needed.
-        </p>
-
-    </div>
+    <p class="hero-text">
+        Enjoy these free printables — a princess coloring book and
+        five self-growth guides. Download instantly, no sign-up needed.
+    </p>
 
 </section>
 
@@ -552,7 +587,7 @@
             <img
                 src="downloads-previews/princess-coloring-book.png"
                 alt="Princess Coloring Book"
-                loading="lazy"
+                onerror="this.style.visibility='hidden'"
             >
         </div>
 
@@ -622,7 +657,7 @@
                     pdf: 'downloads/how-to-manage-time-swiss-way.pdf'
                 })"
             >
-                <img src="downloads-previews/swiss-way.png" alt="How to Manage Time — The Swiss Way" loading="lazy">
+                <img src="downloads-previews/swiss-way.png" alt="How to Manage Time — The Swiss Way" onerror="this.style.visibility=&quot;hidden&quot;">
             </div>
             <span class="guide-badge">GUIDE</span>
             <h3
@@ -663,7 +698,7 @@
                     pdf: 'downloads/how-to-master-anything-chinese-way.pdf'
                 })"
             >
-                <img src="downloads-previews/chinese-way.png" alt="How to Master Anything — The Chinese Way" loading="lazy">
+                <img src="downloads-previews/chinese-way.png" alt="How to Master Anything — The Chinese Way" onerror="this.style.visibility=&quot;hidden&quot;">
             </div>
             <span class="guide-badge">GUIDE</span>
             <h3
@@ -704,7 +739,7 @@
                     pdf: 'downloads/how-to-master-anything-korean-way.pdf'
                 })"
             >
-                <img src="downloads-previews/korean-way.png" alt="How to Master Anything — The Korean Way" loading="lazy">
+                <img src="downloads-previews/korean-way.png" alt="How to Master Anything — The Korean Way" onerror="this.style.visibility=&quot;hidden&quot;">
             </div>
             <span class="guide-badge">GUIDE</span>
             <h3
@@ -745,7 +780,7 @@
                     pdf: 'downloads/how-to-learn-anything-japanese-way.pdf'
                 })"
             >
-                <img src="downloads-previews/japanese-way.png" alt="How to Learn Anything — The Japanese Way" loading="lazy">
+                <img src="downloads-previews/japanese-way.png" alt="How to Learn Anything — The Japanese Way" onerror="this.style.visibility=&quot;hidden&quot;">
             </div>
             <span class="guide-badge">GUIDE</span>
             <h3
@@ -786,7 +821,7 @@
                     pdf: 'downloads/how-to-build-network-american-way.pdf'
                 })"
             >
-                <img src="downloads-previews/american-way.png" alt="How to Build Network — The American Way" loading="lazy">
+                <img src="downloads-previews/american-way.png" alt="How to Build Network — The American Way" onerror="this.style.visibility=&quot;hidden&quot;">
             </div>
             <span class="guide-badge">GUIDE</span>
             <h3
