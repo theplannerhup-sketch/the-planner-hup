@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#b85b82">
+    <link rel="icon" type="image/png" href="images/icon-192.png">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+
+    <title>Free Princess Coloring Book | The Planner Hup</title>
+    <meta name="description" content="Free printable 22-page princess coloring book from The Planner Hup. Download instantly, no sign-up needed.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Planner Hup">
+
+    <link rel="canonical" href="https://theplannerhup-sketch.github.io/the-planner-hup/freebies-coloring.html">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Cpath d='M50 82 C28 66 12 50 12 32 C12 18 23 9 34 9 C43 9 48 15 50 21 C52 15 57 9 66 9 C77 9 88 18 88 32 C88 50 72 66 50 82 Z' fill='none' stroke='%23b85f82' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <meta property="og:title" content="Free Princess Coloring Book | The Planner Hup">
+    <meta property="og:description" content="Free printable 22-page princess coloring book from The Planner Hup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theplannerhup-sketch.github.io/the-planner-hup/freebies-coloring.html">
+    <meta property="og:site_name" content="The Planner Hup">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- =========================================================
+         FREEBIES PAGE — scoped styles only used on this page.
+         Fixes the layout so the coloring book gets its own playful
+         "featured" card, and the guides get their own uniform,
+         book-cover style grid — instead of both sharing the plain
+         .product-card look meant for the homepage category cards.
+         ========================================================= -->
+    <style>
+        .freebie-section-heading {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        .freebie-section-heading .mini-label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--rose);
+            background: var(--soft-pink);
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .freebie-section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(26px, 3.4vw, 34px);
+            margin: 0 0 8px;
+            color: var(--brown);
+        }
+        .freebie-section-heading p {
+            color: var(--text);
+            font-size: 14.5px;
+            margin: 0;
+        }
+
+        /* ---------- COLORING BOOK — single featured card ---------- */
+        .coloring-feature {
+            max-width: 1000px;
+            margin: 0 auto 90px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+            background: linear-gradient(135deg, #fff3f8, #fdeef8);
+            border: 2px solid #f3c7dc;
+            border-radius: 32px;
+            padding: 36px;
+            position: relative;
+        }
+        .coloring-feature::before {
+            content: "✨";
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            font-size: 26px;
+            opacity: 0.7;
+        }
+        .coloring-feature-visual {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 18px 40px rgba(184, 95, 130, 0.18);
+        }
+        .coloring-feature-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .coloring-feature-body .mini-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f4a3c4, #d977a8);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .coloring-feature-body h3 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(26px, 3vw, 34px);
+            margin: 0 0 12px;
+            color: var(--brown);
+        }
+        .coloring-feature-body p.desc {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .coloring-feature-body .age-tag {
+            display: inline-block;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--dark-rose);
+            background: #ffffffaa;
+            border: 1px solid #f3c7dc;
+            padding: 5px 12px;
+            border-radius: 16px;
+            margin-bottom: 22px;
+        }
+        .coloring-feature-body .free-download-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--rose), var(--dark-rose));
+            color: #fff;
+            font-weight: 700;
+            font-size: 14.5px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            box-shadow: 0 10px 22px rgba(184, 95, 130, 0.28);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .coloring-feature-body .free-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(184, 95, 130, 0.34);
+        }
+
+        @media (max-width: 780px) {
+            .coloring-feature { grid-template-columns: 1fr; padding: 26px; }
+        }
+
+        /* ---------- GUIDES — uniform book-cover style grid ---------- */
+        .guides-grid {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 26px;
+        }
+        .guide-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 16px 16px 22px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .guide-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(74, 52, 61, 0.10);
+        }
+        .guide-card .guide-cover {
+            aspect-ratio: 3 / 4;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            background: #f4f0f1;
+            box-shadow: 0 6px 16px rgba(74, 52, 61, 0.12);
+        }
+        .guide-card .guide-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .guide-card .guide-badge {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--dark-rose);
+            background: var(--soft-pink);
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+        .guide-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 17px;
+            line-height: 1.35;
+            margin: 0 0 8px;
+            color: var(--brown);
+        }
+        .guide-card p.desc {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .guide-card .guide-download-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: var(--cream);
+            border: 1.5px solid var(--rose);
+            color: var(--dark-rose) !important;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 14px;
+            border-radius: 24px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .guide-card .guide-download-btn:hover {
+            background: var(--rose);
+            color: #fff !important;
+        }
+
+        /* ---------- click-to-preview triggers ---------- */
+        .freebie-preview-trigger {
+            cursor: pointer;
+        }
+        .coloring-feature-body h3.freebie-preview-trigger:hover,
+        .guide-card h3.freebie-preview-trigger:hover {
+            color: var(--rose);
+        }
+
+        /* ---------- three-button row: Explore / Download / Add to Cart ---------- */
+        .freebie-btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .guide-card .freebie-btn-row {
+            flex-direction: column;
+            margin-top: 6px;
+        }
+        .explore-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: transparent;
+            border: 1.5px solid var(--rose);
+            color: var(--dark-rose);
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 10px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .explore-btn:hover {
+            background: var(--rose);
+            color: #fff;
+        }
+        .add-to-cart-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--brown);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 10px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.15s ease;
+        }
+        .add-to-cart-btn:hover {
+            opacity: 0.9;
+        }
+        .add-to-cart-btn.added {
+            background: #3f9142;
+        }
+        .coloring-feature-body .explore-btn,
+        .coloring-feature-body .add-to-cart-btn {
+            font-size: 14.5px;
+            padding: 14px 24px;
+        }
+        .guide-card .explore-btn,
+        .guide-card .add-to-cart-btn,
+        .guide-card .guide-download-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ---------- PREVIEW MODAL — like the product "Explore" popup ---------- */
+        .freebie-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(74, 52, 61, 0.55);
+            z-index: 999;
+            padding: 24px;
+            align-items: center;
+            justify-content: center;
+        }
+        .freebie-modal-overlay.open {
+            display: flex;
+        }
+        .freebie-modal {
+            position: relative;
+            background: #fff;
+            border-radius: 28px;
+            max-width: 780px;
+            width: 100%;
+            max-height: 88vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 0;
+            box-shadow: 0 30px 70px rgba(74, 52, 61, 0.35);
+        }
+        @media (max-width: 700px) {
+            .freebie-modal {
+                grid-template-columns: 1fr;
+            }
+        }
+        .freebie-modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: #ffffffdd;
+            color: var(--brown);
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .freebie-modal-visual {
+            background: #fff6fa;
+            position: relative;
+        }
+        .freebie-modal-visual img {
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: contain;
+            display: block;
+        }
+        .freebie-modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: #ffffffe6;
+            color: var(--brown);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(74, 52, 61, 0.25);
+        }
+        .freebie-modal-nav-prev {
+            left: 12px;
+        }
+        .freebie-modal-nav-next {
+            right: 12px;
+        }
+        .freebie-modal-nav:hover {
+            background: var(--rose);
+            color: #fff;
+        }
+        .freebie-modal-nav[disabled] {
+            opacity: 0.35;
+            cursor: default;
+            pointer-events: none;
+        }
+        .freebie-modal-page-counter {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4a343dcc;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 14px;
+        }
+        .freebie-modal-body {
+            padding: 32px 30px;
+        }
+        .freebie-modal-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--rose);
+            background: var(--soft-pink);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .freebie-modal-body h3 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(22px, 3vw, 28px);
+            margin: 0 0 12px;
+            color: var(--brown);
+        }
+        .freebie-modal-desc {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .freebie-modal-extra {
+            display: inline-block;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--dark-rose);
+            background: #fdeef3;
+            border: 1px solid #f3c7dc;
+            padding: 5px 12px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* ---------- CART DRAWER ---------- */
+        .freebie-cart-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(74, 52, 61, 0.45);
+            z-index: 1000;
+            justify-content: flex-end;
+        }
+        .freebie-cart-overlay.open {
+            display: flex;
+        }
+        .freebie-cart-drawer {
+            background: #fff;
+            width: 100%;
+            max-width: 380px;
+            height: 100%;
+            box-shadow: -12px 0 40px rgba(74, 52, 61, 0.25);
+            display: flex;
+            flex-direction: column;
+            padding: 26px 22px;
+            overflow-y: auto;
+        }
+        .freebie-cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .freebie-cart-header h3 {
+            margin: 0;
+            font-family: "Playfair Display", serif;
+            color: var(--brown);
+            font-size: 20px;
+        }
+        .freebie-cart-close {
+            background: #fdeef3;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--brown);
+            font-size: 14px;
+        }
+        .freebie-cart-empty {
+            color: var(--text);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .freebie-cart-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f3dde6;
+        }
+        .freebie-cart-item img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .freebie-cart-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .freebie-cart-item-info h4 {
+            margin: 0 0 6px;
+            font-size: 14px;
+            color: var(--brown);
+            line-height: 1.3;
+        }
+        .freebie-cart-item-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .freebie-cart-item-actions a {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--dark-rose);
+            text-decoration: none;
+        }
+        .freebie-cart-item-remove {
+            background: none;
+            border: none;
+            color: #a68493;
+            cursor: pointer;
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        The Planner Hup ♡
+    </a>
+
+    <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+
+    <div class="nav-actions">
+
+        <nav>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#about">
+                Why Us
+            </a>
+
+            <a href="blog.html">
+                Blog
+            </a>
+
+            <a href="tools.html">
+                Free Tools
+            </a>
+
+            <a href="faq.html">
+                FAQ
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <div class="nav-dropdown">
+
+                <button
+                    type="button"
+                    class="nav-dropdown-toggle"
+                    onclick="toggleNavDropdown(event)"
+                >
+                    More ▾
+                </button>
+
+                <div class="nav-dropdown-menu" id="navDropdownMenu">
+                    <a href="faq.html">FAQ &amp; How It Works</a>
+                    <a href="author.html">Meet the Author</a>
+                    <a href="gift-a-planner.html">Gift a Planner</a>
+                    <a href="freebies.html">Free Downloads</a>
+                    <a href="bundles.html">Bundles &amp; Offers</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+                    <a href="refund-and-return-policy.html">Refund &amp; Return Policy</a>
+                </div>
+
+            </div>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <button
+            type="button"
+            class="cart-icon-button"
+            id="installAppButton"
+            onclick="installPlannerHupApp()"
+            aria-label="Install app"
+            style="display:none; margin-right: 8px;"
+        >
+            📲
+        </button>
+
+        <button
+            type="button"
+            class="cart-icon-button"
+            id="coloringCartIconButton"
+            onclick="openFreebieCart('coloring')"
+            aria-label="Open coloring book cart"
+            title="Coloring Book cart"
+        >
+            🎨
+            <span class="cart-count" id="coloringCartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+
+
+<main>
+
+<section class="hero" style="padding-bottom: 20px;">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            FREE FOR YOU
+        </p>
+
+        <h1>
+            Free Coloring Book
+            <span>print, color &amp; play ♡</span>
+        </h1>
+
+        <p class="hero-text">
+            Enjoy this free printable — a 22-page princess coloring book.
+            Download instantly, no sign-up needed.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="products" id="freebies-products">
+
+    <p class="section-label">
+        100% FREE
+    </p>
+
+    <h2>
+        Grab yours today ✨
+    </h2>
+
+    <p class="section-description">
+        Print, color and play — completely free.
+    </p>
+
+    <!-- ============ COLORING BOOK — its own featured layout ============ -->
+    <div class="coloring-feature" id="coloring-section">
+
+        <div
+            class="coloring-feature-visual freebie-preview-trigger"
+            onclick="openFreebiePreview({
+                badge: 'COLOR & PLAY',
+                title: 'Princess Coloring Book',
+                desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                img: 'downloads-previews/princess-coloring-book.png',
+                pages: [
+                    'downloads-previews/coloring-pages/coloring-page-01.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-02.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-03.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-04.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-05.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-06.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-07.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-08.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-09.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-10.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-11.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-12.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-13.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-14.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-15.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-16.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-17.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-18.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-19.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-20.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-21.jpg',
+                    'downloads-previews/coloring-pages/coloring-page-22.jpg'
+                ],
+                pdf: 'downloads/princess-coloring-book.pdf',
+                extra: '👑 Ages 4–8'
+            })"
+        >
+            <img
+                src="downloads-previews/princess-coloring-book.png"
+                alt="Princess Coloring Book"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="coloring-feature-body">
+            <span class="mini-badge">COLOR &amp; PLAY</span>
+            <h3
+                class="freebie-preview-trigger"
+                onclick="openFreebiePreview({
+                    badge: 'COLOR & PLAY',
+                    title: 'Princess Coloring Book',
+                    desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                    img: 'downloads-previews/princess-coloring-book.png',
+                    pages: [
+                        'downloads-previews/coloring-pages/coloring-page-01.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-02.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-03.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-04.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-05.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-06.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-07.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-08.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-09.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-10.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-11.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-12.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-13.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-14.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-15.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-16.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-17.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-18.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-19.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-20.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-21.jpg',
+                        'downloads-previews/coloring-pages/coloring-page-22.jpg'
+                    ],
+                    pdf: 'downloads/princess-coloring-book.pdf',
+                    extra: '👑 Ages 4–8'
+                })"
+            >Princess Coloring Book</h3>
+            <p class="desc">
+                22 pages of cute princess coloring pages, ready to print at home.
+                A fun, screen-free activity kids can start on right away.
+            </p>
+            <span class="age-tag">👑 Ages 4–8</span>
+            <br>
+            <div class="freebie-btn-row">
+                <button
+                    type="button"
+                    class="explore-btn"
+                    onclick="openFreebiePreview({
+                        badge: 'COLOR & PLAY',
+                        title: 'Princess Coloring Book',
+                        desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
+                        img: 'downloads-previews/princess-coloring-book.png',
+                        pages: [
+                            'downloads-previews/coloring-pages/coloring-page-01.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-02.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-03.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-04.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-05.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-06.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-07.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-08.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-09.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-10.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-11.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-12.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-13.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-14.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-15.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-16.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-17.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-18.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-19.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-20.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-21.jpg',
+                            'downloads-previews/coloring-pages/coloring-page-22.jpg'
+                        ],
+                        pdf: 'downloads/princess-coloring-book.pdf',
+                        extra: '👑 Ages 4–8'
+                    })"
+                >
+                    🔍 Explore
+                </button>
+                <a
+                    href="downloads/princess-coloring-book.pdf"
+                    download
+                    class="free-download-btn"
+                >
+                    ⬇ Download Free
+                </a>
+                <button
+                    type="button"
+                    class="add-to-cart-btn"
+                    onclick="addFreebieToCart('coloring', 'Princess Coloring Book', 'downloads-previews/princess-coloring-book.png', 'downloads/princess-coloring-book.pdf', this)"
+                >
+                    🛍 Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============ FREEBIE PREVIEW MODAL — like the product "Explore" popup ============ -->
+<div class="freebie-modal-overlay" id="freebieModalOverlay" onclick="closeFreebiePreviewOnBackdrop(event)">
+    <div class="freebie-modal">
+        <button type="button" class="freebie-modal-close" onclick="closeFreebiePreview()" aria-label="Close preview">✕</button>
+        <div class="freebie-modal-visual">
+            <img id="freebieModalImg" src="" alt="">
+            <button type="button" class="freebie-modal-nav freebie-modal-nav-prev" id="freebieModalPrev" onclick="prevFreebiePage(event)" aria-label="Previous page">‹</button>
+            <button type="button" class="freebie-modal-nav freebie-modal-nav-next" id="freebieModalNext" onclick="nextFreebiePage(event)" aria-label="Next page">›</button>
+            <span class="freebie-modal-page-counter" id="freebieModalPageCounter" style="display:none;"></span>
+        </div>
+        <div class="freebie-modal-body">
+            <span class="freebie-modal-badge" id="freebieModalBadge"></span>
+            <h3 id="freebieModalTitle"></h3>
+            <p class="freebie-modal-desc" id="freebieModalDesc"></p>
+            <span class="freebie-modal-extra" id="freebieModalExtra" style="display:none;"></span>
+            <br>
+            <a id="freebieModalDownload" href="#" download class="free-download-btn">⬇ Download Free</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============ COLORING BOOK CART DRAWER ============ -->
+<div class="freebie-cart-overlay" id="coloringCartOverlay" onclick="closeFreebieCartOnBackdrop(event, 'coloring')">
+    <div class="freebie-cart-drawer">
+        <div class="freebie-cart-header">
+            <h3>🎨 Coloring Book Cart</h3>
+            <button type="button" class="freebie-cart-close" onclick="closeFreebieCart('coloring')" aria-label="Close cart">✕</button>
+        </div>
+        <div class="freebie-cart-list" id="coloringCartList">
+            <!-- filled by JS -->
+        </div>
+        <p class="freebie-cart-empty" id="coloringCartEmpty">
+            Nothing added yet. Tap "🛍 Add to Cart" on the Princess Coloring Book above.
+        </p>
+    </div>
+</div>
+
+</main>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer id="contact">
+
+    <div>
+
+        <h2>
+            The Planner Hup ♡
+        </h2>
+
+
+        <p>
+            Plan your days. Create your dreams.
+        </p>
+
+        <p style="margin-top: 14px;">
+            Questions or need help? Email us at
+            <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a>
+        </p>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 The Planner Hup. Made with love.
+    </p>
+
+    <p style="margin-top: 10px; font-size: 12px;">
+        <a href="faq.html" style="color:#b85b82; text-decoration:none; font-weight:700;">FAQ &amp; How It Works</a> ·
+        <a href="privacy-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Privacy Policy</a> ·
+        <a href="terms-and-conditions.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Terms &amp; Conditions</a> ·
+        <a href="refund-and-return-policy.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Refund &amp; Return Policy</a> ·
+        <a href="author.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Meet the Author</a> ·
+        <a href="gift-a-planner.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Gift a Planner</a> ·
+        <a href="freebies.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Free Downloads</a> ·
+        <a href="bundles.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Bundles &amp; Offers</a> ·
+        <a href="reviews.html" style="color:#b85b82; text-decoration:none; font-weight:700;">Reviews</a>
+    </p>
+
+    <p style="margin-top: 14px; font-size: 11px; opacity: 0.55;">
+        <a href="student-full-year-planner.html" style="color:#a68493; text-decoration:none;">Student Full Year Planner</a> ·
+        <a href="student-planner-2026.html" style="color:#a68493; text-decoration:none;">Student Planner 2026</a> ·
+        <a href="my-life-planner.html" style="color:#a68493; text-decoration:none;">My Life Planner</a> ·
+        <a href="book-reading-journal.html" style="color:#a68493; text-decoration:none;">Book Reading Journal</a> ·
+        <a href="365-days-learning-korean.html" style="color:#a68493; text-decoration:none;">365 Days of Learning Korean</a> ·
+        <a href="huqooq-allah-aur-huqooq-ul-ibad.html" style="color:#a68493; text-decoration:none;">Huqooq Allah Aur Huqooq-ul-Ibad</a> ·
+        <a href="hazrat-ali-majmua-e-quran.html" style="color:#a68493; text-decoration:none;">Hazrat Ali Ka Majmua-e-Quran</a> ·
+        <a href="fahm-ul-quran.html" style="color:#a68493; text-decoration:none;">Fahoom-ul-Quran</a> ·
+        <a href="glow-up-korean-secrets.html" style="color:#a68493; text-decoration:none;">Glow-Up Korean Secrets</a> ·
+        <a href="novel-bheriya-ki-rooh.html" style="color:#a68493; text-decoration:none;">بھیڑیے کی روح</a>
+    </p>
+
+</footer>
+
+<script>
+function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
+
+function toggleNavDropdown(event) {
+    event.stopPropagation();
+    document.getElementById('navDropdownMenu').classList.toggle('open');
+}
+
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('navDropdownMenu');
+    if (menu && menu.classList.contains('open') && !menu.contains(event.target)) {
+        menu.classList.remove('open');
+    }
+});
+
+var FREEBIE_CART_KEYS = {
+    coloring: 'plannerHupColoringCart',
+    guides: 'plannerHupGuidesCart'
+};
+
+function openFreebieCart(type) {
+    renderFreebieCart(type);
+    document.getElementById(type + 'CartOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFreebieCart(type) {
+    document.getElementById(type + 'CartOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeFreebieCartOnBackdrop(event, type) {
+    if (event.target.id === type + 'CartOverlay') {
+        closeFreebieCart(type);
+    }
+}
+
+function getFreebieCart(type) {
+    try {
+        var stored = localStorage.getItem(FREEBIE_CART_KEYS[type]);
+        return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveFreebieCart(type, items) {
+    try {
+        localStorage.setItem(FREEBIE_CART_KEYS[type], JSON.stringify(items));
+    } catch (e) {}
+    document.getElementById(type + 'CartCount').textContent = items.length;
+}
+
+function renderFreebieCart(type) {
+    var items = getFreebieCart(type);
+    var listEl = document.getElementById(type + 'CartList');
+    var emptyEl = document.getElementById(type + 'CartEmpty');
+    listEl.innerHTML = '';
+
+    if (items.length === 0) {
+        emptyEl.style.display = 'block';
+        return;
+    }
+    emptyEl.style.display = 'none';
+
+    items.forEach(function (item, index) {
+        var row = document.createElement('div');
+        row.className = 'freebie-cart-item';
+        row.innerHTML =
+            '<img src="' + item.img + '" alt="' + item.name + '">' +
+            '<div class="freebie-cart-item-info">' +
+                '<h4>' + item.name + '</h4>' +
+                '<div class="freebie-cart-item-actions">' +
+                    '<a href="' + item.pdf + '" download>⬇ Download</a>' +
+                    '<button type="button" class="freebie-cart-item-remove" onclick="removeFreebieFromCart(\'' + type + '\', ' + index + ')">Remove</button>' +
+                '</div>' +
+            '</div>';
+        listEl.appendChild(row);
+    });
+}
+
+function removeFreebieFromCart(type, index) {
+    var items = getFreebieCart(type);
+    items.splice(index, 1);
+    saveFreebieCart(type, items);
+    renderFreebieCart(type);
+}
+
+function installPlannerHupApp() {}
+
+/* ---------- Freebie preview modal (like the product "Explore" popup) ---------- */
+var freebieModalPages = [];
+var freebieModalPageIndex = 0;
+var freebieModalTitleText = '';
+
+function openFreebiePreview(item) {
+    freebieModalPages = (item.pages && item.pages.length) ? item.pages : [item.img];
+    freebieModalPageIndex = 0;
+    freebieModalTitleText = item.title;
+
+    document.getElementById('freebieModalBadge').textContent = item.badge;
+    document.getElementById('freebieModalTitle').textContent = item.title;
+    document.getElementById('freebieModalDesc').textContent = item.desc;
+    document.getElementById('freebieModalDownload').href = item.pdf;
+
+    var extra = document.getElementById('freebieModalExtra');
+    if (item.extra) {
+        extra.textContent = item.extra;
+        extra.style.display = 'inline-block';
+    } else {
+        extra.style.display = 'none';
+    }
+
+    renderFreebieModalPage();
+
+    document.getElementById('freebieModalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function renderFreebieModalPage() {
+    var total = freebieModalPages.length;
+    var img = document.getElementById('freebieModalImg');
+    img.src = freebieModalPages[freebieModalPageIndex];
+    img.alt = freebieModalTitleText + ' — page ' + (freebieModalPageIndex + 1);
+
+    var counter = document.getElementById('freebieModalPageCounter');
+    var prevBtn = document.getElementById('freebieModalPrev');
+    var nextBtn = document.getElementById('freebieModalNext');
+
+    if (total > 1) {
+        counter.style.display = 'inline-block';
+        counter.textContent = (freebieModalPageIndex + 1) + ' / ' + total;
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        prevBtn.disabled = freebieModalPageIndex === 0;
+        nextBtn.disabled = freebieModalPageIndex === total - 1;
+    } else {
+        counter.style.display = 'none';
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+    }
+}
+
+function prevFreebiePage(event) {
+    if (event) event.stopPropagation();
+    if (freebieModalPageIndex > 0) {
+        freebieModalPageIndex--;
+        renderFreebieModalPage();
+    }
+}
+
+function nextFreebiePage(event) {
+    if (event) event.stopPropagation();
+    if (freebieModalPageIndex < freebieModalPages.length - 1) {
+        freebieModalPageIndex++;
+        renderFreebieModalPage();
+    }
+}
+
+function closeFreebiePreview() {
+    document.getElementById('freebieModalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeFreebiePreviewOnBackdrop(event) {
+    if (event.target.id === 'freebieModalOverlay') {
+        closeFreebiePreview();
+    }
+}
+
+/* ---------- Add-to-cart for free coloring book / guides (separate carts) ---------- */
+function addFreebieToCart(type, name, img, pdf, btn) {
+    var items = getFreebieCart(type);
+    var alreadyIn = items.some(function (item) { return item.name === name; });
+
+    if (!alreadyIn) {
+        items.push({ name: name, img: img, pdf: pdf });
+        saveFreebieCart(type, items);
+    }
+
+    if (btn) {
+        var original = btn.textContent;
+        btn.textContent = alreadyIn ? '✓ Already in cart' : '✓ Added';
+        btn.classList.add('added');
+        setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove('added');
+        }, 1500);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var coloringCountEl = document.getElementById('coloringCartCount');
+    if (coloringCountEl) coloringCountEl.textContent = getFreebieCart('coloring').length;
+});
+</script>
+
+</body>
+
+</html>
