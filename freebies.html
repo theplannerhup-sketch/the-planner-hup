@@ -567,6 +567,10 @@
         Print, color, read and learn — completely free.
     </p>
 
+    <p style="text-align:center; margin-top:-10px;">
+        <a href="freebies.html" id="freebiesBackLink" style="display:none; color:#b85b82; font-weight:700; text-decoration:none; font-size:14px;">← See all free downloads</a>
+    </p>
+
     <!-- ============ COLORING BOOK — its own featured layout ============ -->
     <div class="coloring-feature" id="coloring-section">
 
@@ -635,6 +639,7 @@
     </div>
 
     <!-- ============ GUIDES — separate, uniform grid ============ -->
+    <div id="guides-wrapper">
     <div class="freebie-section-heading" id="guides-section">
         <span class="mini-label">SELF-GROWTH GUIDES</span>
         <h2>5 free guides, 5 ways of thinking</h2>
@@ -849,6 +854,7 @@
         </article>
 
     </div>
+    </div>
 
 </section>
 
@@ -1004,6 +1010,35 @@ function closeFreebiePreviewOnBackdrop(event) {
         closeFreebiePreview();
     }
 }
+
+/* ---------- Show only the relevant section based on which card was clicked ---------- */
+function filterFreebiesSection() {
+    var hash = window.location.hash;
+    var coloringBox = document.getElementById('coloring-section');
+    var guidesBox = document.getElementById('guides-wrapper');
+    var pageIntro = document.querySelector('.section-description');
+    var backLink = document.getElementById('freebiesBackLink');
+
+    if (hash === '#coloring-section') {
+        if (guidesBox) guidesBox.style.display = 'none';
+        if (coloringBox) coloringBox.style.display = '';
+        if (pageIntro) pageIntro.textContent = 'Print, color and enjoy — completely free.';
+        if (backLink) backLink.style.display = 'inline-block';
+    } else if (hash === '#guides-section') {
+        if (coloringBox) coloringBox.style.display = 'none';
+        if (guidesBox) guidesBox.style.display = '';
+        if (pageIntro) pageIntro.textContent = 'Read and learn — completely free.';
+        if (backLink) backLink.style.display = 'inline-block';
+    } else {
+        if (coloringBox) coloringBox.style.display = '';
+        if (guidesBox) guidesBox.style.display = '';
+        if (pageIntro) pageIntro.textContent = 'Print, color, read and learn — completely free.';
+        if (backLink) backLink.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', filterFreebiesSection);
+window.addEventListener('hashchange', filterFreebiesSection);
 </script>
 
 <script src="i18n-translations.js"></script>
