@@ -95,7 +95,8 @@ const translations = {
     },
     footer: {
       tagline: "Plan your days. Create your dreams.",
-      contactText: "Questions or need help? Email us at"
+      contactText: "Questions or need help? Email us at",
+      emailUs: "Email us:"
     }
   },
 
@@ -186,7 +187,8 @@ const translations = {
     },
     footer: {
       tagline: "Rencanakan harimu. Wujudkan mimpimu.",
-      contactText: "Ada pertanyaan atau butuh bantuan? Email kami di"
+      contactText: "Ada pertanyaan atau butuh bantuan? Email kami di",
+      emailUs: "Email kami:"
     }
   },
 
@@ -277,7 +279,8 @@ const translations = {
     },
     footer: {
       tagline: "당신의 하루를 계획하고, 당신의 꿈을 만들어가세요.",
-      contactText: "질문이 있거나 도움이 필요하신가요? 이메일을 보내주세요:"
+      contactText: "질문이 있거나 도움이 필요하신가요? 이메일을 보내주세요:",
+      emailUs: "이메일:"
     }
   }
 };

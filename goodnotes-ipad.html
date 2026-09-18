@@ -32,12 +32,21 @@
   section.howto h2{text-align:center;margin-bottom:20px;}
   section.howto ol{color:#6b5d5d;line-height:1.8;}
 </style>
+    <link rel="stylesheet" href="i18n.css">
 </head>
 <body>
+<div class="lang-switcher-compact" id="langSwitcherCompact" style="position:fixed; top:16px; right:16px; z-index:999;">
+    <button type="button" class="lang-globe-btn" onclick="toggleLangMenu(event)" aria-label="Change language" aria-haspopup="true">🌐</button>
+    <div class="lang-menu" id="langMenu">
+        <button type="button" data-lang-option="en" onclick="setLanguage('en')"><span class="flag">🇬🇧</span> English</button>
+        <button type="button" data-lang-option="id" onclick="setLanguage('id')"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
+        <button type="button" data-lang-option="ko" onclick="setLanguage('ko')"><span class="flag">🇰🇷</span> 한국어</button>
+    </div>
+</div>
+
 
 <nav class="breadcrumb">
-  <a href="../index.html">Home</a> / <a href="../index.html#products">Planners</a> / GoodNotes & iPad
-</nav>
+  <a href="../index.html">Home</a> / <a href="../index.html#products">Planners</a> / GoodNotes & iPad    </nav>
 
 <header class="hub-hero">
   <h1>Digital Planner for GoodNotes & iPad ✨</h1>
@@ -93,8 +102,10 @@
 </script>
 
 <footer style="text-align:center;padding:30px;color:#a89a9a;font-size:.85rem;">
-  © 2026 The Planner Hup. Made with love. · <a href="../faq.html" style="color:#c48b8b;">FAQ</a>
+  © 2026 The Planner Hup. Made with love. · <a href="../faq.html" style="color:#c48b8b;" data-i18n="nav.faq">FAQ</a>
 </footer>
 
+<script src="i18n-translations.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

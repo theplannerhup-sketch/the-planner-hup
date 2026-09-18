@@ -26,9 +26,19 @@ section.howto{max-width:800px;margin:50px auto;padding:0 20px;}
 section.howto h2{text-align:center;margin-bottom:20px;}
 section.howto ol{color:#6b5d5d;line-height:1.8;}
 </style>
+    <link rel="stylesheet" href="../i18n.css">
 </head>
 <body>
-<nav class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#products">Planners</a> / Printable PDF</nav>
+<div class="lang-switcher-compact" id="langSwitcherCompact" style="position:fixed; top:16px; right:16px; z-index:999;">
+    <button type="button" class="lang-globe-btn" onclick="toggleLangMenu(event)" aria-label="Change language" aria-haspopup="true">🌐</button>
+    <div class="lang-menu" id="langMenu">
+        <button type="button" data-lang-option="en" onclick="setLanguage('en')"><span class="flag">🇬🇧</span> English</button>
+        <button type="button" data-lang-option="id" onclick="setLanguage('id')"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
+        <button type="button" data-lang-option="ko" onclick="setLanguage('ko')"><span class="flag">🇰🇷</span> 한국어</button>
+    </div>
+</div>
+
+<nav class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#products">Planners</a> / Printable PDF    </nav>
 <header class="hub-hero">
   <h1>Printable Planner PDFs (A4 / A5) 🖨️</h1>
   <p>Prefer paper? Our printable planners are designed for crisp home printing — grab your favorite pens and start planning on paper today.</p>
@@ -56,6 +66,8 @@ section.howto ol{color:#6b5d5d;line-height:1.8;}
 {"@type":"ListItem","position":2,"name":"Planners","item":"https://theplannerhup-sketch.github.io/the-planner-hup/index.html#products"},
 {"@type":"ListItem","position":3,"name":"Printable PDF","item":"https://theplannerhup-sketch.github.io/the-planner-hup/planners/printable-pdf.html"}]}
 </script>
-<footer style="text-align:center;padding:30px;color:#a89a9a;font-size:.85rem;">© 2026 The Planner Hup. Made with love. · <a href="../faq.html" style="color:#c48b8b;">FAQ</a></footer>
+<footer style="text-align:center;padding:30px;color:#a89a9a;font-size:.85rem;">© 2026 The Planner Hup. Made with love. · <a href="../faq.html" style="color:#c48b8b;" data-i18n="nav.faq">FAQ</a></footer>
+<script src="../i18n-translations.js"></script>
+<script src="../i18n.js"></script>
 </body>
 </html>
