@@ -410,12 +410,52 @@
             width: min(820px, 100%);
             margin: 0 auto;
             text-align: center;
+            position: relative;
         }
         .single-freebie-page-number {
             margin: 0 0 12px;
             font-size: 17px;
             font-weight: 700;
             color: var(--dark-rose);
+        }
+        .gallery-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .gallery-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid #f0c3d4;
+            background: white;
+            color: var(--dark-rose);
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .gallery-nav-btn:hover {
+            background: var(--rose);
+            color: white;
+        }
+        .gallery-nav-btn:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+        .gallery-nav-btn:disabled:hover {
+            background: white;
+            color: var(--dark-rose);
+        }
+        .gallery-page-count {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark-rose);
+            min-width: 90px;
         }
         .single-freebie-page img {
             display: block;
@@ -581,6 +621,7 @@
                 title: 'Princess Coloring Book',
                 desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
                 img: 'downloads-previews/princess-coloring-book.png',
+                pages: ['downloads-previews/coloring-pages/princess-coloring-page-1.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-2.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-3.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-4.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-5.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-6.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-7.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-8.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-9.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-10.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-11.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-12.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-13.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-14.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-15.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-16.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-17.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-18.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-19.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-20.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-21.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-22.jpg'],
                 pdf: 'downloads/princess-coloring-book.pdf',
                 extra: '👑 Ages 4–8'
             })"
@@ -601,6 +642,7 @@
                     title: 'Princess Coloring Book',
                     desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
                     img: 'downloads-previews/princess-coloring-book.png',
+                pages: ['downloads-previews/coloring-pages/princess-coloring-page-1.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-2.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-3.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-4.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-5.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-6.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-7.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-8.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-9.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-10.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-11.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-12.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-13.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-14.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-15.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-16.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-17.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-18.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-19.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-20.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-21.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-22.jpg'],
                     pdf: 'downloads/princess-coloring-book.pdf',
                     extra: '👑 Ages 4–8'
                 })"
@@ -620,6 +662,7 @@
                         title: 'Princess Coloring Book',
                         desc: '22 pages of cute princess coloring pages, ready to print at home. A fun, screen-free activity kids can start on right away.',
                         img: 'downloads-previews/princess-coloring-book.png',
+                pages: ['downloads-previews/coloring-pages/princess-coloring-page-1.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-2.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-3.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-4.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-5.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-6.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-7.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-8.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-9.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-10.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-11.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-12.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-13.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-14.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-15.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-16.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-17.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-18.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-19.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-20.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-21.jpg', 'downloads-previews/coloring-pages/princess-coloring-page-22.jpg'],
                         pdf: 'downloads/princess-coloring-book.pdf',
                         extra: '👑 Ages 4–8'
                     })"
@@ -893,8 +936,13 @@
         </div>
 
         <div class="single-freebie-page">
-            <p class="single-freebie-page-number">Page 1</p>
+            <p class="single-freebie-page-number" id="freebieModalPageLabel">Page 1</p>
             <img id="freebieModalImg" src="" alt="">
+            <div class="gallery-nav-row" id="galleryNavRow" style="display:none;">
+                <button type="button" class="gallery-nav-btn" id="galleryPrevBtn" onclick="galleryPrev()" aria-label="Previous page">←</button>
+                <span class="gallery-page-count" id="galleryPageCount">1 / 22</span>
+                <button type="button" class="gallery-nav-btn" id="galleryNextBtn" onclick="galleryNext()" aria-label="Next page">→</button>
+            </div>
         </div>
 
     </div>
@@ -980,13 +1028,54 @@ function openCart() {
 function installPlannerHupApp() {}
 
 /* ---------- Freebie preview modal (like the product "Explore" popup) ---------- */
+var galleryPages = [];
+var galleryIndex = 0;
+
+function renderGalleryPage() {
+    document.getElementById('freebieModalImg').src = galleryPages[galleryIndex];
+    document.getElementById('freebieModalPageLabel').textContent = 'Page ' + (galleryIndex + 1);
+    document.getElementById('galleryPageCount').textContent = (galleryIndex + 1) + ' / ' + galleryPages.length;
+    document.getElementById('galleryPrevBtn').disabled = (galleryIndex === 0);
+    document.getElementById('galleryNextBtn').disabled = (galleryIndex === galleryPages.length - 1);
+}
+
+function galleryNext() {
+    if (galleryIndex < galleryPages.length - 1) {
+        galleryIndex++;
+        renderGalleryPage();
+    }
+}
+
+function galleryPrev() {
+    if (galleryIndex > 0) {
+        galleryIndex--;
+        renderGalleryPage();
+    }
+}
+
 function openFreebiePreview(item) {
-    document.getElementById('freebieModalImg').src = item.img;
-    document.getElementById('freebieModalImg').alt = item.title;
     document.getElementById('freebieModalBadge').textContent = item.badge;
     document.getElementById('freebieModalTitle').textContent = item.title;
     document.getElementById('freebieModalDesc').textContent = item.desc;
     document.getElementById('freebieModalDownload').href = item.pdf;
+
+    var navRow = document.getElementById('galleryNavRow');
+
+    if (item.pages && item.pages.length) {
+        /* Multi-page gallery mode (used for the coloring book) */
+        galleryPages = item.pages;
+        galleryIndex = 0;
+        renderGalleryPage();
+        navRow.style.display = 'flex';
+    } else {
+        /* Single preview image mode (used for the guides) */
+        galleryPages = [];
+        document.getElementById('freebieModalImg').src = item.img;
+        document.getElementById('freebieModalPageLabel').textContent = 'Preview';
+        navRow.style.display = 'none';
+    }
+
+    document.getElementById('freebieModalImg').alt = item.title;
 
     var extra = document.getElementById('freebieModalExtra');
     if (item.extra) {
@@ -1010,6 +1099,14 @@ function closeFreebiePreviewOnBackdrop(event) {
         closeFreebiePreview();
     }
 }
+
+document.addEventListener('keydown', function(event) {
+    var viewer = document.getElementById('freebieViewer');
+    if (!viewer.classList.contains('open') || galleryPages.length === 0) return;
+    if (event.key === 'ArrowRight') galleryNext();
+    if (event.key === 'ArrowLeft') galleryPrev();
+    if (event.key === 'Escape') closeFreebiePreview();
+});
 
 /* ---------- Show only the relevant section based on which card was clicked ---------- */
 function filterFreebiesSection() {
