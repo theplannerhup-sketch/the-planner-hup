@@ -5015,34 +5015,36 @@ document.addEventListener('click', function(event) {
     left: 0;
     right: 0;
     z-index: 10000;
-    background: #1a1a1a;
+    background: #fffafd;
+    border-top: 2px solid #b85b82;
+    box-shadow: 0 -8px 24px rgba(70, 35, 50, 0.12);
     padding: 18px 6%;
     display: none;
     align-items: center;
     justify-content: center;
     gap: 24px;
     flex-wrap: wrap;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     opacity: 0;
     transform: translateY(100%);
     transition: opacity 0.35s ease, transform 0.35s ease;
 ">
     <p style="
         margin: 0;
-        color: #ddd;
+        color: #5a4450;
         font-size: 13.5px;
         line-height: 1.6;
         max-width: 620px;
     ">
-        We use cookies to improve your experience and understand site traffic (via Google Analytics). See our
-        <a href="privacy-policy.html" style="color:#fff; font-weight:700; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>.
+        🍪 We use cookies to improve your experience and understand site traffic, via Google Analytics. See our
+        <a href="privacy-policy.html" style="color:#b85b82; font-weight:700; text-decoration:none; border-bottom:1px solid rgba(184,91,130,0.4);">Privacy Policy</a> to learn more.
     </p>
 
     <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
         <button onclick="declineCookieConsent()" style="
             background: none;
             border: none;
-            color: #999;
+            color: #a68493;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
@@ -5051,11 +5053,12 @@ document.addEventListener('click', function(event) {
             background: #b85b82;
             color: white;
             border: none;
-            padding: 10px 24px;
-            border-radius: 4px;
+            padding: 11px 26px;
+            border-radius: 30px;
             font-size: 13.5px;
             font-weight: 700;
             cursor: pointer;
+            box-shadow: 0 6px 16px rgba(184, 91, 130, 0.28);
         " onmouseover="this.style.background='#a84d73'" onmouseout="this.style.background='#b85b82'">Accept</button>
     </div>
 </div>
