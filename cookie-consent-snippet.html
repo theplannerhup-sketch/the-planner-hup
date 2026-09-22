@@ -1,0 +1,84 @@
+<!-- ===== Cookie Consent Banner — paste this once, right before </body>, on every page ===== -->
+<div id="cookieConsentBanner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: #1a1a1a;
+    padding: 18px 6%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+">
+    <p style="
+        margin: 0;
+        color: #ddd;
+        font-size: 13.5px;
+        line-height: 1.6;
+        max-width: 620px;
+    ">
+        We use cookies to improve your experience and understand site traffic (via Google Analytics). See our
+        <a href="privacy-policy.html" style="color:#fff; font-weight:700; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>.
+    </p>
+
+    <div style="display:flex; align-items:center; gap:14px; flex-shrink:0;">
+        <button onclick="declineCookieConsent()" style="
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        ">Decline</button>
+        <button onclick="acceptCookieConsent()" style="
+            background: #b85b82;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+        " onmouseover="this.style.background='#a84d73'" onmouseout="this.style.background='#b85b82'">Accept</button>
+    </div>
+</div>
+
+<script>
+(function () {
+    var CONSENT_KEY = 'plannerHupCookieConsent';
+    var banner = document.getElementById('cookieConsentBanner');
+    var existing = localStorage.getItem(CONSENT_KEY);
+
+    if (!existing) {
+        banner.style.display = 'flex';
+        setTimeout(function () {
+            banner.style.opacity = '1';
+            banner.style.transform = 'translateY(0)';
+        }, 300);
+    }
+
+    function hideBanner() {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(100%)';
+        setTimeout(function () { banner.style.display = 'none'; }, 350);
+    }
+
+    window.acceptCookieConsent = function () {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        hideBanner();
+    };
+
+    window.declineCookieConsent = function () {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        hideBanner();
+    };
+})();
+</script>
+<!-- ===== End Cookie Consent Banner ===== -->
