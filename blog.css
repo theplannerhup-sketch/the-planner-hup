@@ -1,0 +1,121 @@
+/* blog.css: shared design for all blog posts. Load it AFTER the post's own <style> and i18n.css. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{--cream:#fff9fb;--pink:#f7dce7;--soft:#fdf0f5;--rose:#b85f82;--dark:#8f4765;--brown:#4a343d;--text:#5b4750;--border:#efd9e2}
+
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--brown);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* header */
+body header.navbar{position:sticky;top:0;z-index:50;padding:18px 7%;background:rgba(255,249,251,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+body header.navbar .logo{font-family:"Playfair Display",serif;font-size:25px;font-weight:700;color:var(--dark)}
+body header.navbar nav a{color:var(--brown);font-size:14px;font-weight:600}
+body header.navbar nav a:hover{color:var(--rose)}
+body .menu-toggle{color:var(--brown)}
+
+/* article column */
+body article{max-width:760px;margin:0 auto;padding:48px 24px 90px}
+body .back-link{display:block;width:fit-content;margin-bottom:22px;font-size:14px;font-weight:600;color:var(--dark)}
+body .back-link:hover{color:var(--rose)}
+body article .blog-tag{display:inline-block;margin-bottom:18px;padding:5px 14px;border-radius:50px;background:var(--pink);color:var(--dark);font-size:12px;font-weight:700;letter-spacing:1.5px}
+body article h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.12;letter-spacing:-1px;margin:0 0 16px;color:var(--brown)}
+.byline{margin:0 0 30px;font-size:14px;color:var(--text);opacity:.85}
+
+/* cover image: never cropped */
+body article .cover-image{display:flex;justify-content:center;align-items:center;height:auto;padding:26px;margin:0 0 22px;border-radius:24px;border:1px solid var(--border);background:radial-gradient(circle at 25% 15%,var(--pink),transparent 45%),var(--soft)}
+body article .cover-image img{width:auto;height:auto;max-width:100%;max-height:440px;object-fit:contain;border-radius:12px;box-shadow:0 18px 40px rgba(74,52,61,.14)}
+
+/* text */
+body article p,body article li{font-size:18px;line-height:1.85;color:var(--text)}
+body article p{margin:0 0 1.15em}
+body article .intro-text,body article .lead{font-size:20px;color:var(--brown)}
+body article strong{color:var(--brown)}
+body article h2{font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(26px,3.6vw,34px);line-height:1.2;margin:0 0 16px;color:var(--brown)}
+body article h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:19px;margin:28px 0 8px;color:var(--dark)}
+body .content-card{margin:54px 0 0;padding:0}
+body article a{color:var(--dark);font-weight:600;border-bottom:1px solid rgba(184,95,130,.4)}
+body article a:hover{color:var(--rose);border-bottom-color:var(--rose)}
+body article ul,body article ol{padding-left:1.3em;margin:0 0 1.2em}
+body article li{margin-bottom:.5em}
+body article li::marker{color:var(--rose)}
+
+/* dotted feature lists */
+body .feature-list{list-style:none;padding:0;margin:0 0 1.2em}
+body .feature-list li{display:flex;gap:14px;padding:14px 18px;margin:0 0 10px;background:#fff;border:1px solid var(--border);border-radius:16px}
+body .feature-dot{width:8px;height:8px;margin-top:11px;background:var(--rose)}
+
+/* FAQ questions (bold-only paragraphs) */
+body .content-card p:has(>strong:only-child){margin:24px 0 4px;font-size:18px}
+body .faq details{margin-bottom:10px;padding:14px 20px;background:#fff;border:1px solid var(--border);border-radius:16px}
+body .faq summary{cursor:pointer;font-weight:700;color:var(--brown)}
+body .faq details p{margin:.7em 0 .2em}
+
+/* sample entry box */
+body .entry{margin:1.2em 0;padding:20px 24px;background:#fff;border:1px solid var(--border);border-left:5px solid var(--rose);border-radius:0 16px 16px 0}
+body .entry ul{list-style:none;padding:0;margin:0}
+body .entry li{margin-bottom:.4em;font-size:17px}
+
+/* call to action */
+body .cta-box{margin:56px 0 0;padding:36px 28px;text-align:center;background:var(--soft);border:2px solid #e6a8be;border-radius:26px;font-size:18px;color:var(--brown)}
+body .cta-box h2{margin-top:0}
+body article .cta-box a{display:inline-block;margin:10px 6px 0;padding:14px 26px;border:0;border-radius:50px;background:var(--rose);color:#fff;font-weight:700;box-shadow:0 12px 28px rgba(184,95,130,.25)}
+body article .cta-box a:hover{background:var(--dark);color:#fff}
+body article .cta-box a.ghost{background:#fff;color:var(--dark);border:1px solid var(--border);box-shadow:none}
+
+/* share bar */
+body .share-bar{margin:0 0 30px}
+body .share-btn{background:#fff;border:1px solid var(--border);color:var(--brown)}
+body .share-btn:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+body .share-bar span.share-label{color:var(--dark)}
+
+/* related posts */
+.related-posts{margin-top:64px}
+.related-posts h2{font-size:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+body article .related-grid a{display:block;padding:20px;background:#fff;border:1px solid var(--border);border-radius:18px;color:var(--brown);font-weight:600;line-height:1.4;font-size:16px}
+body article .related-grid a small{display:block;margin-bottom:8px;color:var(--rose);font-size:11px;font-weight:700;letter-spacing:1.5px}
+body article .related-grid a:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(74,52,61,.1);border-color:var(--rose)}
+
+/* footer */
+body footer#contact{padding:50px 7%;background:#3d2c34;border-top:0;color:#fff}
+body footer#contact h2{font-family:"Playfair Display",serif;font-weight:700;font-size:28px;color:#fff}
+body footer#contact p{color:#ead9df}
+body footer#contact a{color:#f4b9cf!important}
+body footer#contact .copyright{color:#cdb6bf}
+.footer-links{max-width:900px;margin:22px auto 0;font-size:14px;line-height:2}
+.footer-links a{margin:0 8px;text-decoration:none!important;font-weight:500!important}
+
+@media (max-width:700px){
+  body header.navbar{padding:14px 5%}
+  body article{padding:36px 20px 70px}
+  body article p,body article li{font-size:17px}
+  body article .cover-image{padding:16px}
+  .related-grid{grid-template-columns:1fr}
+}
+
+/* ===== newer post template (post-hero / post-content) ===== */
+body .post-hero{max-width:800px;margin:0 auto;padding:52px 24px 8px;text-align:center}
+body .post-hero .blog-tag{display:inline-block;margin-bottom:18px;padding:5px 14px;border-radius:50px;background:var(--pink);color:var(--dark);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+body .post-hero h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1.12;letter-spacing:-1px;margin:0 0 16px;color:var(--brown)}
+body .post-hero .subtitle{max-width:620px;margin:0 auto;font-size:19px;color:var(--text)}
+body .post-hero-image{display:flex;justify-content:center;width:calc(100% - 48px);max-width:712px;margin:26px auto 0;padding:26px;border-radius:24px;border:1px solid var(--border);background:radial-gradient(circle at 25% 15%,var(--pink),transparent 45%),var(--soft)}
+body .post-hero-image img{width:auto;height:auto;max-width:100%;max-height:440px;object-fit:contain;border-radius:12px;box-shadow:0 18px 40px rgba(74,52,61,.14)}
+body>.share-bar{justify-content:center;max-width:712px;margin:24px auto 18px}
+body>.author-mini-banner{width:calc(100% - 48px);max-width:712px;margin-left:auto;margin-right:auto}
+body .author-mini-banner a{border-color:var(--border);border-radius:18px;background:#fff}
+body article.post-content{max-width:760px;padding:34px 24px 20px}
+body article.post-content a.inline-link{color:var(--dark);font-weight:600;border-bottom:1px solid rgba(184,95,130,.4)}
+body article.post-content h2{margin:2em 0 .5em}
+body .faq-section{width:calc(100% - 48px);max-width:712px;margin:30px auto 0;padding:0}
+body .faq-item{margin-bottom:10px;padding:16px 20px;background:#fff;border:1px solid var(--border);border-radius:16px}
+body .faq-item h3{margin:0 0 6px;font-size:18px;color:var(--brown)}
+body .faq-item p{margin:0;font-size:17px;color:var(--text)}
+body>.related-posts{width:calc(100% - 48px);max-width:900px;margin:60px auto 0;padding:0}
+body>.related-posts h2{font-family:"Playfair Display",serif;font-size:28px}
+body .related-posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+body .related-posts-grid a{display:block;padding:20px;background:#fff;border:1px solid var(--border);border-radius:18px;color:var(--brown)}
+body .related-posts-grid a:hover{transform:translateY(-4px);border-color:var(--rose);box-shadow:0 16px 34px rgba(74,52,61,.1)}
+body .related-posts-grid h3{margin:6px 0 0;font-size:16px;line-height:1.4;font-weight:600;color:var(--brown)}
+body .related-tag{color:var(--rose);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+body .back-to-blog{text-align:center;margin:36px 0 56px}
+body .back-to-blog a{color:var(--dark);font-weight:600}
+@media (max-width:700px){body .related-posts-grid{grid-template-columns:1fr}}
