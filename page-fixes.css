@@ -1,0 +1,50 @@
+/* page-fixes.css: header, compact banner and footer for the freebies pages.
+   Load it right AFTER style.css. */
+
+/* ---------- HEADER ---------- */
+.navbar{gap:18px}
+.navbar .logo{white-space:nowrap}
+.navbar .nav-actions{display:flex;align-items:center;gap:22px}
+.navbar nav{display:flex;align-items:center;gap:26px;flex-wrap:nowrap}
+.navbar nav a{white-space:nowrap}
+.menu-toggle{display:none;background:none;border:none;font-size:26px;color:#4a343d;cursor:pointer;padding:4px 8px}
+
+.cart-icon-button{position:relative;border:none;background:#fff0f5;color:#7d3e5c;border-radius:50%;width:44px;height:44px;font-size:19px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.2s ease}
+.cart-icon-button:hover{background:#fbdce7}
+.cart-count{position:absolute;top:-4px;right:-4px;background:#b85b82;color:#fff;font-size:11px;font-weight:700;border-radius:50%;min-width:18px;height:18px;display:flex;align-items:center;justify-content:center;padding:0 3px}
+
+.nav-dropdown{position:relative;display:inline-block}
+.nav-dropdown-toggle{background:none;border:none;font-family:inherit;font-size:14px;font-weight:600;color:#4a343d;cursor:pointer;padding:0;white-space:nowrap}
+.nav-dropdown-toggle:hover{color:#b85f82}
+.nav-dropdown-menu{display:none;position:absolute;top:32px;left:0;min-width:220px;padding:10px 0;background:#fff;border:1px solid #efd9e2;border-radius:14px;box-shadow:0 14px 34px rgba(70,35,50,.16);z-index:500}
+.nav-dropdown-menu.open{display:block}
+.nav-dropdown-menu a{display:block;margin:0;padding:9px 18px;color:#4a343d!important;font-size:14px!important;font-weight:600!important}
+.nav-dropdown-menu a:hover{background:#fdf0f5;color:#b85f82!important}
+
+@media (max-width:1100px){
+  .navbar{flex-wrap:wrap;padding:16px 5%}
+  .menu-toggle{display:block;margin-left:auto}
+  .navbar .nav-actions{flex-wrap:wrap;justify-content:flex-end;gap:12px}
+  .navbar nav{display:none;order:3;width:100%;flex-direction:column;align-items:flex-start;gap:0;margin-top:12px}
+  .navbar nav.open{display:flex}
+  .navbar nav a,.navbar nav .nav-dropdown{padding:10px 0}
+  .nav-dropdown-menu{position:static;box-shadow:none;border:0;padding:4px 0 0 14px}
+}
+@media (max-width:600px){.navbar{flex-direction:row}}
+
+/* ---------- COMPACT BANNER (replaces the tall 2-column hero) ---------- */
+.hero.hero-compact{min-height:0;grid-template-columns:1fr;gap:0;justify-items:center;text-align:center;padding:64px 7% 28px}
+.hero-compact .hero-content{margin:0 auto;max-width:760px}
+.hero-compact .eyebrow{margin-bottom:16px}
+.hero-compact h1{font-size:clamp(38px,5.2vw,62px);line-height:1.08;letter-spacing:-1px;margin-bottom:18px}
+.hero-compact .hero-text{margin:0 auto;font-size:18px}
+@media (max-width:600px){.hero.hero-compact{padding:44px 6% 18px}.hero-compact h1{font-size:36px}}
+
+/* ---------- FOOTER ---------- */
+footer#contact{display:block;text-align:center;padding:52px 7% 44px}
+footer#contact h2{margin-bottom:8px}
+footer#contact p{color:#ead9df;opacity:1!important;margin-top:10px}
+footer#contact a{color:#f4b9cf!important;font-weight:600!important}
+footer#contact p:nth-of-type(n+3) a{margin:0 6px;line-height:2}
+footer#contact .copyright{color:#cdb6bf;margin-top:18px}
+footer#contact>p[style*="font-size: 11px"] a{color:#d9c3cc!important;font-weight:500!important}
