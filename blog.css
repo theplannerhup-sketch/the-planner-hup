@@ -119,3 +119,8 @@ body .related-tag{color:var(--rose);font-size:11px;font-weight:700;letter-spacin
 body .back-to-blog{text-align:center;margin:36px 0 56px}
 body .back-to-blog a{color:var(--dark);font-weight:600}
 @media (max-width:700px){body .related-posts-grid{grid-template-columns:1fr}}
+
+/* inline article images */
+body article .inline-figure{margin:2em auto;text-align:center}
+body article .inline-figure img{width:auto;max-width:100%;max-height:520px;height:auto;border-radius:12px;border:1px solid var(--border);box-shadow:0 14px 32px rgba(74,52,61,.14)}
+body article .inline-figure figcaption{margin-top:10px;font-size:14px;color:var(--text)}
