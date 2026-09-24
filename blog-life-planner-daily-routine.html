@@ -7,6 +7,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        gtag('consent', 'default', {'analytics_storage': 'denied'});
         gtag('config', 'G-SJ14ZK6Z6F');
     </script>
 
@@ -246,6 +247,47 @@
             color: #1a1a1a;
         }
 
+        .faq-accordion {
+            border-top: 1px solid #e5e5e5;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .faq-item summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 0;
+            font-weight: 700;
+            font-size: 16px;
+            color: #1a1a1a;
+            cursor: pointer;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "▾";
+            flex-shrink: 0;
+            color: #b85b82;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .faq-item summary:hover {
+            color: #b85b82;
+        }
+        .faq-item .faq-answer {
+            padding: 0 0 18px;
+            margin: 0;
+            font-size: 15px;
+            color: #444;
+        }
+
         .feature-list {
             list-style: none;
             padding: 0;
@@ -394,7 +436,6 @@
             header.navbar nav a { margin: 8px 0; }
         }
     </style>
-    <link rel="stylesheet" href="i18n.css">
 </head>
 <body>
 
@@ -402,22 +443,12 @@
     <a href="index.html" class="logo">The Planner Hup ♡</a>
     <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
     <nav>
-        <a href="index.html#products" data-i18n="nav.products">Products</a>
-        <a href="index.html#about" data-i18n="nav.whyUs">Why Us</a>
-        <a href="blog.html" data-i18n="nav.blog">Blog</a>
-        <a href="tools.html" data-i18n="nav.freeTools">Free Tools</a>
-        <a href="about.html" data-i18n="nav.about">About</a>
-        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
-    
-        <!-- LANGUAGE SWITCHER: compact globe dropdown (EN / ID / KO) -->
-        <div class="lang-switcher-compact" id="langSwitcherCompact">
-            <button type="button" class="lang-globe-btn" onclick="toggleLangMenu(event)" aria-label="Change language" aria-haspopup="true">🌐</button>
-            <div class="lang-menu" id="langMenu">
-                <button type="button" data-lang-option="en" onclick="setLanguage('en')"><span class="flag">🇬🇧</span> English</button>
-                <button type="button" data-lang-option="id" onclick="setLanguage('id')"><span class="flag">🇮🇩</span> Bahasa Indonesia</button>
-                <button type="button" data-lang-option="ko" onclick="setLanguage('ko')"><span class="flag">🇰🇷</span> 한국어</button>
-            </div>
-        </div>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#about">Why Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="tools.html">Free Tools</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
     </nav>
 </header>
 
@@ -528,26 +559,42 @@
     <div class="content-card">
         <h2>Frequently Asked Questions</h2>
 
-        <p><strong>What is a life planner used for?</strong></p>
-        <p>A life planner is used to organize your daily routine, goals, and self-care in one place, rather than tracking tasks in one app and everything else in your head. It's meant to reflect your whole day, not just your to-do list.</p>
+        <div class="faq-accordion">
+            <details class="faq-item">
+                <summary>What is a life planner used for?</summary>
+                <p class="faq-answer">A life planner is used to organize your daily routine, goals, and self-care in one place, rather than tracking tasks in one app and everything else in your head. It's meant to reflect your whole day, not just your to-do list.</p>
+            </details>
 
-        <p><strong>How is My Life Planner different from a regular to-do list?</strong></p>
-        <p>A to-do list only tracks tasks. My Life Planner adds daily rhythm pages, a habit tracker, weekly resets, and self-care check-ins, so rest and reflection stay part of the plan instead of getting pushed aside.</p>
+            <details class="faq-item">
+                <summary>How is My Life Planner different from a regular to-do list?</summary>
+                <p class="faq-answer">A to-do list only tracks tasks. My Life Planner adds daily rhythm pages, a habit tracker, weekly resets, and self-care check-ins, so rest and reflection stay part of the plan instead of getting pushed aside.</p>
+            </details>
 
-        <p><strong>Can a daily routine planner help with self-care?</strong></p>
-        <p>Yes. When self-care has its own dedicated space next to your goals and tasks, it's far less likely to be skipped than when it's left as an afterthought you only get to "if there's time."</p>
+            <details class="faq-item">
+                <summary>Can a daily routine planner help with self-care?</summary>
+                <p class="faq-answer">Yes. When self-care has its own dedicated space next to your goals and tasks, it's far less likely to be skipped than when it's left as an afterthought you only get to "if there's time."</p>
+            </details>
 
-        <p><strong>How long does it take for a new routine to feel natural?</strong></p>
-        <p>Most people notice a routine starting to feel like habit rather than effort after about two consistent weeks — which is why starting small with just a few daily lines matters more than filling every page right away.</p>
+            <details class="faq-item">
+                <summary>How long does it take for a new routine to feel natural?</summary>
+                <p class="faq-answer">Most people notice a routine starting to feel like habit rather than effort after about two consistent weeks — which is why starting small with just a few daily lines matters more than filling every page right away.</p>
+            </details>
 
-        <p><strong>Is My Life Planner only for students?</strong></p>
-        <p>No. It's built for anyone who wants more structure day to day — whether that's managing a household, working from home, or simply wanting a calmer daily rhythm.</p>
+            <details class="faq-item">
+                <summary>Is My Life Planner only for students?</summary>
+                <p class="faq-answer">No. It's built for anyone who wants more structure day to day — whether that's managing a household, working from home, or simply wanting a calmer daily rhythm.</p>
+            </details>
 
-        <p><strong>Should I use a planner or a habit-tracking app?</strong></p>
-        <p>Both can work, but many people find a physical or PDF-based planner sticks longer than an app, since opening it is a deliberate ritual rather than one more notification competing for attention. Some people use an app for reminders and a planner for reflection.</p>
+            <details class="faq-item">
+                <summary>Should I use a planner or a habit-tracking app?</summary>
+                <p class="faq-answer">Both can work, but many people find a physical or PDF-based planner sticks longer than an app, since opening it is a deliberate ritual rather than one more notification competing for attention. Some people use an app for reminders and a planner for reflection.</p>
+            </details>
 
-        <p><strong>What's the difference between a daily planner and a self-care planner?</strong></p>
-        <p>A daily planner usually focuses on tasks and schedules, while a self-care planner adds mood tracking, gratitude prompts, and wellness check-ins. My Life Planner combines both, so structure and self-care live on the same page instead of in two separate systems.</p>
+            <details class="faq-item">
+                <summary>What's the difference between a daily planner and a self-care planner?</summary>
+                <p class="faq-answer">A daily planner usually focuses on tasks and schedules, while a self-care planner adds mood tracking, gratitude prompts, and wellness check-ins. My Life Planner combines both, so structure and self-care live on the same page instead of in two separate systems.</p>
+            </details>
+        </div>
     </div>
 
     <div class="cta-box">
@@ -559,8 +606,8 @@
 
 <footer id="contact">
     <h2>The Planner Hup ♡</h2>
-    <p data-i18n="footer.tagline">Plan your days. Create your dreams.</p>
-    <p style="margin-top: 10px;"><span data-i18n="footer.emailUs">Email us:</span> <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a></p>
+    <p>Plan your days. Create your dreams.</p>
+    <p style="margin-top: 10px;">Email us: <a href="mailto:theplannerhup@gmail.com" style="color: #b85b82; font-weight: 700; text-decoration: none;">theplannerhup@gmail.com</a></p>
     <p class="copyright">© 2026 The Planner Hup. Made with love.</p>
 </footer>
 
@@ -576,7 +623,7 @@ function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
 </script>
 
-<script src="i18n-translations.js"></script>
-<script src="i18n.js"></script>
+<script src="cookie-consent.js"></script>
+
 </body>
 </html>

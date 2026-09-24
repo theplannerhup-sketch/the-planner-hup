@@ -7,6 +7,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        gtag('consent', 'default', {'analytics_storage': 'denied'});
         gtag('config', 'G-SJ14ZK6Z6F');
     </script>
 
@@ -244,6 +245,47 @@
             margin-bottom: 0;
         }
 
+        .faq-accordion {
+            border-top: 1px solid #f3dde6;
+        }
+        .faq-item {
+            border-bottom: 1px solid #f3dde6;
+        }
+        .faq-item summary {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 0;
+            font-weight: 700;
+            font-size: 16px;
+            color: #432b37;
+            cursor: pointer;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "▾";
+            flex-shrink: 0;
+            color: #b85b82;
+            font-size: 18px;
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .faq-item summary:hover {
+            color: #b85b82;
+        }
+        .faq-item .faq-answer {
+            padding: 0 0 18px;
+            margin: 0;
+            font-size: 15px;
+            color: #5a4450;
+        }
+
         .feature-list {
             list-style: none;
             padding: 0;
@@ -457,26 +499,42 @@
     <div class="content-card">
         <h2>Frequently Asked Questions</h2>
 
-        <p><strong>What does Fahm-ul-Quran mean?</strong></p>
-        <p>Fahm-ul-Quran is an Urdu and Arabic phrase that means understanding of the Quran. It refers to grasping the meaning, message and context of the Quran, rather than only reciting its Arabic text.</p>
+        <div class="faq-accordion">
+            <details class="faq-item">
+                <summary>What does Fahm-ul-Quran mean?</summary>
+                <p class="faq-answer">Fahm-ul-Quran is an Urdu and Arabic phrase that means understanding of the Quran. It refers to grasping the meaning, message and context of the Quran, rather than only reciting its Arabic text.</p>
+            </details>
 
-        <p><strong>What is the difference between reciting the Quran and understanding it?</strong></p>
-        <p>Reciting the Quran (tilawat) focuses on reading the Arabic text correctly, often with proper tajweed. Understanding the Quran (fahm) focuses on knowing what the verses actually mean and how to apply that meaning in daily life. Many readers do one without the other; ideally, both are built together.</p>
+            <details class="faq-item">
+                <summary>What is the difference between reciting the Quran and understanding it?</summary>
+                <p class="faq-answer">Reciting the Quran (tilawat) focuses on reading the Arabic text correctly, often with proper tajweed. Understanding the Quran (fahm) focuses on knowing what the verses actually mean and how to apply that meaning in daily life. Many readers do one without the other; ideally, both are built together.</p>
+            </details>
 
-        <p><strong>Do I need to know Arabic to understand the Quran?</strong></p>
-        <p>No. While learning Quranic Arabic deepens understanding, a reliable translation and a beginner-friendly tafseer let you understand the Quran's meaning in your own language, such as Urdu or English.</p>
+            <details class="faq-item">
+                <summary>Do I need to know Arabic to understand the Quran?</summary>
+                <p class="faq-answer">No. While learning Quranic Arabic deepens understanding, a reliable translation and a beginner-friendly tafseer let you understand the Quran's meaning in your own language, such as Urdu or English.</p>
+            </details>
 
-        <p><strong>What is tafseer and why does it matter for Fahm-ul-Quran?</strong></p>
-        <p>Tafseer is a detailed explanation of the Quran's verses, covering their context, background and meaning. It matters because many verses are easier to understand once you know when and why they were revealed, which a plain translation alone doesn't always show.</p>
+            <details class="faq-item">
+                <summary>What is tafseer and why does it matter for Fahm-ul-Quran?</summary>
+                <p class="faq-answer">Tafseer is a detailed explanation of the Quran's verses, covering their context, background and meaning. It matters because many verses are easier to understand once you know when and why they were revealed, which a plain translation alone doesn't always show.</p>
+            </details>
 
-        <p><strong>How much time does it take to build real understanding of the Quran?</strong></p>
-        <p>There's no fixed timeline. Understanding the Quran is a gradual, lifelong process. Even a few verses studied with translation and reflection each day, kept up consistently, build real understanding over months and years.</p>
+            <details class="faq-item">
+                <summary>How much time does it take to build real understanding of the Quran?</summary>
+                <p class="faq-answer">There's no fixed timeline. Understanding the Quran is a gradual, lifelong process. Even a few verses studied with translation and reflection each day, kept up consistently, build real understanding over months and years.</p>
+            </details>
 
-        <p><strong>Is Fahm-ul-Quran only for scholars or advanced students?</strong></p>
-        <p>No. Fahm-ul-Quran is for every reader. Beginner-friendly translations and simplified tafseer books are specifically written to make the Quran's meaning accessible to people with no prior Islamic studies background.</p>
+            <details class="faq-item">
+                <summary>Is Fahm-ul-Quran only for scholars or advanced students?</summary>
+                <p class="faq-answer">No. Fahm-ul-Quran is for every reader. Beginner-friendly translations and simplified tafseer books are specifically written to make the Quran's meaning accessible to people with no prior Islamic studies background.</p>
+            </details>
 
-        <p><strong>What is the best way to start studying the Quran's meaning as a beginner?</strong></p>
-        <p>Start small: read one or two verses with a trusted translation, then a short explanation of their context. A structured book that organizes this for you, like our <a href="fahm-ul-quran.html">Fahoom-ul-Quran</a>, removes the guesswork of deciding what to read and in what order.</p>
+            <details class="faq-item">
+                <summary>What is the best way to start studying the Quran's meaning as a beginner?</summary>
+                <p class="faq-answer">Start small: read one or two verses with a trusted translation, then a short explanation of their context. A structured book that organizes this for you, like our <a href="fahm-ul-quran.html">Fahoom-ul-Quran</a>, removes the guesswork of deciding what to read and in what order.</p>
+            </details>
+        </div>
     </div>
 
     <div class="cta-box">
@@ -504,6 +562,8 @@ function copyLink(btn){ navigator.clipboard.writeText(window.location.href).then
 <script>
 function toggleMobileMenu(){ document.querySelector('header.navbar nav').classList.toggle('open'); }
 </script>
+
+<script src="cookie-consent.js"></script>
 
 </body>
 </html>
