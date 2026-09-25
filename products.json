@@ -1,0 +1,110 @@
+{
+  "store_name": "The Planner Hup",
+  "whatsapp": "https://wa.me/923434457596?text=Hi!%20I'd%20like%20to%20place%20an%20order%20from%20The%20Planner%20Hup.",
+  "contact_email": "theplannerhup@gmail.com",
+  "bundle_offer": "Buy any 2 planners or books, get 10% off. Message us on WhatsApp and mention code BUNDLE10.",
+  "products": [
+    {
+      "name": "Student Full Year Planner",
+      "category": "Planner",
+      "price_usd": 2.99,
+      "price_pkr": "~Rs. 831",
+      "description": "A complete full-year planner designed for students to organize classes, assignments, goals, and study schedules.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/student-full-year-planner.html"
+    },
+    {
+      "name": "Student Planner 2026",
+      "category": "Planner",
+      "price_usd": 2.99,
+      "price_pkr": "~Rs. 831",
+      "description": "A dated 2026 student planner to track classes, homework, and exams.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/student-planner-2026.html"
+    },
+    {
+      "name": "My Life Planner",
+      "category": "Planner",
+      "price_usd": 2.99,
+      "price_pkr": "~Rs. 831",
+      "description": "A minimalist all-purpose life planner to organize daily goals, habits, and routines.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/my-life-planner.html"
+    },
+    {
+      "name": "Book Reading Journal",
+      "category": "Planner",
+      "price_usd": 2.99,
+      "price_pkr": "~Rs. 831",
+      "description": "A journal to log books read, track reading goals, and jot notes and reviews.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/book-reading-journal.html"
+    },
+    {
+      "name": "365 Days of Learning Korean",
+      "category": "Book",
+      "price_usd": 3.99,
+      "price_pkr": "~Rs. 1109",
+      "description": "A structured daily guide to learning Korean over a full year.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/365-days-learning-korean.html"
+    },
+    {
+      "name": "Glow-Up Korean Secrets",
+      "category": "Book",
+      "price_usd": 3.99,
+      "price_pkr": "~Rs. 1109",
+      "description": "A guide-style book on Korean beauty and self-improvement secrets.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/glow-up-korean-secrets.html"
+    },
+    {
+      "name": "Huqooq Allah Aur Huqooq-ul-Ibad",
+      "category": "Islamic Book",
+      "price_usd": 3.99,
+      "price_pkr": "~Rs. 1109",
+      "description": "An Urdu religious non-fiction book about the rights of Allah and the rights of people.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/huqooq-allah-aur-huqooq-ul-ibad.html"
+    },
+    {
+      "name": "Hazrat Ali Ka Majmua-e-Quran",
+      "category": "Islamic Book",
+      "price_usd": 3.99,
+      "price_pkr": "~Rs. 1109",
+      "description": "An Urdu religious non-fiction book compiling teachings related to Hazrat Ali and the Quran.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/hazrat-ali-majmua-e-quran.html"
+    },
+    {
+      "name": "Fahm-ul-Quran",
+      "category": "Islamic Book",
+      "price_usd": 3.99,
+      "price_pkr": "~Rs. 1109",
+      "description": "An Urdu religious non-fiction book aimed at helping readers understand the Quran.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/fahm-ul-quran.html"
+    },
+    {
+      "name": "Bheriya Ki Rooh (بھیڑیے کی روح)",
+      "category": "Urdu Novel",
+      "price_usd": 4.99,
+      "price_pkr": "~Rs. 1387",
+      "description": "An Urdu-language fiction novel by The Planner Hup's author.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/novel-bheriya-ki-rooh.html"
+    }
+  ],
+  "free_items": [
+    {
+      "name": "Free Weekly Planner",
+      "description": "A free downloadable weekly planner, no sign-up required.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/free-weekly-planner.html"
+    },
+    {
+      "name": "Fillable Weekly Planner",
+      "description": "A weekly planner you can type directly onto.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/fillable-weekly-planner.html"
+    },
+    {
+      "name": "Princess Coloring Book",
+      "description": "A free 22-page printable princess coloring book.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/freebies-coloring.html"
+    },
+    {
+      "name": "Self-Growth Guides",
+      "description": "Five free self-growth PDF guides on time, focus and learning.",
+      "url": "https://theplannerhup-sketch.github.io/the-planner-hup/freebies-guides.html"
+    }
+  ]
+}
