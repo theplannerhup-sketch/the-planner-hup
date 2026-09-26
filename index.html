@@ -1103,6 +1103,118 @@
             color: #432b37;
         }
 
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            padding: 100px 7%;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .steps-grid {
+            max-width: 1100px;
+            margin: 55px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .step-item {
+            position: relative;
+            padding: 34px 22px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--rose);
+            color: white;
+            font-family: "Playfair Display", serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .step-item h3 {
+            font-size: 18px;
+            color: var(--brown);
+            margin-bottom: 6px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .step-arrow {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .steps-grid { grid-template-columns: 1fr; max-width: 420px; }
+        }
+
+        /* ===== WHY SHOP WITH US (TRUST) ===== */
+        .trust-section {
+            padding: 100px 7%;
+            text-align: center;
+            background: var(--soft-pink);
+        }
+
+        .trust-grid {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            text-align: left;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 22px 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        .trust-item .tick {
+            flex-shrink: 0;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--rose);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        .trust-item h3 {
+            font-size: 16px;
+            color: var(--brown);
+            margin-bottom: 4px;
+        }
+
+        .trust-item p {
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        @media (max-width: 900px) {
+            .trust-grid { grid-template-columns: 1fr; max-width: 460px; }
+        }
+
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -1810,6 +1922,102 @@
 
 </section>
 
+
+
+<!-- =========================================
+     HOW IT WORKS
+========================================= -->
+
+<section class="how-it-works" id="how-it-works">
+
+    <p class="section-label">HOW IT WORKS</p>
+
+    <h2>From browsing to downloading in minutes ♡</h2>
+
+    <p class="section-description">
+        No printer required to get started, and nothing complicated to figure out.
+    </p>
+
+    <div class="steps-grid">
+
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <h3>Choose your product</h3>
+            <p>Browse planners, books, novels and free tools to find what fits your routine.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <h3>Preview it first</h3>
+            <p>Look through sample pages so you know exactly what you're getting before you decide.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <h3>Get your file</h3>
+            <p>Download instantly as a digital or fillable PDF — no waiting, no shipping.</p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <h3>Print or use digitally</h3>
+            <p>Print it at home, or fill it in directly on your phone, tablet or laptop.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WHY SHOP WITH US (TRUST)
+========================================= -->
+
+<section class="trust-section" id="why-shop-with-us">
+
+    <p class="section-label">WHY SHOP WITH US</p>
+
+    <h2>Made to be easy, from click to download ♡</h2>
+
+    <p class="section-description">
+        A few reasons readers and students keep coming back to The Planner Hup.
+    </p>
+
+    <div class="trust-grid">
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Instant digital download</h3><p>Get your file right away — no waiting for shipping.</p></div>
+        </div>
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Printable &amp; fillable PDFs</h3><p>Print at home, or type directly on your phone, tablet or laptop.</p></div>
+        </div>
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Beginner-friendly designs</h3><p>Simple layouts that don't need any instructions to get started.</p></div>
+        </div>
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Preview before you decide</h3><p>See real sample pages so there are no surprises after download.</p></div>
+        </div>
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Free resources included</h3><p>Free planners, guides and a coloring book to try before you buy.</p></div>
+        </div>
+
+        <div class="trust-item">
+            <span class="tick">✓</span>
+            <div><h3>Friendly support by email</h3><p>Questions or issues? We reply personally at theplannerhup@gmail.com.</p></div>
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =========================================
