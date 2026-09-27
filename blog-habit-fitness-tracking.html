@@ -574,5 +574,118 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
   <a href="https://theplannerhup-sketch.github.io/the-planner-hup/index.html" style="color:#765866;text-decoration:none;">&#127968; Home</a>
   <a href="https://theplannerhup-sketch.github.io/the-planner-hup/tools.html" style="color:#b85b82;text-decoration:none;font-weight:600;">Free Tools &rarr;</a>
 </div>
+<!-- The Planner Hup — Yue Chat Assistant -->
+<style>
+  #tph-chat-bubble { position: fixed; bottom: 20px; right: 20px; width: 58px; height: 58px; border-radius: 50%; background: #b85b82; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.25); z-index: 9999; border: none; font-family: Arial, sans-serif; }
+  #tph-chat-window { position: fixed; bottom: 88px; right: 20px; width: 320px; max-width: 90vw; height: 440px; max-height: 70vh; background: #fffafd; border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.25); display: none; flex-direction: column; overflow: hidden; z-index: 9999; font-family: Arial, sans-serif; }
+  #tph-chat-window.open { display: flex; }
+  #tph-chat-header { background: #b85b82; color: #fff; padding: 12px 16px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; font-size: 15px; }
+  #tph-chat-close { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; }
+  #tph-chat-messages { flex: 1; overflow-y: auto; padding: 12px; }
+  .tph-msg { margin-bottom: 10px; max-width: 85%; padding: 8px 12px; border-radius: 12px; font-size: 13.5px; line-height: 1.4; }
+  .tph-msg.user { background: #b85b82; color: #fff; margin-left: auto; border-bottom-right-radius: 2px; }
+  .tph-msg.bot { background: #fff; color: #432b37; border: 1px solid #fdeef3; border-bottom-left-radius: 2px; }
+  .tph-msg.bot a { color: #b85b82; font-weight: 600; }
+  #tph-chat-input-row { display: flex; border-top: 1px solid #fdeef3; background: #fff; }
+  #tph-chat-input { flex: 1; border: none; padding: 12px; font-size: 13.5px; outline: none; font-family: Arial, sans-serif; }
+  #tph-chat-send { background: #b85b82; color: #fff; border: none; padding: 0 16px; cursor: pointer; font-size: 16px; }
+</style>
+
+<button id="tph-chat-bubble" aria-label="Chat with Yue">💗</button>
+<div id="tph-chat-window">
+  <div id="tph-chat-header"><span>Chat with Yue 💗</span><button id="tph-chat-close">✕</button></div>
+  <div id="tph-chat-messages"></div>
+  <div id="tph-chat-input-row">
+    <input id="tph-chat-input" type="text" placeholder="Ask about our planners, books..." />
+    <button id="tph-chat-send">➤</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var BASE = "https://theplannerhup-sketch.github.io/the-planner-hup/";
+  var catalog = [{"name": "Student Full Year Planner", "price": "$2.99", "url": "student-full-year-planner.html", "keywords": ["student", "school", "assignment", "goal", "study", "academic", "full year", "class", "classes"], "blurb": "Keep your classes, assignments, goals and study routine organized all year long."}, {"name": "Student Planner 2026", "price": "$4.99", "url": "student-planner-2026.html", "keywords": ["student", "2026", "daily planner", "school", "daily"], "blurb": "A complete 10-page 2026 student planner."}, {"name": "My Life Planner", "price": "$6.99", "url": "my-life-planner.html", "keywords": ["life", "goals", "routine", "everyday", "daily life", "organize my life"], "blurb": "A complete life planner to organize your goals, routines and everyday moments."}, {"name": "Book Reading Journal", "price": "$3.00", "url": "book-reading-journal.html", "keywords": ["reading", "book journal", "track books", "reader", "books"], "blurb": "A 10-page planner to track and reflect on every book you read."}, {"name": "365 Days of Learning Korean", "price": "$8.00", "url": "365-days-learning-korean.html", "keywords": ["korean", "learn korean", "korean language", "hangul"], "blurb": "A complete 52-page book to help you learn Korean, one day at a time."}, {"name": "Fahm-ul-Quran", "price": "$3.99", "url": "fahm-ul-quran.html", "keywords": ["quran", "islamic", "deen", "fahm"], "blurb": "A book to help build a deeper understanding of the Quran."}, {"name": "Glow-Up Korean Secrets", "price": "$4.99", "url": "glow-up-korean-secrets.html", "keywords": ["skin", "glass skin", "skincare", "korean beauty", "glow"], "blurb": "Natural remedies, daily rituals and the Korean 'Glass Skin' secret for radiant skin."}, {"name": "Hazrat Ali Ka Majmua-e-Quran", "price": "$3.99", "url": "hazrat-ali-majmua-e-quran.html", "keywords": ["quran", "islamic", "hazrat ali"], "blurb": "A collection inspired by Hazrat Ali's connection with the Quran."}, {"name": "Huqooq Allah Aur Huqooq-ul-Ibad", "price": "$3.99", "url": "huqooq-allah-aur-huqooq-ul-ibad.html", "keywords": ["islamic", "huqooq", "rights", "deen"], "blurb": "A book on the rights of Allah and the rights of His servants."}, {"name": "Bheriya Ki Rooh (Urdu Novel)", "price": null, "url": "novel-bheriya-ki-rooh.html", "keywords": ["novel", "urdu novel", "story", "fiction", "bheriya"], "blurb": "A gripping Urdu novel full of emotion and mystery."}, {"name": "Free Weekly Planner", "price": "Free", "url": "free-weekly-planner.html", "keywords": ["free planner", "weekly planner", "printable"], "blurb": "A free 5-page weekly planner PDF you can download right now."}, {"name": "Fillable Weekly Planner", "price": "Free", "url": "fillable-weekly-planner.html", "keywords": ["fillable", "type in browser", "fill online", "weekly planner online"], "blurb": "Fill in your weekly planner right in your browser and download it as a PDF."}, {"name": "Habit Tracker Generator", "price": "Free", "url": "habit-tracker-generator.html", "keywords": ["habit", "habit tracker", "tool"], "blurb": "A free tool to generate your own custom habit tracker."}, {"name": "GPA Calculator", "price": "Free", "url": "gpa-calculator.html", "keywords": ["gpa", "grades", "calculator", "finals"], "blurb": "A free tool to calculate your GPA."}, {"name": "Reading Pace Calculator", "price": "Free", "url": "reading-pace-calculator.html", "keywords": ["reading pace", "how fast", "reading speed"], "blurb": "A free tool to calculate your reading pace and finish-date."}, {"name": "Time Blocking Planner", "price": "Free", "url": "time-blocking-planner.html", "keywords": ["time blocking", "schedule", "time management"], "blurb": "A free tool to plan your day using time blocking."}, {"name": "Hangul Practice Sheet", "price": "Free", "url": "hangul-practice-sheet-generator.html", "keywords": ["hangul", "korean alphabet", "practice sheet"], "blurb": "A free generator for Korean Hangul practice sheets."}];
+
+  var bubble = document.getElementById("tph-chat-bubble");
+  var win = document.getElementById("tph-chat-window");
+  var closeBtn = document.getElementById("tph-chat-close");
+  var messagesEl = document.getElementById("tph-chat-messages");
+  var input = document.getElementById("tph-chat-input");
+  var sendBtn = document.getElementById("tph-chat-send");
+  var greeted = false;
+
+  function addMessage(role, html) {
+    var div = document.createElement("div");
+    div.className = "tph-msg " + (role === "user" ? "user" : "bot");
+    div.innerHTML = html;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function openChat() {
+    win.classList.add("open");
+    if (!greeted) {
+      greeted = true;
+      addMessage("bot", "Assalam-o-Alaikum! Main Yue hoon 💗 The Planner Hup ki chat assistant. Aap kis cheez ki talash mein hain? (jaise: student planner, life planner, Korean book, novel...)");
+    }
+  }
+
+  bubble.addEventListener("click", openChat);
+  closeBtn.addEventListener("click", function () { win.classList.remove("open"); });
+
+  function findProducts(text) {
+    var words = text.toLowerCase();
+    var scored = catalog.map(function (p) {
+      var score = 0;
+      p.keywords.forEach(function (k) { if (words.indexOf(k) !== -1) score += 2; });
+      if (words.indexOf(p.name.toLowerCase()) !== -1) score += 5;
+      return { p: p, score: score };
+    }).filter(function (s) { return s.score > 0; })
+      .sort(function (a, b) { return b.score - a.score; });
+    return scored.slice(0, 2).map(function (s) { return s.p; });
+  }
+
+  function respond(text) {
+    var t = text.toLowerCase();
+
+    if (/(kis ?ne|kisne|who made|who built|developer|owner|creator).*(website|site|banaya|bnaya)|(website|site).*(kis ?ne|kisne banaya)/.test(t)) {
+      return "Ye website <b>Sania Intazar</b> ne banayi hai — The Planner Hup ki founder, aur ek Urdu-language author bhi hain. 💗";
+    }
+    if (/(salam|assalam|hello|hi|hey|slm)\b/.test(t) && t.length < 20) {
+      return "Wa alaikum assalam! Kaise help kar sakti hoon? Planners, Islamic books, Korean learning ya novel — kuch bhi pooch lein.";
+    }
+    if (/(khareed|kharid|order kar diya|bought|payment kar di|paisa bhej|maine le liya|purchase kar liya)/.test(t)) {
+      return "Bohat bohat shukriya aapki kharidari ke liye! 🥰 Agar pasand aaye to please apni friends ke sath humari website share kar dein: <a href='" + BASE + "index.html' target='_blank'>" + BASE + "index.html</a>";
+    }
+    if (/(contact|whatsapp|email|number|rabta)/.test(t)) {
+      return "Aap humein WhatsApp par <b>+92 343 4457596</b> ya email <b>theplannerhup@gmail.com</b> par contact kar sakte hain.";
+    }
+    if (/(price|qeemat|kitne|cost)/.test(t)) {
+      return "Hamare planners aur books $2.99 se $8 tak range mein hain, aur kuch (jaise Free Weekly Planner) bilkul free hain. Kis product ka price janna hai?";
+    }
+
+    var matches = findProducts(t);
+    if (matches.length) {
+      return matches.map(function (p) {
+        var priceTxt = p.price ? (" — " + p.price) : "";
+        return "<b>" + p.name + "</b>" + priceTxt + "<br>" + p.blurb + "<br><a href='" + BASE + p.url + "' target='_blank'>Yahan dekhein &rarr;</a>";
+      }).join("<br><br>");
+    }
+
+    return "Mujhe iska pakka jawab nahi pata, lekin aap hamara <a href='" + BASE + "faq.html' target='_blank'>FAQ page</a> dekh sakte hain, ya WhatsApp <b>+92 343 4457596</b> par pooch lein.";
+  }
+
+  function send() {
+    var text = input.value.trim();
+    if (!text) return;
+    addMessage("user", text.replace(/</g, "&lt;"));
+    input.value = "";
+    setTimeout(function () { addMessage("bot", respond(text)); }, 350);
+  }
+
+  sendBtn.addEventListener("click", send);
+  input.addEventListener("keydown", function (e) { if (e.key === "Enter") send(); });
+})();
+</script>
 </body>
 </html>
