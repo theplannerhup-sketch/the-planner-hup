@@ -169,7 +169,7 @@
     <!-- PAGE 3: PRIORITIES + TO-DO -->
     <div class="page-label">Top Priorities &amp; To-Do</div>
     <div class="page-wrap" id="page-3">
-        <img class="bg" src="images/weekly-3.png" alt="My Top Priorities and To-Do List">
+        <img class="bg" src="images/weekly-4.png" alt="My Top Priorities and To-Do List">
         <input class="field" style="left:20%; top:22.5%; width:70%; height:5%; font-size:2.6vw;" type="text">
         <input class="field" style="left:20%; top:34%; width:70%; height:5%; font-size:2.6vw;" type="text">
         <input class="field" style="left:20%; top:45.5%; width:70%; height:5%; font-size:2.6vw;" type="text">
@@ -188,12 +188,12 @@
     <!-- PAGE 4: HABIT TRACKER -->
     <div class="page-label">Habit Tracker</div>
     <div class="page-wrap" id="page-4">
-        <img class="bg" src="images/weekly-4.png" alt="Habit Tracker grid">
-        <input class="field" style="left:5%; top:43%; width:26%; height:5.5%; font-size:2vw;" type="text" placeholder="">
-        <input class="field" style="left:5%; top:51.5%; width:26%; height:5.5%; font-size:2vw;" type="text">
-        <input class="field" style="left:5%; top:60%; width:26%; height:5.5%; font-size:2vw;" type="text">
-        <input class="field" style="left:5%; top:68.5%; width:26%; height:5.5%; font-size:2vw;" type="text">
-        <input class="field" style="left:5%; top:77%; width:26%; height:5.5%; font-size:2vw;" type="text">
+        <img class="bg" src="images/weekly-3.png" alt="Habit Tracker grid">
+        <input class="field" style="left:5.5%; top:41.5%; width:25%; height:5.5%; font-size:2vw;" type="text" placeholder="">
+        <input class="field" style="left:5.5%; top:51.1%; width:25%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5.5%; top:60.5%; width:25%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5.5%; top:70%; width:25%; height:5.5%; font-size:2vw;" type="text">
+        <input class="field" style="left:5.5%; top:79.6%; width:25%; height:5.5%; font-size:2vw;" type="text">
 
         <!-- checkboxes: 5 rows x 7 days -->
         <div id="habit-checkboxes"></div>
@@ -228,6 +228,11 @@
         <p>Yes. Simply revisit the page, fill in the new week's details, and download a fresh PDF each time.</p>
     </div>
 
+
+    <div class="content-card">
+        <h2>New to Weekly Planning?</h2>
+        <p>Read our guide on <a href="blog-free-printable-weekly-planner.html">how to choose, print and use a free printable weekly planner</a>, including a simple 10-minute routine to plan your week.</p>
+    </div>
 </main>
 
 <footer id="contact">
@@ -242,12 +247,12 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
 // Build the 5x7 habit tracker checkbox grid
 (function() {
     const container = document.getElementById('habit-checkboxes');
-    const rowTops = [45.2, 53.7, 62.2, 70.7, 79.2];
-    const colLefts = [34.5, 42.7, 50.9, 59.1, 67.3, 75.5, 83.7];
+    const rowTops = [41.4, 50.9, 60.4, 69.9, 79.4];
+    const colLefts = [33.0, 42.0, 51.1, 60.1, 69.2, 78.2, 87.3];
     let html = '';
     rowTops.forEach(top => {
         colLefts.forEach(left => {
-            html += '<div class="checkbox-field" style="left:' + left + '%; top:' + top + '%; width:5.5%; height:3.8%;"><input type="checkbox"></div>';
+            html += '<div class="checkbox-field" style="left:' + left + '%; top:' + top + '%; width:6.4%; height:4.8%;"><input type="checkbox"></div>';
         });
     });
     container.innerHTML = html;
