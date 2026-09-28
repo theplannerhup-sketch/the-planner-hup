@@ -36,10 +36,10 @@ const translations = {
       }
     },
     hero: {
-      eyebrow: "PLAN • READ • DREAM",
+      eyebrow: "PLAN • LEARN • READ • REFLECT",
       heading1: "Make your days",
       heading2: "beautifully organized.",
-      text: "Beautiful planners, books and novels for people who love to plan, learn and dream.",
+      text: "Plan your days. Grow your mind. Nourish your soul.",
       ctaPrimary: "Explore Collection →",
       ctaSecondary: "Discover More",
       noteOne: "✨ Dream Big",
@@ -58,7 +58,8 @@ const translations = {
     products: {
       label: "OUR COLLECTION",
       heading: "Find something made for you ✨",
-      desc: "Choose from our planners, books, novels and free downloads."
+      desc: "Choose from our planners, books, novels and free downloads.",
+      pillars: "Plan · Learn · Read · Reflect"
     },
     whyUs: {
       label: "WHY THE PLANNER HUP?",
@@ -71,6 +72,13 @@ const translations = {
       benefit2Desc: "Designed to make planning feel special.",
       benefit3Title: "Practical",
       benefit3Desc: "Made for real everyday routines."
+    },
+    creator: {
+      label: "MEET THE CREATOR",
+      heading: "Hi, I'm Sania Intazar 💗",
+      text1: "I'm an Urdu author and the creator of The Planner Hup. I write books, design planners and build simple tools for one reason: I believe a good life is built from small, intentional steps.",
+      text2: "Whether you're planning your week, learning Korean, getting lost in a story, or reconnecting with the Quran, every step counts. Everything here is made with care, for anyone who wants to grow a little every day. Start where you are. Take one small step today. 💗",
+      cta: "Meet the Author →"
     },
     reviews: {
       label: "WHAT PEOPLE SAY",
@@ -128,10 +136,10 @@ const translations = {
       }
     },
     hero: {
-      eyebrow: "RENCANAKAN • BACA • BERMIMPI",
+      eyebrow: "RENCANAKAN • PELAJARI • BACA • RENUNGKAN",
       heading1: "Jadikan harimu",
       heading2: "tertata dengan indah.",
-      text: "Planner, buku, dan novel yang indah untuk kamu yang suka merencanakan, belajar, dan bermimpi.",
+      text: "Rencanakan harimu. Kembangkan pikiranmu. Rawat jiwamu.",
       ctaPrimary: "Jelajahi Koleksi →",
       ctaSecondary: "Lihat Selengkapnya",
       noteOne: "✨ Bermimpi Besar",
@@ -150,7 +158,8 @@ const translations = {
     products: {
       label: "KOLEKSI KAMI",
       heading: "Temukan yang cocok untukmu ✨",
-      desc: "Pilih dari planner, buku, novel, dan unduhan gratis kami."
+      desc: "Pilih dari planner, buku, novel, dan unduhan gratis kami.",
+      pillars: "Rencanakan · Pelajari · Baca · Renungkan"
     },
     whyUs: {
       label: "KENAPA THE PLANNER HUP?",
@@ -163,6 +172,13 @@ const translations = {
       benefit2Desc: "Dirancang agar merencanakan terasa istimewa.",
       benefit3Title: "Praktis",
       benefit3Desc: "Dibuat untuk rutinitas sehari-hari."
+    },
+    creator: {
+      label: "KENALAN DENGAN PENCIPTA",
+      heading: "Halo, aku Sania Intazar 💗",
+      text1: "Aku seorang penulis berbahasa Urdu dan pencipta The Planner Hup. Aku menulis buku, merancang planner, dan membuat alat sederhana karena satu alasan: aku percaya hidup yang baik dibangun dari langkah-langkah kecil yang disengaja.",
+      text2: "Entah kamu sedang merencanakan minggumu, belajar bahasa Korea, tenggelam dalam sebuah cerita, atau kembali dekat dengan Al-Qur'an, setiap langkah berarti. Semua yang ada di sini dibuat dengan penuh perhatian, untuk siapa pun yang ingin tumbuh sedikit setiap hari. Mulailah dari mana kamu berada. Ambil satu langkah kecil hari ini. 💗",
+      cta: "Kenali Penulisnya →"
     },
     reviews: {
       label: "KATA MEREKA",
@@ -220,10 +236,10 @@ const translations = {
       }
     },
     hero: {
-      eyebrow: "계획 • 독서 • 꿈",
+      eyebrow: "계획 • 배움 • 독서 • 성찰",
       heading1: "당신의 하루를",
       heading2: "아름답게 정리하세요.",
-      text: "계획하고, 배우고, 꿈꾸는 것을 좋아하는 사람들을 위한 아름다운 플래너, 책, 소설.",
+      text: "하루를 계획하고, 마음을 키우고, 영혼을 채워 보세요.",
       ctaPrimary: "컬렉션 보기 →",
       ctaSecondary: "더 알아보기",
       noteOne: "✨ 큰 꿈을 꾸세요",
@@ -242,7 +258,8 @@ const translations = {
     products: {
       label: "우리의 컬렉션",
       heading: "당신을 위한 것을 찾아보세요 ✨",
-      desc: "플래너, 책, 소설, 무료 다운로드 중에서 선택하세요."
+      desc: "플래너, 책, 소설, 무료 다운로드 중에서 선택하세요.",
+      pillars: "계획 · 배움 · 독서 · 성찰"
     },
     whyUs: {
       label: "왜 The Planner Hup인가요?",
@@ -255,6 +272,13 @@ const translations = {
       benefit2Desc: "계획이 특별하게 느껴지도록 디자인했어요.",
       benefit3Title: "실용적",
       benefit3Desc: "실제 일상 루틴을 위해 만들어졌어요."
+    },
+    creator: {
+      label: "크리에이터 소개",
+      heading: "안녕하세요, Sania Intazar입니다 💗",
+      text1: "저는 우르두어 작가이자 The Planner Hup의 창립자입니다. 좋은 삶은 작지만 의도적인 걸음으로 만들어진다고 믿기 때문에 책을 쓰고, 플래너를 디자인하고, 간단한 도구를 만듭니다.",
+      text2: "한 주를 계획하든, 한국어를 배우든, 이야기에 빠져들든, 꾸란과 다시 가까워지든, 모든 걸음이 소중합니다. 이곳의 모든 것은 매일 조금씩 성장하고 싶은 분들을 위해 정성껏 만들었어요. 지금 있는 곳에서 시작하세요. 오늘 작은 한 걸음을 내디뎌 보세요. 💗",
+      cta: "작가 소개 보기 →"
     },
     reviews: {
       label: "고객들의 이야기",
