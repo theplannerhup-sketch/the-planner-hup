@@ -589,11 +589,22 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
   #tph-chat-input-row { display: flex; border-top: 1px solid #fdeef3; background: #fff; }
   #tph-chat-input { flex: 1; border: none; padding: 12px; font-size: 13.5px; outline: none; font-family: Arial, sans-serif; }
   #tph-chat-send { background: #b85b82; color: #fff; border: none; padding: 0 16px; cursor: pointer; font-size: 16px; }
+  #tph-chat-bubble { padding: 0; overflow: visible; transition: transform .2s ease; }
+  #tph-chat-bubble:hover { transform: scale(1.08); }
+  #tph-chat-bubble svg { border-radius: 50%; display: block; }
+  #tph-chat-bubble::after { content: ""; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 rgba(184,91,130,.55); animation: tphPulse 2.6s ease-out infinite; pointer-events: none; }
+  @keyframes tphPulse { 0% { box-shadow: 0 0 0 0 rgba(184,91,130,.55); } 70% { box-shadow: 0 0 0 14px rgba(184,91,130,0); } 100% { box-shadow: 0 0 0 0 rgba(184,91,130,0); } }
+  @media (prefers-reduced-motion: reduce) { #tph-chat-bubble::after { animation: none; } #tph-chat-bubble { transition: none; } }
+  #tph-chat-header .tph-hdr-left { display: flex; align-items: center; gap: 10px; }
+  #tph-chat-header .tph-hdr-left svg { flex: none; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
+  #tph-chat-header .tph-hdr-text { display: flex; flex-direction: column; line-height: 1.15; }
+  #tph-chat-header .tph-hdr-text b { font-size: 15px; }
+  #tph-chat-header .tph-hdr-text small { font-size: 11px; font-weight: 400; opacity: .9; }
 </style>
 
-<button id="tph-chat-bubble" aria-label="Chat with Yue">💗</button>
+<button id="tph-chat-bubble" aria-label="Chat with Yue" title="Chat with Yue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%" aria-hidden="true" focusable="false"><rect width="100%" height="100%" aria-hidden="true" focusable="false" rx="32" fill="#b85b82"/><path d="M32 12c-11 0-20 7.6-20 17 0 5.2 2.8 9.8 7.2 12.9-.3 2.6-1.4 4.8-3.2 6.6 3.6-.2 6.8-1.6 9.2-3.6 2.1.5 4.5.8 6.8.8 11 0 20-7.6 20-17S43 12 32 12z" fill="#fff"/><ellipse cx="21.5" cy="33" rx="3.2" ry="2.1" fill="#f4b6cc"/><ellipse cx="42.5" cy="33" rx="3.2" ry="2.1" fill="#f4b6cc"/><circle cx="25.5" cy="28.5" r="2.5" fill="#432b37"/><circle cx="38.5" cy="28.5" r="2.5" fill="#432b37"/><path d="M27 34.2q5 4.6 10 0" fill="none" stroke="#432b37" stroke-width="2.2" stroke-linecap="round"/><path d="M50 9l1.6 4.2L56 15l-4.4 1.8L50 21l-1.6-4.2L44 15l4.4-1.8z" fill="#ffe08a"/></svg></button>
 <div id="tph-chat-window">
-  <div id="tph-chat-header"><span>Chat with Yue 💗</span><button id="tph-chat-close" aria-label="Close chat">✕</button></div>
+  <div id="tph-chat-header"><span class="tph-hdr-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect width="32" height="32" aria-hidden="true" focusable="false" rx="32" fill="#b85b82"/><path d="M32 12c-11 0-20 7.6-20 17 0 5.2 2.8 9.8 7.2 12.9-.3 2.6-1.4 4.8-3.2 6.6 3.6-.2 6.8-1.6 9.2-3.6 2.1.5 4.5.8 6.8.8 11 0 20-7.6 20-17S43 12 32 12z" fill="#fff"/><ellipse cx="21.5" cy="33" rx="3.2" ry="2.1" fill="#f4b6cc"/><ellipse cx="42.5" cy="33" rx="3.2" ry="2.1" fill="#f4b6cc"/><circle cx="25.5" cy="28.5" r="2.5" fill="#432b37"/><circle cx="38.5" cy="28.5" r="2.5" fill="#432b37"/><path d="M27 34.2q5 4.6 10 0" fill="none" stroke="#432b37" stroke-width="2.2" stroke-linecap="round"/><path d="M50 9l1.6 4.2L56 15l-4.4 1.8L50 21l-1.6-4.2L44 15l4.4-1.8z" fill="#ffe08a"/></svg><span class="tph-hdr-text"><b>Yue</b><small>The Planner Hup assistant</small></span></span><button id="tph-chat-close" aria-label="Close chat">✕</button></div>
   <div id="tph-chat-messages"></div>
   <div id="tph-chat-input-row">
     <input id="tph-chat-input" type="text" placeholder="Ask about our planners, books..." />
