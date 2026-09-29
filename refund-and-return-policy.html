@@ -377,6 +377,8 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       greeting: "Assalam-o-Alaikum! I'm Yue 💗 Are you looking to plan, learn, read or reflect today?",
       hello: "Hello! How can I help? Ask me about planners, Islamic books, Korean learning or the novel.",
       who: "This website was made by <b>Sania Intazar</b>, the founder of The Planner Hup and an Urdu-language author. 💗",
+
+      nameStory: "My name is <b>Yue</b> — Sania gave me this name herself. 💗",
       bought: "Thank you so much for your purchase! 🥰 If you liked it, please share our website with your friends: ",
       contact: "You can reach us on WhatsApp at <b>+92 343 4457596</b> or by email at <b>theplannerhup@gmail.com</b>.",
       price: "Our planners and books range from $2.99 to $8, and some (like the Free Weekly Planner) are completely free. Which product's price would you like to know?",
@@ -388,6 +390,8 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       greeting: "Assalam-o-Alaikum! Main Yue hoon 💗 Aaj aap plan, learn, read ya reflect mein se kis cheez ki talash mein hain?",
       hello: "Wa alaikum assalam! Kaise help kar sakti hoon? Planners, Islamic books, Korean learning ya novel, kuch bhi pooch lein.",
       who: "Ye website <b>Sania Intazar</b> ne banayi hai, jo The Planner Hup ki founder aur ek Urdu author bhi hain. 💗",
+
+      nameStory: "Mera naam <b>Yue</b> hai — Sania ne khud mera ye pyara sa naam rakha hai. 💗",
       bought: "Aap ki kharidari ka bohat bohat shukriya! 🥰 Agar pasand aaye to please apni friends ke sath humari website share kar dein: ",
       contact: "Aap humein WhatsApp par <b>+92 343 4457596</b> ya email <b>theplannerhup@gmail.com</b> par contact kar sakte hain.",
       price: "Hamare planners aur books $2.99 se $8 tak hain, aur kuch (jaise Free Weekly Planner) bilkul free hain. Kis product ka price janna hai?",
@@ -399,6 +403,8 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       greeting: "Halo! Aku Yue 💗 asisten chat The Planner Hup. Hari ini kamu ingin merencanakan, belajar, membaca, atau merenung?",
       hello: "Halo! Ada yang bisa aku bantu? Tanyakan tentang planner, buku Islami, belajar bahasa Korea, atau novel.",
       who: "Website ini dibuat oleh <b>Sania Intazar</b>, pendiri The Planner Hup sekaligus penulis berbahasa Urdu. 💗",
+
+      nameStory: "Namaku <b>Yue</b> — Sania sendiri yang memberikan nama ini untukku. 💗",
       bought: "Terima kasih banyak sudah berbelanja! 🥰 Kalau kamu suka, tolong bagikan website kami ke teman-temanmu: ",
       contact: "Hubungi kami lewat WhatsApp <b>+92 343 4457596</b> atau email <b>theplannerhup@gmail.com</b>.",
       price: "Planner dan buku kami berharga $2.99 sampai $8, dan beberapa (seperti Free Weekly Planner) gratis. Harga produk yang mana yang ingin kamu ketahui?",
@@ -410,6 +416,8 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       greeting: "안녕하세요! 저는 Yue예요 💗 The Planner Hup의 채팅 도우미입니다. 오늘은 계획, 배움, 독서, 성찰 중 무엇을 찾고 계신가요?",
       hello: "안녕하세요! 무엇을 도와드릴까요? 플래너, 이슬람 도서, 한국어 학습 자료, 소설 등 무엇이든 물어보세요.",
       who: "이 웹사이트는 우르두어 작가이자 The Planner Hup의 창립자인 <b>Sania Intazar</b>가 만들었어요. 💗",
+
+      nameStory: "제 이름은 <b>Yue</b>예요 — Sania가 직접 지어준 이름이에요. 💗",
       bought: "구매해 주셔서 정말 감사합니다! 🥰 마음에 드셨다면 친구들에게도 웹사이트를 공유해 주세요: ",
       contact: "WhatsApp <b>+92 343 4457596</b> 또는 이메일 <b>theplannerhup@gmail.com</b>으로 문의해 주세요.",
       price: "플래너와 도서는 $2.99에서 $8 사이이고, Free Weekly Planner처럼 무료인 것도 있어요. 어떤 상품의 가격이 궁금하세요?",
@@ -474,14 +482,27 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     return scored.slice(0, 2).map(function (s) { return s.p; });
   }
 
+  function includesAny(t, arr) {
+    for (var i = 0; i < arr.length; i++) { if (t.indexOf(arr[i]) !== -1) return true; }
+    return false;
+  }
+
   function respond(text, lang) {
     var t = text.toLowerCase();
     var L = T[lang];
 
-    if (/(who (made|built|created|owns)|kis ?ne (ye |yeh )?(website|site)? ?(banaya|bnaya)|siapa (yang )?(membuat|pembuat)|누가 (만들|제작)|만든 사람|제작자|pembuat)/.test(t)) {
+    var whoWords = ["kisne","kis ne","kis na","kisna","kis ny","kisny","kis nay","kisnay","who made","who built","who created","who owns","siapa yang membuat","siapa pembuat","siapa yang buat","가가가 가가가","가가가"];
+    var whoWordsFix = ["kisne","kis ne","kis na","kisna","kis ny","kisny","kis nay","kisnay","who made","who built","who created","who owns","siapa yang membuat","siapa pembuat","siapa yang buat","누가 만들","누가만들","제작자","만든 사람"];
+    var madeWords = ["banaya","bnaya","banai","bnai","bani","bnayi","banayi","build","built","design","made this","made it","dibuat","membuat","만들","제작","website","site","webiste","websit"];
+    var nameWords = ["naam","name"];
+
+    if (t.indexOf("yue") !== -1 && includesAny(t, nameWords)) {
+      return L.nameStory;
+    }
+    if (includesAny(t, whoWordsFix) && includesAny(t, madeWords)) {
       return L.who;
     }
-    if (/(khareed|kharid|order kar diya|bought|purchased|payment kar di|paisa bhej|maine le liya|sudah beli|sudah membeli|telah membeli|구매했|샀어|샀습니다|구입했)/.test(t)) {
+    if (/(khareed|kharid|order kar diya|bought|purchased|payment kar di|paisa bhej|maine le liya|sudah beli|sudah membeli|telah membeli|구매했|샨어|샨습니다|구입했)/.test(t)) {
       return L.bought + "<a href='" + BASE + "index.html' target='_blank'>" + BASE + "index.html</a>";
     }
     if (/(contact|whatsapp|email|number|rabta|hubungi|kontak|연락|문의|이메일)/.test(t)) {
@@ -500,12 +521,13 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       }).join("<br><br>");
     }
 
-    if (/(^|\s)(salam|assalam|hello|hi|hey|slm|halo|hai)(\s|$|!|\.)|안녕/.test(t) && t.length < 25) {
+    if (includesAny(t, ["salam","assalam","hello","hi","hey","slm","halo","hai ","안녕"]) && t.length < 25) {
       return L.hello;
     }
 
     return L.fallback;
   }
+
 
   function send() {
     var text = input.value.trim();
