@@ -452,8 +452,16 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
   function detectLang(text) {
     var t = text.toLowerCase();
     if (/[\uAC00-\uD7AF]/.test(t)) return "ko";
+    if (/[\u0600-\u06FF]/.test(t)) return "ur";
+    var idWords = ["apa","bagaimana","berapa","harga","beli","saya","aku","kamu","halo","terima kasih","belajar","ingin","mau","siapa","untuk","dengan","tolong","ada","rekomendasi","sebaiknya"];
+    var urWords = ["kya","hai","nahi","mujhe","mujy","kaise","kitne","khareed","kharid","salam","assalam","aap","kisne","banaya","chahiye","chahye","batao","bata","pato","btao","bta","konsa","kaunsa","kaun","karo","kro","krna","lena","kitab","acha","theek","kese","kesy","krna","chaiye"];
     if (/\b(apa|bagaimana|berapa|harga|beli|saya|aku|kamu|halo|terima kasih|belajar|ingin|mau|siapa|untuk|dengan|tolong|ada)\b/.test(t)) return "id";
     if (/\b(kya|hai|nahi|mujhe|mujy|kaise|kitne|khareed|kharid|salam|assalam|aap|kisne|banaya|chahiye|chahye|batao|bata|pato|btao|bta|konsa|kaunsa|kaun|karo|kro|krna|lena|kitab)\b/.test(t)) return "ur";
+    var words = t.split(/[^a-z0-9]+/).filter(Boolean);
+    for (var i = 0; i < words.length; i++) {
+      for (var j = 0; j < idWords.length; j++) { if (idWords[j].indexOf(" ") === -1 && levDist(words[i], idWords[j]) <= 1 && words[i].length >= 3) return "id"; }
+      for (var k = 0; k < urWords.length; k++) { if (levDist(words[i], urWords[k]) <= 1 && words[i].length >= 3) return "ur"; }
+    }
     return currentLang || pageLang();
   }
 
@@ -482,7 +490,11 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     var words = text.toLowerCase();
     var scored = catalog.map(function (p) {
       var score = 0;
-      p.keywords.forEach(function (k) { if (words.indexOf(k.toLowerCase()) !== -1) score += 2; });
+      p.keywords.forEach(function (k) {
+        var kk = k.toLowerCase();
+        if (words.indexOf(kk) !== -1) score += 2;
+        else if (fuzzyHas(words, kk)) score += 1.5;
+      });
       if (words.indexOf(p.name.toLowerCase()) !== -1) score += 5;
       return { p: p, score: score };
     }).filter(function (s) { return s.score > 0; })
@@ -490,8 +502,49 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     return scored.slice(0, 2).map(function (s) { return s.p; });
   }
 
+  function levDist(a, b) {
+    if (a === b) return 0;
+    var al = a.length, bl = b.length;
+    if (al === 0) return bl;
+    if (bl === 0) return al;
+    var v0 = [], v1 = [];
+    for (var i = 0; i <= bl; i++) v0[i] = i;
+    for (i = 0; i < al; i++) {
+      v1[0] = i + 1;
+      for (var j = 0; j < bl; j++) {
+        var cost = a[i] === b[j] ? 0 : 1;
+        v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);
+      }
+      for (j = 0; j <= bl; j++) v0[j] = v1[j];
+    }
+    return v1[bl];
+  }
+
+  function tokenize(t) {
+    return t.toLowerCase().split(/[^a-z0-9\u0600-\u06FF\uAC00-\uD7AF]+/).filter(Boolean);
+  }
+
+  function fuzzyHas(t, phrase) {
+    phrase = phrase.toLowerCase();
+    if (t.indexOf(phrase) !== -1) return true;
+    if (phrase.indexOf(" ") !== -1) {
+      var loose = phrase.replace(/ /g, "\\s?");
+      try { if (new RegExp(loose).test(t)) return true; } catch (e) {}
+      return false;
+    }
+    if (phrase.length < 5) return false;
+    var maxDist = phrase.length <= 6 ? 1 : (phrase.length <= 9 ? 2 : 3);
+    var words = tokenize(t);
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length < 5) continue;
+      if (Math.abs(words[i].length - phrase.length) > maxDist) continue;
+      if (levDist(words[i], phrase) <= maxDist) return true;
+    }
+    return false;
+  }
+
   function includesAny(t, arr) {
-    for (var i = 0; i < arr.length; i++) { if (t.indexOf(arr[i]) !== -1) return true; }
+    for (var i = 0; i < arr.length; i++) { if (fuzzyHas(t, arr[i])) return true; }
     return false;
   }
 
@@ -504,7 +557,7 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     var madeWords = ["banaya","bnaya","banai","bnai","bani","bnayi","banayi","build","built","design","made this","made it","dibuat","membuat","만들","제작","website","site","webiste","websit"];
     var nameWords = ["naam","name"];
 
-    if (t.indexOf("yue") !== -1 && includesAny(t, nameWords)) {
+    if ((t.indexOf("yue") !== -1 || t.indexOf("yeu") !== -1 || /\byu[ei]?\b/.test(t)) && includesAny(t, nameWords)) {
       return L.nameStory;
     }
     if (includesAny(t, whoWordsFix) && includesAny(t, madeWords)) {
@@ -513,7 +566,7 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     if (/(khareed|kharid|order kar diya|bought|purchased|payment kar di|paisa bhej|maine le liya|sudah beli|sudah membeli|telah membeli|구매했|샨어|샨습니다|구입했)/.test(t)) {
       return L.bought + "<a href='" + BASE + "index.html' target='_blank'>" + BASE + "index.html</a>";
     }
-    if (/(contact|whatsapp|email|number|rabta|hubungi|kontak|연락|문의|이메일)/.test(t)) {
+    if (/(cont[ae]ct|whats?app|w[th]?tsap|email|numbe?r|rabta|hubungi|kontak|연락|문의|이메일)/.test(t)) {
       return L.contact;
     }
     if (/(price|qeemat|kitne|cost|harga|berapa|가격|얼마)/.test(t)) {
@@ -529,7 +582,7 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
       }).join("<br><br>");
     }
 
-    if (/(which.*(buy|product|one)|what should i buy|recommend|suggest|help me choose|which is (best|good)|kaunsa|kon\s?sa|konsa|kaun\s?sa|kya\s?lu|kya lena|lena chahiye|sabse (acha|best)|best kya|kya khareed|rekomendasi|saran (dong|nya)?|sebaiknya (beli|pilih)|mau beli apa|beli apa|apa yang harus (saya )?beli|pilih apa|yang mana (bagus|baik)|추천|뭐가 좋|어느.*(사야|좋)|어떤 상품)/.test(t)) {
+    if (/(which.*(buy|product|one)|what should i buy|recommend|suggest|help me choose|which is (best|good)|kaunsa|kon\s?sa|konsa|kaun\s?sa|kya\s?lu|kya lena|lena chahiye|sabse (acha|best)|best kya|kya khareed|rekomendasi|saran (dong|nya)?|sebaiknya (beli|pilih)|mau beli apa|beli apa|apa yang harus (saya )?beli|pilih apa|yang mana (bagus|baik)|추천|뭐가 좋|어느.*(사야|좋)|어떤 상품)/.test(t) || (/(planner|planer|kitab|book|buku|도서|플래너)/.test(t) && !matches.length)) {
       return L.recommend;
     }
 
