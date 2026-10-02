@@ -2944,6 +2944,34 @@ const planners = {
     },
 
 
+    "a-dream-for-you": {
+
+        title:
+            "A Dream For You",
+
+        type:
+            "URDU NOVEL",
+
+        category:
+            "novel",
+
+        description:
+            "A heartfelt Urdu novel about return, forgiveness and a family caf\u00e9 by the river. Read the first 3 chapters free.",
+
+        price:
+            null,
+
+        whatsappUrl:
+            "https://wa.me/923434457596?text=Assalam%20o%20Alaikum!%20I%20would%20like%20the%20full%20novel%20%22A%20Dream%20For%20You%22.",
+
+        cover:
+            "images/a-dream-for-you-cover.jpg",
+
+        pages: []
+
+    },
+
+
     "free-weekly": {
 
         title:
@@ -2994,7 +3022,8 @@ const productPageSlugs = {
     "majmua-quran": "hazrat-ali-majmua-e-quran.html",
     "fahoom-ul-quran": "fahm-ul-quran.html",
     "glow-up-korean": "glow-up-korean-secrets.html",
-    "bheriya-ki-rooh": "novel-bheriya-ki-rooh.html"
+    "bheriya-ki-rooh": "novel-bheriya-ki-rooh.html",
+    "a-dream-for-you": "novel-a-dream-for-you.html"
 };
 
 let activePlanner = null;
@@ -3050,7 +3079,7 @@ const collections = {
             "Novels",
 
         description:
-            "Beautiful, original Urdu novels. Read the first chapter free.",
+            "Beautiful, original Urdu novels. Read the first chapters free.",
 
         type:
             "novels"
@@ -3285,7 +3314,7 @@ function createPlannerCard(
         </p>
 
         <p class="product-price small">
-            $${planner.price.toFixed(2)}${planner.price > 0 ? ' <span style="font-size:0.8em;color:#a68493;font-weight:600;">(~Rs. ' + Math.round(planner.price * 278).toLocaleString() + ')</span>' : ''}
+            ${planner.whatsappUrl ? '<span style="font-size:0.85em;">First 3 chapters free</span>' : '$' + planner.price.toFixed(2)}${planner.whatsappUrl ? '' : ''}${planner.price > 0 ? ' <span style="font-size:0.8em;color:#a68493;font-weight:600;">(~Rs. ' + Math.round(planner.price * 278).toLocaleString() + ')</span>' : ''}
         </p>
 
         <div class="card-actions">
@@ -3303,12 +3332,9 @@ function createPlannerCard(
                 }
             </a>
 
-            <button
-                type="button"
-                class="add-to-cart-button add-to-cart-card-btn"
-            >
-                🛍 Add to Cart
-            </button>
+            ${planner.whatsappUrl
+                ? `<a class="add-to-cart-button" href="${planner.whatsappUrl}" target="_blank" rel="noopener" style="text-decoration:none;text-align:center;">💬 Get on WhatsApp</a>`
+                : `<button type="button" class="add-to-cart-button add-to-cart-card-btn">🛍 Add to Cart</button>`}
 
         </div>
 
@@ -3377,16 +3403,11 @@ function createPlannerCard(
         );
 
 
-    addToCartButton.addEventListener(
-        "click",
-        function() {
-
-            addToCart(
-                plannerKey
-            );
-
-        }
-    );
+    if (addToCartButton) {
+        addToCartButton.addEventListener("click", function() {
+            addToCart(plannerKey);
+        });
+    }
 
 
     grid.appendChild(
