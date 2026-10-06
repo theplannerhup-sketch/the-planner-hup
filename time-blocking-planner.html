@@ -410,9 +410,11 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     var idWords = ["apa","bagaimana","berapa","harga","beli","saya","aku","kamu","halo","terima","kasih","belajar","ingin","mau","siapa","untuk","dengan","tolong","ada","rekomendasi","sebaiknya","kalau","mahu","boleh"];
     var urWords = ["kya","hai","nahi","mujhe","mujy","kaise","kitne","khareed","kharid","salam","assalam","assalamualaikum","asalamualaikum","alaikum","aap","kisne","banaya","chahiye","chahye","chahti","chahta","batao","bata","pato","btao","bta","konsa","kaunsa","kaun","karo","kro","krna","lena","kitab","acha","theek","kese","kesy","hun","hoon","parhna","parhni","mera","meri","tumhe","sakta","sakti","kyun","kyu","kion","shukriya","apko","tumko"];
     var words = t.split(/[^a-z0-9]+/).filter(Boolean);
-    var idScore = 0, urScore = 0;
+    var idScore = 0, urScore = 0, enScore = 0;
+    var enWords = ["the","you","have","what","how","want","need","please","hello","price","buy","recommend","looking","for","with","does","which","where","who","thanks","thank","show","about","any","tell","your","are","can"];
     words.forEach(function (w) {
       if (w.length < 2) return;
+      if (enWords.indexOf(w) !== -1) enScore += 2;
       idWords.forEach(function (iw) {
         if (w === iw) idScore += 2;
         else if (w.length >= 3 && iw.length >= 3 && Math.abs(w.length - iw.length) <= 1 && levDist(w, iw) <= 1) idScore += 1;
@@ -424,6 +426,8 @@ function toggleMobileMenu(){ document.querySelector('header.navbar nav').classLi
     });
     if (urScore > 0 && urScore >= idScore) return "ur";
     if (idScore > 0) return "id";
+    if (enScore >= 2 && enScore > urScore && enScore > idScore) return "en";
+    if (currentLang === "ko") return "en";
     return currentLang || pageLang();
   }
 
