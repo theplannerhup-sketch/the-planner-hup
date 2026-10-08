@@ -401,6 +401,7 @@
   </div>
 </div>
 
+<script src="yue-extra.js"></script>
 <script>
 (function () {
   var BASE = "https://theplannerhup-sketch.github.io/the-planner-hup/";
@@ -469,6 +470,8 @@
     }
   };
 
+  if (window.YueExt) { window.YueExt.extend(T); }
+
   var bubble = document.getElementById("tph-chat-bubble");
   var win = document.getElementById("tph-chat-window");
   var closeBtn = document.getElementById("tph-chat-close");
@@ -484,6 +487,8 @@
   }
 
   function detectLang(text) {
+    var ex = window.YueExt && window.YueExt.detect(text, currentLang);
+    if (ex) return ex;
     var t = text.toLowerCase();
     if (/[\uAC00-\uD7AF]/.test(t)) return "ko";
     if (/[\u0600-\u06FF]/.test(t)) return "ur";
@@ -597,6 +602,10 @@
   function respond(text, lang) {
     var t = text.toLowerCase();
     var L = T[lang];
+    if (window.YueExt) {
+      var xr = window.YueExt.respond(text, lang, T, { BASE: BASE, findProducts: findProducts, includesAny: includesAny });
+      if (xr) return xr;
+    }
 
     var whoWords = ["kisne","kis ne","kis na","kisna","kis ny","kisny","kis nay","kisnay","who made","who built","who created","who owns","siapa yang membuat","siapa pembuat","siapa yang buat","가가가 가가가","가가가"];
     var whoWordsFix = ["kisne","kis ne","kis na","kisna","kis ny","kisny","kis nay","kisnay","who made","who built","who created","who owns","siapa yang membuat","siapa pembuat","siapa yang buat","누가 만들","누가만들","제작자","만든 사람"];
